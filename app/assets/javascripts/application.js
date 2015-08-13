@@ -15,4 +15,3 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
-//= require smart_editor
