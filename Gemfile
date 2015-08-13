@@ -28,6 +28,7 @@ gem 'faker'			,		'1.4.2'
 gem 'will_paginate'	,		'3.0.7'
 gem 'bootstrap-will_paginate','0.0.10'
 gem 'omniauth-facebook', '~> 1.4.1'
+gem 'smart_editor', github: "goodoc/smart_editor_rails", branch: "rails4" 
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
