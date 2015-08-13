@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150813050322) do
+ActiveRecord::Schema.define(version: 20150813105150) do
+
+  create_table "albums", force: :cascade do |t|
+    t.integer  "restaurant_id"
+    t.string   "r_photo"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "facebook_users", force: :cascade do |t|
     t.string   "provider"
@@ -21,6 +28,15 @@ ActiveRecord::Schema.define(version: 20150813050322) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string   "r_name"
+    t.string   "r_phone_number"
+    t.integer  "r_click_count"
+    t.integer  "r_like"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|
