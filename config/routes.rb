@@ -4,14 +4,18 @@ Rails.application.routes.draw do
   root             'static_pages#home'
   get 'about'   	=> 'static_pages#about'
   get 'contact' 	=> 'static_pages#contact'
+
+  #Facebook
+
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'sessions#destroy', as: 'signout'
+
+  resources :sessions, only: [:create, :destroy]
   
   #users controller
   get 'signup'		=> 'users#new'
-  resources :users
 
-  #sessions controller
-  get 'login' 		=> 'sessions#new'
-  post 'login'		=> 'sessions#create'
-  delete 'logout' 	=> 'sessions#destroy'
+  resources :users
   
 end
