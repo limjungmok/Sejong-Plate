@@ -60,7 +60,22 @@ body{
   padding-top: 60px;
 }
 
+.carousel-indicators{
+  padding-bottom: 60px;
+}
+
+.carousel-search{
+  width: 100%;
+  height: 50px;
+  background-color: #000;
+  position: absolute;
+  left: 0px; top: 300px;
+  font-size: 0px;
+  color: #fff;
+}
+
 .carousel-inner{
+  width: 100%;
   background-color: #transparent;
   height: 450px;
 }
@@ -118,17 +133,22 @@ table{
 .recommend-menu:hover .info{
     position: absolute;
     left: 0px; top: 180px;
-        text-align:center;
+    text-align:center;
     width: 100%;
-
     font-size: 25px;
     color: #fff;    
 }
 
 
 footer{
+  height: 50px;
+  padding-left: 25px;
+
 }
 
+#footer-line{
+  padding-right: 50px;
+}
 section {
   overflow: auto;
 }
