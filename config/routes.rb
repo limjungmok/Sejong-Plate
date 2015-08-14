@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'facebook_users/edit'
+
+  get 'facebook_users/update'
+
   #static_pages controller
   root             'static_pages#home'
   get 'about'   	=> 'static_pages#about'
@@ -16,5 +20,7 @@ Rails.application.routes.draw do
   get 'signup'		=> 'users#new'
 
   resources :users
+  resources :facebook_users
+
   
 end

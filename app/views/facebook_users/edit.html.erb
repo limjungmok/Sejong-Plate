@@ -1,0 +1,15 @@
+<% provide(:title, "닉네임 설정") %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  	<h3> 사용할 별명을 선택하세요. 익명이 보장됩니다. </h3><p><br>
+    <%= form_for(@f_user) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.text_field :nickname, class: 'form-control', 
+      	id: 'edit-form', placeholder: "원하는 별명을 입력하세요."%><p><br>
+
+      <%= f.submit "변경하기", class: "btn btn-primary" , data: { disable_with: "변경중.."} %>
+    <% end %>
+  </div>
+</div>
