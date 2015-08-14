@@ -7,14 +7,26 @@
           <%=link_to "Sample page", '# '%>
         </li>
         <li>
-        <div id = 'facebook'>
-          <% if current_user %>
-                <%= link_to current_user.nickname , edit_facebook_user_path(:id => current_user.id) %>  
-                <%= link_to "Log out", signout_path, id: "sign_out" %>
+          <% if current_user %> 
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <%if current_user.nickname == nil%>
+                    <%= current_user.name + "님" %> <b class="caret"></b>
+                    <% else %>
+                    <%= current_user.nickname + "님" %> <b class="caret"></b>
+                  <% end %>                    
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Setting", edit_facebook_user_path(:id => current_user.id) %></li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Log out", signout_path, id: "sign_out" %>
+                  </li>
+                </ul>
+              </li>                
           <% else %>
             <%= link_to "Log in with Facebook", "/auth/facebook", id: "sign_in" %>
           <% end %>
-        </div>
         </li>
       </ul>
     </nav>
