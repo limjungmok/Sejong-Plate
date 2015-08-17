@@ -23,3 +23,5 @@ Rails.application.routes.draw do
 
   resources :facebook_users
   resources :restaurants
+
+end
