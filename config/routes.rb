@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'albums/new'
+
   get 'facebook_users/edit'
   get 'facebook_users/update'
 
@@ -21,5 +23,3 @@ Rails.application.routes.draw do
 
   resources :facebook_users
   resources :restaurants
-  
-end
