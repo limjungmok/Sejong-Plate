@@ -7,4 +7,8 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+
+  def new_store
+  	@restaurant = Restaurant.new
+  end
 end
