@@ -4,6 +4,10 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li>
+          <%=link_to "coco page", '#'%>
+        </li>
+
+        <li>
           <%=link_to "Sample page", '# '%>
         </li>
         <li>
@@ -25,7 +29,7 @@
                 </ul>
               </li>                
           <% else %>
-            <%= link_to "Log in with Facebook", "/auth/facebook", id: "sign_in" %>          
+            <%= link_to "페이스북 로그인", "/auth/facebook", id: "sign_in" %>          
           <% end %>
         </li>
       </ul>

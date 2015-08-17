@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   get 'facebook_users/edit'
-
   get 'facebook_users/update'
 
   #static_pages controller
@@ -19,8 +18,7 @@ Rails.application.routes.draw do
   #users controller(로그인 페이스북만 쓰면 필요없음)
   get 'signup'		=> 'users#new'
 
-  resources :users
   resources :facebook_users
-
+  resources :restaurants
   
 end

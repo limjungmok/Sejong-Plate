@@ -6,7 +6,7 @@ class FacebookUsersController < ApplicationController
 
   def update
   	@f_user = FacebookUser.find(params[:id])
-  	if params[:facebook_user][:nickname] == ""
+  	if params[:facebook_user][:nickname].blank?
   		flash[:danger] = "제대로 입력하세요"
   		redirect_to :back
   	else

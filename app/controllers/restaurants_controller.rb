@@ -1,0 +1,7 @@
+class RestaurantsController < ApplicationController
+	def show
+	end
+
+	def index
+	end
+end
