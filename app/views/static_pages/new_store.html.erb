@@ -1,1 +1,11 @@
 <h1>test</h1>
+<%= form_for(@restaurant) do |f| %>
+<%= f.text_area :r_name, :class => 'ckeditor' %>
+<% end %>
+
+<script>
+
+	$('.ckeditor').ckeditor({
+  // optional config
+});
+</script>
