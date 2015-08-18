@@ -1,0 +1,21 @@
+<h1>Index</h1>
+<table class="table">
+<% @restaurants.each do |r| %>
+			<tr>
+				<td>
+					<%= link_to r.r_name, restaurant_path(:id => r.id) %>
+				</td>
+				<td>
+					<%= r.r_phone_number %>
+				</td>
+				<td>
+					<%= r.r_distance %>
+				</td>
+				<td>
+					<%= r.r_code %>
+				</td>
+				<br>
+
+			</tr>
+<% end %>
+</table>

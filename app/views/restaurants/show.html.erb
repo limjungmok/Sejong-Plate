@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <p>
 	<strong>상호명:</strong>
@@ -18,6 +17,21 @@
 <p>
 	<strong>추천수:</strong>
 	<%= @restaurant.r_like %>
+</p>
+
+<p>
+	<strong>소요시간:</strong>
+	<%= @restaurant.r_distance %>
+</p>
+
+<p>
+	<strong>영업시간:</strong>
+	<%= @restaurant.r_time %>
+</p>
+
+<p>
+	<strong>종류:</strong>
+	<%= @restaurant.r_code %>
 </p>
 
 <% @albums.each do |p| %>

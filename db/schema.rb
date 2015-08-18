@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818062627) do
+ActiveRecord::Schema.define(version: 20150818084425) do
 
   create_table "albums", force: :cascade do |t|
     t.integer  "restaurant_id"
@@ -39,6 +39,9 @@ ActiveRecord::Schema.define(version: 20150818062627) do
     t.integer  "r_like",         default: 0
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.string   "r_distance"
+    t.string   "r_time"
+    t.string   "r_code"
   end
 
   create_table "users", force: :cascade do |t|
