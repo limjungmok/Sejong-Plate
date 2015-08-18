@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+	<strong>상호명:</strong>
+	<%= @restaurant.r_name %>
+</p>
+
+<p>
+	<strong>연락처:</strong>
+	<%= @restaurant.r_phone_number %>
+</p>
+
+<p>
+	<strong>조회수:</strong>
+	<%= @restaurant.r_click_count %>
+</p>
+
+<p>
+	<strong>추천수:</strong>
+	<%= @restaurant.r_like %>
+</p>
+
+<% @albums.each do |p| %>
+	<%= image_tag p.picture_url , :width => "300px", :height => "300px" %>
+<% end %>
+<br>
+<%= link_to "뒤로", root_path %>
