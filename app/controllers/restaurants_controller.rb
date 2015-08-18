@@ -17,8 +17,10 @@ class RestaurantsController < ApplicationController
 		@restaurant = Restaurant.new(restaurant_params)
 		respond_to do |format|
 			if @restaurant.save
-				params[:albums]['picture'].each do |a|
-					@album = @restaurant.albums.create!(:picture => a)
+				unless params[:albums].nil?
+					params[:albums]['picture'].each do |a|
+						@album = @restaurant.albums.create!(:picture => a)
+					end
 				end
 				format.html { redirect_to @restaurant, notice: '등록 완료!'}
 			else
