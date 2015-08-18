@@ -1,0 +1,39 @@
+<%= form_for(@restaurant, :html => { :multipart => true}) do |f| %>
+
+	<div class="field">
+		<%= f.label :상호명 %> <br>
+		<%= f.text_field :r_name %>
+	</div>
+
+	<div class="field">
+		<%= f.label :연락처 %> <br>
+		<%= f.text_field :r_phone_number %>
+	</div>	
+
+	<div class="field">
+		<%= f.label :소요시간 %> <br>
+		<%= f.text_field :r_distance %>
+	</div>	
+
+	<div class="field">
+		<%= f.label :영업시간 %> <br>
+		<%= f.text_field :r_time %>
+	</div>	
+
+	<div class="field">
+		<%= f.label :종류 %> <br>
+		<%= f.text_field :r_code %>
+	</div>	
+
+	<%= f.fields_for :사진 do |p| %>
+		<div class="field">
+			<%= p.label :picture %>
+			<%= p.file_field :picture, :multiple => true, name: "albums[picture][]" %>
+		</div>
+	<% end %>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+
+<% end %>
