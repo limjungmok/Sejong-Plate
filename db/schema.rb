@@ -11,14 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150815195032) do
+ActiveRecord::Schema.define(version: 20150814103341) do
 
   create_table "albums", force: :cascade do |t|
     t.integer  "restaurant_id"
     t.string   "r_photo"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.string   "picture"
   end
 
   create_table "facebook_users", force: :cascade do |t|
@@ -35,10 +34,10 @@ ActiveRecord::Schema.define(version: 20150815195032) do
   create_table "restaurants", force: :cascade do |t|
     t.string   "r_name"
     t.string   "r_phone_number"
-    t.integer  "r_click_count"
-    t.integer  "r_like"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "r_click_count",  default: 0
+    t.integer  "r_like",         default: 0
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "users", force: :cascade do |t|
