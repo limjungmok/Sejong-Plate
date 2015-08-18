@@ -1,7 +1,17 @@
 <h1>Index</h1>
 <table class="table">
+	<tr>
+		<th>사진</th>		
+		<th>상호명</th>
+		<th>연락처</th>			
+		<th>소요시간</th>
+		<th>분류</th>					
+	</tr>
 <% @restaurants.each do |r| %>
 			<tr>
+				<td>
+					<%= image_tag r.albums[0].picture_url , :width => "120px", :height => "120px" %>
+				</td>
 				<td>
 					<%= link_to r.r_name, restaurant_path(:id => r.id) %>
 				</td>
