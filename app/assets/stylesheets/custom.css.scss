@@ -143,15 +143,7 @@ table{
 }
 
 
-footer{
-  height: 50px;
-  padding-left: 25px;
 
-}
-
-#footer-line{
-  padding-right: 50px;
-}
 section {
   overflow: auto;
 }
@@ -171,10 +163,16 @@ textarea {
 /* footer */
 
 footer {
-  margin-top: 500px;
+
+  height: 10%;
+  padding-left: 25px;  
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
+  border-top: 0px solid #eaeaea;
   color: #777;
+}
+
+#footer-line{
+  padding-right: 50px;
 }
 
 footer a {
