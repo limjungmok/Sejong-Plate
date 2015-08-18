@@ -51,7 +51,7 @@
       <% @restaurants.each do |r| %>
       <div class="recommend">
         <div class="recommend-menu">
-          <%= link_to image_tag(r.albums.find(r.id).picture, 
+          <%= link_to image_tag(r.albums.first.picture, 
             :width => '310px', :height => '310px'), 
               restaurant_path(:id => r.id) %>
             <div class="info">
