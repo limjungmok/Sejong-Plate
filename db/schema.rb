@@ -23,11 +23,10 @@ ActiveRecord::Schema.define(version: 20150819120134) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "c_content"
-    t.integer  "c_like",          default: 0
+    t.integer  "c_like",        default: 0
     t.integer  "c_facebook_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.integer  "c_restaurant_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.integer  "restaurant_id"
   end
 
