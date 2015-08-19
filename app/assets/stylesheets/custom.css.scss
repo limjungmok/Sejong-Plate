@@ -28,8 +28,8 @@
   font-weight: bold;
 }
 .navbar-inverse{
-  background-color: transparent;
-  border-color: transparent;
+  background-color: #fff;
+  border-color: #fff;
 }
 
 #logo{
@@ -107,12 +107,10 @@ table{
 .recommend-menu{   
   position: relative;
   float: left;
-  margin:4.1%;
   background-size: 25% 25%;
   height:25%;
   width:25%;
   border-radius:50%;
-  overflow:hidden;
   opacity: 0.6;
   -moz-opacity: 0.6;
   -khtml-opacity: 0.6;
