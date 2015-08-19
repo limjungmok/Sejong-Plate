@@ -2,20 +2,19 @@
 	<div class="restaurant_contents">
 
 		<% @albums.each do |p| %>
-		<%= image_tag p.picture_url , :width => "310px", :height => "310px" %>
+		<%= image_tag p.picture_url , :width => "450px", :height => "350px" %>
 		<% end %>
 
 		<div class="restaurant_info">
 		<h3><%= @restaurant.r_name %></h3>
 		<hr>
-		<span class="restaurant_click_count">
-		<%= @restaurant.r_click_count %>
-		조회수
-		</span>
-		<span class="restaurant_like">
-		<%= @restaurant.r_like %>
-		추천수
-		</span><hr>
+		별점
+		<span class="glyphicon glyphicon-star-empty"> </span>
+		<span class="glyphicon glyphicon-star-empty"> </span>
+		<span class="glyphicon glyphicon-star-empty"> </span>
+		<span class="glyphicon glyphicon-star-empty"> </span>
+		<span class="glyphicon glyphicon-star-empty"> </span>
+		<hr>
 
 		<ul class="restaurant_ul">
 			<li>
@@ -27,6 +26,7 @@
 			</li>
 
 			<li>
+				<span id="restaurant_icon" class="glyphicon glyphicon-map-marker"> </span>
 				<span class="restaurant_title"> 소요시간 </span>
 				<span class="restaurant_content">
 				<%= @restaurant.r_distance %>
@@ -34,6 +34,7 @@
 			</li>
 
 			<li>
+				<span id="restaurant_icon" class="glyphicon glyphicon-time"> </span>
 				<span class="restaurant_title"> 영업시간 </span>
 				<span class="restaurant_content">
 				<%= @restaurant.r_time %>
@@ -41,6 +42,7 @@
 			</li>
 
 			<li>
+				<span id="restaurant_icon" class="glyphicon glyphicon-th-list"> </span>
 				<span class="restaurant_title"> 종류 </span>
 				<span class="restaurant_content">
 				<%= @restaurant.r_code %>
@@ -53,5 +55,20 @@
 			<% end %>
 		</ul>
 		</div>
+	</div>
+
+	<div class="comment_contents">
+
+	<strong> 리뷰 </strong>
+	<span class="r_contents">
+	(<%= @comments.count %>)
+	</span>
+	<br>
+	<div class="comment_content">
+		<% @comments.each do |c| %>
+		<%= c.c_content %>
+		<% end %>
+	</div>
+
 	</div>
 </div>

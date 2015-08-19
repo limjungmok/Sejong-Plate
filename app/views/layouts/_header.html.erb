@@ -6,10 +6,10 @@
         <li>
           <%=link_to "coco page", restaurants_path %>
         </li>
-
+        <% if current_user && current_user.admin == true %>
         <li>
           <%=link_to "Sample page", new_restaurant_path %>
-
+        <% end %>
         </li>
         <li>
           <% if current_user %> 

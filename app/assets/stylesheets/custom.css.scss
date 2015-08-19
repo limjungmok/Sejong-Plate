@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 /* header */
 
@@ -219,7 +220,7 @@ $gray-medium-light: #eaeaea;
 /* 지연 */
 
 body {
-  font-family: '나눔고딕';
+  font-family: 'Nanum Gothic', sans-serif;
   line-height: 1.3;
   font-style: normal;
   letter-spacing: normal;
@@ -231,6 +232,11 @@ body {
   background-color: whitesmoke;
 }
 
+#restaurant_icon {
+  float: left;
+  width: 23px;
+  line-height: 2.0;
+}
 
 .restaurant_contents {
   position: relative;
@@ -238,6 +244,12 @@ body {
   width: 900px;
   background: white;
   margin: 20px auto;
+  border: solid 1px gainsboro;
+
+  h3 {
+    font-size: 32px;
+    margin: 15px 0 18px;
+  }
 }
 
 
@@ -250,9 +262,6 @@ img {
   padding: 13px 20px 0 480px;
 }
 
-h3 {
-  font-size: 32px;
-}
 
 .restaurant_ul {
   margin-top: 25px;
@@ -264,7 +273,7 @@ h3 {
 
 
 .restaurant_title {
-    width: 60px;
+    width: 90px;
     float: left;
     font-weight: 800;
 }
@@ -273,3 +282,29 @@ h3 {
   width: 310px;
   float: right;
 }
+<<<<<<< HEAD
+=======
+
+.comment_contents {
+  position: relative;
+  height: 650px;
+  width: 900px;
+  background: white;
+  margin: 20px auto;
+  border: solid 1px gainsboro;
+
+  strong {
+    margin-left: 30px;
+    line-height: 3.0;
+    font-size: 25px;
+  }
+}
+
+.r_contents {
+  color: orange;
+}
+
+.comment_content {
+  margin-left: 300px;
+}
+>>>>>>> 670a0896a6367c6dc2c3e64c8bcc532ba7a35b77
