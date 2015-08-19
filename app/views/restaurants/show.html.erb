@@ -1,41 +1,57 @@
+<div class="show_container">
+	<div class="restaurant_contents">
 
-<p>
-	<strong>상호명:</strong>
-	<%= @restaurant.r_name %>
-</p>
+		<% @albums.each do |p| %>
+		<%= image_tag p.picture_url , :width => "310px", :height => "310px" %>
+		<% end %>
 
-<p>
-	<strong>연락처:</strong>
-	<%= @restaurant.r_phone_number %>
-</p>
+		<div class="restaurant_info">
+		<h3><%= @restaurant.r_name %></h3>
+		<hr>
+		<span class="restaurant_click_count">
+		<%= @restaurant.r_click_count %>
+		조회수
+		</span>
+		<span class="restaurant_like">
+		<%= @restaurant.r_like %>
+		추천수
+		</span><hr>
 
-<p>
-	<strong>조회수:</strong>
-	<%= @restaurant.r_click_count %>
-</p>
+		<ul class="restaurant_ul">
+			<li>
+				<span id="restaurant_icon" class="glyphicon glyphicon-phone-alt"> </span>
+				<span class="restaurant_title"> 연락처 </span>
+				<span class="restaurant_content">
+				<%= @restaurant.r_phone_number %>
+				</span>
+			</li>
 
-<p>
-	<strong>추천수:</strong>
-	<%= @restaurant.r_like %>
-</p>
+			<li>
+				<span class="restaurant_title"> 소요시간 </span>
+				<span class="restaurant_content">
+				<%= @restaurant.r_distance %>
+				</span>
+			</li>
 
-<p>
-	<strong>소요시간:</strong>
-	<%= @restaurant.r_distance %>
-</p>
+			<li>
+				<span class="restaurant_title"> 영업시간 </span>
+				<span class="restaurant_content">
+				<%= @restaurant.r_time %>
+				</span>
+			</li>
 
-<p>
-	<strong>영업시간:</strong>
-	<%= @restaurant.r_time %>
-</p>
+			<li>
+				<span class="restaurant_title"> 종류 </span>
+				<span class="restaurant_content">
+				<%= @restaurant.r_code %>
+				</span>
+			</li>
 
-<p>
-	<strong>종류:</strong>
-	<%= @restaurant.r_code %>
-</p>
 
-<% @albums.each do |p| %>
-	<%= image_tag p.picture_url , :width => "300px", :height => "300px" %>
-<% end %>
-<br>
-<%= link_to "뒤로", root_path %>
+			<% @comments.each do |c| %>
+			<%= c.c_content %>
+			<% end %>
+		</ul>
+		</div>
+	</div>
+</div>

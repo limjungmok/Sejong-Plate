@@ -2,6 +2,7 @@ class RestaurantsController < ApplicationController
 	def show
 		@restaurant = Restaurant.find(params[:id])
 		@albums = @restaurant.albums.all
+		@comments = @restaurant.comments.all
 	end
 
 	def index

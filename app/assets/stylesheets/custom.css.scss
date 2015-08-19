@@ -214,3 +214,62 @@ $gray-medium-light: #eaeaea;
   margin-top: 45px;
   @include box_sizing;
 }
+
+
+/* 지연 */
+
+body {
+  font-family: '나눔고딕';
+  line-height: 1.3;
+  font-style: normal;
+  letter-spacing: normal;
+}
+
+.show_container {
+  padding-top: 20px;
+  padding-bottom: 520px;
+  background-color: whitesmoke;
+}
+
+
+.restaurant_contents {
+  position: relative;
+  height: 350px;
+  width: 900px;
+  background: white;
+  margin: 20px auto;
+}
+
+
+img {
+      vertical-align: top;
+      float: left;
+}
+
+.restaurant_info {
+  padding: 13px 20px 0 480px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+.restaurant_ul {
+  margin-top: 25px;
+  padding-left: 5px;
+  font-size: 12px;
+  line-height: 26px;
+  list-style: none;
+}
+
+
+.restaurant_title {
+    width: 60px;
+    float: left;
+    font-weight: 800;
+}
+
+.restaurant_val {
+  width: 310px;
+  float: right;
+}
