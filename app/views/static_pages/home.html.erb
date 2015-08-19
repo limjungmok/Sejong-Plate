@@ -32,44 +32,35 @@
 
       <div class ="carousel-search">
       </div>
-      <!--
-      <div>
-        <form class="form-inline">
-          <div class="form-group">
-            <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-            <div class="input-group">
-              <input type="text" class="form-control" id="exampleInputAmount" placeholder="ex) 석기시대 ">
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary">검색</button>
-        </form> 
-      </div>
-      -->
+
     </div>
 
     <!-- 슬라이더 밑에 공간 -->
     <div class = "lower-body">
-      <h1> 추천 메뉴 </h1>
+      <!-- 분류별로 보여주기 위함 
+      <div class="index">
+          <%= link_to "전체보기", '#', class:"btn btn-success" %>
+          <%= link_to "한식", '#',class:"btn btn-success" %>
+          <%= link_to "중식", '#',class:"btn btn-success" %>
+          <%= link_to "일식", '#',class:"btn btn-success" %>
+          <%= link_to "분식", '#',class:"btn btn-success" %>
+          <%= link_to "후식", '#',class:"btn btn-success" %>
+      </div>
+      -->
+
+      <% @restaurants.each do |r| %>
       <div class="recommend">
         <div class="recommend-menu">
-          <%= link_to image_tag("a.jpg", :width => '110%', :height => '110%'), '#' %>
+          <%= link_to image_tag(r.albums.first.picture, 
+            :width => '310px', :height => '310px'), 
+              restaurant_path(:id => r.id) %>
             <div class="info">
-              팥빙수 맛집
+              <%= r.r_name %>
             </div>
-        </div>
-        <div class="recommend-menu">
-          <%= link_to image_tag("b.jpg", :width => '110%', :height => '110%'), '#' %>
-            <div class="info">
-              파스타 맛집
-            </div>
-        </div>
-        <div class="recommend-menu">
-          <%= link_to image_tag("c.jpg", :width => '110%', :height => '110%'), '#' %>
-            <div class="info">
-              피자 맛집
-            </div>          
-        </div>        
+        </div>      
       </div>
+
+      <% end %>
     </div>
   </body>
 </html>
