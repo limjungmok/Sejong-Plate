@@ -1,18 +1,20 @@
-<h1>Index</h1>
+<div class="show_container">
+	<div class="restaurant_contents">
 <table class="table">
 	<tr>
 		<th>사진</th>		
 		<th>상호명</th>
 		<th>연락처</th>			
 		<th>소요시간</th>
-		<th>분류</th>					
+		<th>배달유무</th>
+		<th>운영자메뉴</th>					
 	</tr>
 <% @restaurants.each do |r| %>
 			<tr>
 				<td>
 					<% if r.albums[0].nil? %>
 					<% else %>
-						<%= image_tag r.albums[0].picture_url , :width => "120px", :height => "120px" %>
+						<%= image_tag r.albums[0].picture_url , :width => "170px", :height => "170px" %>
 					<% end %>
 				</td>
 				<td>
@@ -27,8 +29,14 @@
 				<td>
 					<%= r.r_code %>
 				</td>
+				<td>
+					<%= link_to "", edit_restaurant_path(:id =>r.id), class:"glyphicon glyphicon-wrench" %>
+					<%= link_to "", r,method: :delete, data: {confirm: "삭제하시겠습니까?"},class:"glyphicon glyphicon-trash" %>
+				</td>
 				<br>
 
 			</tr>
 <% end %>
 </table>
+</div>
+</div>

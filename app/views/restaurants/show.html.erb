@@ -48,6 +48,11 @@
 				<%= @restaurant.r_code %>
 				</span>
 			</li>
+
+
+			<% @comments.each do |c| %>
+			<%= c.c_content %>
+			<% end %>
 		</ul>
 		</div>
 	</div>
