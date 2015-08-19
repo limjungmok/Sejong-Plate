@@ -19,6 +19,7 @@
 
 		<ul class="restaurant_ul">
 			<li>
+				<span id="restaurant_icon" class="glyphicon glyphicon-phone-alt"> </span>
 				<span class="restaurant_title"> 연락처 </span>
 				<span class="restaurant_content">
 				<%= @restaurant.r_phone_number %>
@@ -45,6 +46,11 @@
 				<%= @restaurant.r_code %>
 				</span>
 			</li>
+
+
+			<% @comments.each do |c| %>
+			<%= c.c_content %>
+			<% end %>
 		</ul>
 		</div>
 	</div>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  c_content: MyString
+  c_like: 1
+  c_facebook_id: 1
+
+two:
+  c_content: MyString
+  c_like: 1
+  c_facebook_id: 1
