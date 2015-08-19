@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 20150818131651) do
     t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "nickname"
-    t.boolean  "admin"
+    t.boolean  "admin",            default: false
   end
 
   create_table "restaurants", force: :cascade do |t|
