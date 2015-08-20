@@ -1,11 +1,8 @@
 <% provide(:title, "Sejong Plate") %>
 
 <html>
-<head>
-
-	<title></title>
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
+  <head>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <!-- Indicators ( o o o ) -->
       <ol class="carousel-indicators">
         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -30,31 +27,29 @@
       </div>
 
     </div>
-</head>
+  </head>
+
+  
   <body>
-    <!-- 슬라이더 밑에 공간 -->
-    <div class = "lower-body">
-    <% @restaurants.each do |r| %>
-      <div class="recommend-menu">
+    <div class = "container">
+      <div class="lower-body">
+        <% @restaurants.each do |r| %>
+        <div class="col-xs-4">
           <% if r.albums[0].nil? %>
           <% else %>
-            <%= link_to image_tag(r.albums.first.picture, 
-              :width => '300px', :height => '300px'), 
-                restaurant_path(:id => r.id) %>
-            <div class="info">
-            <%= r.r_name %><p>
+            <div class = "recommend-menu">
+            <%= link_to image_tag(r.albums.first.picture, :width => '300px', :height => '300px'), restaurant_path(:id => r.id) %>
+              <div class = "info">
+                <%= r.r_name %><p>
+              </div>
+              <div class="info-detail"%>
+                <b style="color:red"><%= r.r_like %></b> <small> 좋아요 </small> | <b style="color:red"><%= r.comments.count %></b> <small> 의견 </small>
+              </div>              
             </div>
-            <div class="info-detail"%>
-              <b style="color:red"><%= r.r_like %></b> <small> 좋아요 </small> | <b style="color:red"><%= r.comments.count %></b> <small> 의견 </small>
-            </div>
-        <% end %>
-        <div class="info">
-          <%= r.r_name %>
+          <% end %>
         </div>
-      </div>      
-    <% end %>      
-
-
+        <% end %>
+      </div>
     </div>
   </body>
 </html>
