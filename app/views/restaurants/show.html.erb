@@ -26,6 +26,14 @@
 			</li>
 
 			<li>
+				<span id="restaurant_icon" class="glyphicon glyphicon-send"> </span>
+				<span class="restaurant_title"> 배달유무 </span>
+				<span class="restaurant_content">
+				<%= @restaurant.r_code %>
+				</span>
+			</li>
+
+			<li>
 				<span id="restaurant_icon" class="glyphicon glyphicon-map-marker"> </span>
 				<span class="restaurant_title"> 소요시간 </span>
 				<span class="restaurant_content">
@@ -40,19 +48,6 @@
 				<%= @restaurant.r_time %>
 				</span>
 			</li>
-
-			<li>
-				<span id="restaurant_icon" class="glyphicon glyphicon-th-list"> </span>
-				<span class="restaurant_title"> 종류 </span>
-				<span class="restaurant_content">
-				<%= @restaurant.r_code %>
-				</span>
-			</li>
-
-
-			<% @comments.each do |c| %>
-			<%= c.c_content %>
-			<% end %>
 		</ul>
 		</div>
 	</div>
@@ -64,6 +59,7 @@
 	(<%= @comments.count %>)
 	</span>
 	<br>
+
 	<div class="comment_content">
 		<% @comments.each do |c| %>
 		<%= c.c_content %>
@@ -71,4 +67,9 @@
 	</div>
 
 	</div>
+
+	<%= form_for (@comment) do |c| %>
+		<%= c.text_area :c_content, class: "comment_create" %>
+		<%= c.submit "등록", class: "btn btn-success btn-sm", data:{disable_with: "등록중..."} %>
+	<% end %>
 </div>
