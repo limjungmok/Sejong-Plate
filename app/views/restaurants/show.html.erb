@@ -72,6 +72,7 @@
 
 	</div>
 
+<<<<<<< HEAD
 
 	<%= form_for([@restaurant, @restaurant.comments.build]) do |f| %>
         <%= f.text_field :c_content, class: "comment_create" %>
@@ -79,4 +80,10 @@
     <% end %>
 
 
+=======
+	<%= form_for ([@restaurant, @restaurant.comments.build]) do |c| %>
+		<%= c.text_area :c_content, class: "comment_create" %>
+		<%= c.submit "등록", class: "btn btn-success btn-sm", data:{disable_with: "등록중..."} %>
+	<% end %>
+>>>>>>> 786bc1b50ba42f3d2aa0dfc565e91460bb1c4f1c
 </div>
