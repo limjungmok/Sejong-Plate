@@ -34,7 +34,7 @@
     <div class = "container">
       <div class="lower-body">
         <% @restaurants.each do |r| %>
-          <div class="col-md-4" onclick="location.href='/restaurants'">
+          <div class="col-md-4" onclick="location.href='/restaurant/<%r.id%>'">
             <% if r.albums[0].nil? %>
             <% else %>
               <div class = "recommend-menu">
