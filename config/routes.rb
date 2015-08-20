@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'comments/create'
+
+  get 'comments/edit'
+
+  get 'comments/destroy'
+
   get 'albums/new'
 
   get 'facebook_users/edit'

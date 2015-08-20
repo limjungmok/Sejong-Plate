@@ -8,12 +8,32 @@
 		<div class="restaurant_info">
 		<h3><%= @restaurant.r_name %></h3>
 		<hr>
-		별점
-		<span class="glyphicon glyphicon-star-empty"> </span>
-		<span class="glyphicon glyphicon-star-empty"> </span>
-		<span class="glyphicon glyphicon-star-empty"> </span>
-		<span class="glyphicon glyphicon-star-empty"> </span>
-		<span class="glyphicon glyphicon-star-empty"> </span>
+
+		<div class="middle_info">
+		<div class="score_area">
+		<span class="glyphicon glyphicon-cutlery"></span><span class="glyphicon glyphicon-cutlery"></span> <br>
+		<%= @comments.count %> 리뷰
+		</div>
+		<div class="restaurant_like">
+		<%= @restaurant.r_like %> <br> 맛나요
+		</div>
+		
+		<div class="menu_list">
+		<button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#myModal">
+  		메뉴판 보기
+		</button>
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  			<div class="modal-dialog">
+    			<div class="modal-content">
+      				<h5>소금구이 덮밥 : 3000원</h5>
+      				<h5>육회비빔밥 : 4000원</h5>
+      				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    			</div>
+  			</div>
+		</div>
+		</div>
+
+		</div>
 		<hr>
 
 		<ul class="restaurant_ul">
@@ -26,7 +46,7 @@
 			</li>
 
 			<li>
-				<span id="restaurant_icon" class="glyphicon glyphicon-send"> </span>
+				<span id="restaurant_icon" class="glyphicon glyphicon-briefcase"> </span>
 				<span class="restaurant_title"> 배달유무 </span>
 				<span class="restaurant_content">
 				<%= @restaurant.r_code %>
@@ -58,18 +78,24 @@
 	<span class="r_contents">
 	(<%= @comments.count %>)
 	</span>
-	<br>
+	<br><br>
+	<div class="comment_user">
+	</div>
 
 	<div class="comment_content">
-		<% @comments.each do |c| %>
-		<%= c.c_content %>
+		<div class="comment_sentence">
+			<% @comments.each do |c| %>
+			<%= c.c_content %>		
+		<hr>
 		<% end %>
+		</div>
 	</div>
 
-	</div>
+	<div class="comment_new">
 
 	<%= form_for ([@restaurant, @restaurant.comments.build]) do |c| %>
-		<%= c.text_area :c_content, class: "comment_create" %>
-		<%= c.submit "등록", class: "btn btn-success btn-sm", data:{disable_with: "등록중..."} %>
+		<%= c.text_field :c_content, class: "comment_create" %>
+		<%= c.submit "등록", id: "comment_submit", class: "btn btn-success", data:{disable_with: "등록중..."} %>
 	<% end %>
+	</div>
 </div>

@@ -1,33 +1,72 @@
-<div class="show_container">
+<div class="col-md-8">
 <% @restaurants.each do |r| %>
-				<div class="r_index_content">
-				
-					<% if r.albums[0].nil? %>
-					<% else %>
-					<div class="r_index_picture">
-						<%= image_tag r.albums[0].picture_url , :width => "170px", :height => "170px" %>
-					</div>
-					<% end %>
-					<div class="r_index_name"
-						<h4><%= link_to r.r_name, restaurant_path(:id => r.id) %></h4>
-					</div>
-					<div class="r_index_star">
-						<span class="glyphicon glyphicon-star-empty"> </span>
-						<span class="glyphicon glyphicon-star-empty"> </span>
-						<span class="glyphicon glyphicon-star-empty"> </span>
-						<span class="glyphicon glyphicon-star-empty"> </span>
-						<span class="glyphicon glyphicon-star-empty"> </span>
-					</div>
-					<div class="r_index_code">
-						<span id="restaurant_icon" class="glyphicon glyphicon-briefcase"> </span>
-						<%= r.r_code %>	
-					</div>
-					<div class="r_index_admin">
-						<span id="restaurant_icon" class="glyphicon glyphicon-user"> </span>	
-						<%= link_to "", edit_restaurant_path(:id =>r.id), class:"glyphicon glyphicon-wrench" %>
-						<%= link_to "", r,method: :delete, data: {confirm: "삭제하시겠습니까?"},class:"glyphicon glyphicon-trash" %>
-					</div>
+	<div class="restaurants_contents">
+				<% if r.albums[0].nil? %>
+				<% else %>
+				<div class="r_index_picture">
+					<%= link_to (image_tag(r.albums[0].picture_url , :width => "220px", :height => "220px")), restaurant_path(:id => r.id) %>
 				</div>
+				<% end %>
+				<div class="restaurants_info">
+					<h3><%= link_to r.r_name, restaurant_path(:id => r.id) %></h3>
+					<ul class="restaurants_ul">
+						<li>
+							<span id="restaurant_icon" class="glyphicon glyphicon-phone-alt"> </span>
+							<span class="restaurant_title"> 연락처 </span>
+							<span class="restaurant_content">
+							<%= r.r_phone_number %>
+							</span>
+						</li>
 
+						<li>
+							<span id="restaurant_icon" class="glyphicon glyphicon-send"> </span>
+							<span class="restaurant_title"> 배달유무 </span>
+							<span class="restaurant_content">
+							<%= r.r_code %>
+							</span>
+						</li>
+
+						<li>
+							<span id="restaurant_icon" class="glyphicon glyphicon-map-marker"> </span>
+							<span class="restaurant_title"> 소요시간 </span>
+							<span class="restaurant_content">
+							<%= r.r_distance %>
+							</span>
+						</li>
+
+						<li>
+							<span id="restaurant_icon" class="glyphicon glyphicon-time"> </span>
+							<span class="restaurant_title"> 영업시간 </span>
+							<span class="restaurant_content">
+							<%= r.r_time %>
+							</span>
+						</li>
+						<li>
+							<span id="restaurant_icon" class="glyphicon glyphicon-user"> </span>
+							<span class="restaurant_title"> 운영자메뉴 </span>
+							<span class="restaurant_content">
+								<%= link_to "", edit_restaurant_path(:id =>r.id), class:"glyphicon glyphicon-wrench" %>
+								<%= link_to "", r,method: :delete, data: {confirm: "삭제하시겠습니까?"},class:"glyphicon glyphicon-trash" %>
+							</span>
+						</li>
+					</ul>
+				</div>
+		</div>	
 <% end %>
+</div>
+<div class="col-md-4">
+	<div class="side_card">
+		<h4>식당 랭킹</h4>
+		<ul class="ranking_ul">
+			<li>
+				1
+			</li>
+			<li>
+				2
+			</li>
+			<li>
+				3
+			</li>
+		</ul>
+	</div>
 </div>
