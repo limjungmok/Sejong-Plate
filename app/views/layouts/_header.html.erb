@@ -4,7 +4,12 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <%=link_to "Sample page", new_store_path %>
+          <%=link_to "coco page", restaurants_path %>
+        </li>
+        
+        <li>
+          <%=link_to "Sample page", new_restaurant_path %>
+        
         </li>
         <li>
           <% if current_user %> 
@@ -25,7 +30,7 @@
                 </ul>
               </li>                
           <% else %>
-            <%= link_to "Log in with Facebook", "/auth/facebook", id: "sign_in" %>
+            <%= link_to "페이스북 로그인", "/auth/facebook", id: "sign_in" %>          
           <% end %>
         </li>
       </ul>
