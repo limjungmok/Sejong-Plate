@@ -169,7 +169,7 @@ table{
 .recommend-menu:hover .info-box{
     position: absolute;
     text-align:center;
-    width: 300px;
+    width: 98%;
     height: 80px;
     margin-top: 220px; 
     background-color: #000;
@@ -211,7 +211,7 @@ footer {
   padding-right: 50px;
 }
 .footer-box{
-  width: 80%;
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -325,7 +325,7 @@ img {
 
 .comment_contents {
   position: relative;
-  height: 650px;
+  height: 750px;
   width: 900px;
   background: white;
   margin: 20px auto;
@@ -346,10 +346,73 @@ img {
   margin-left: 300px;
 }
 
+hr {
+  margin-left: 0;
+  width: 80%;
+}
 
-/* 승진 */
-.r_index_picture {
-    width: 170px;
-    height: 170px;
-    background-color: red;
+.glyphicon-cutlery:before {
+  padding-right: 5px;
+}
+.comment_new {
+  margin-top: 60px;
+}
+
+.comment_create {
+  width: 640px;
+  height: 100px;
+  margin-left: 60px;
+  border-radius: 4px;
+}
+
+.comment_score {
+  margin-top: -20px;
+}
+
+#comment_submit {
+  margin-left: 695px;
+  margin-top: -90px;
+}
+
+.middle_info {
+  line-height: 21px;
+  height: 50px;
+}
+
+.glyphicon-cutlery:before {
+  color: orange;
+  font-size: 18px;
+  padding-right: 2px;
+}
+
+.score_area {
+  float: left;
+  width: 100px;
+  padding: 0 5px;
+  font-size: 11px;
+  margin-top: 4px;
+  text-align: center;
+  border-right: solid 1px gainsboro;
+}
+
+.restaurant_like {
+  font-size: 16px;
+  width: 160px;
+  text-align: center;
+  margin-left: 50px;
+  line-height: 26px;
+  border-right: solid 1px gainsboro;
+}
+
+.menu_list {
+  font-size: 16px;
+  width: 60px;
+  text-align: center;
+  margin-left: 236px;
+  margin-top: -38px;
+  line-height: 26px;
+}
+
+.btn-default {
+  margin-bottom: 8px;
 }
