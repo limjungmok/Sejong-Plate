@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'comments/create'
+
+  get 'comments/edit'
+
+  get 'comments/destroy'
+
   get 'albums/new'
 
   get 'facebook_users/edit'
@@ -22,6 +28,8 @@ Rails.application.routes.draw do
   get 'signup'		=> 'users#new'
 
   resources :facebook_users
-  resources :restaurants
+  resources :restaurants do
+    resources :comments
+  end
 
 end
