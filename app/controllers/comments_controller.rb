@@ -1,8 +1,12 @@
 class CommentsController < ApplicationController
 	def create
-		@restaurant = Restaurant.find(params[:comment_id])
+		@restaurant = Restaurant.find(params[:restaurant_id])
 		@comment = @restaurant.comments.create(comment_params)
-
+		if @comment.save
+			redirect_to :back
+		else
+			redirect_to root_path
+		end
 	end
 
 	def edit
