@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   get 'signup'		=> 'users#new'
 
   resources :facebook_users
-  resources :restaurants
+  resources :restaurants do
+    resources :comments
+  end
 
 end
