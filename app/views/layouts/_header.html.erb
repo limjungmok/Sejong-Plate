@@ -6,9 +6,11 @@
         <li>
           <%=link_to "coco page", restaurants_path %>
         </li>
+        <% if current_user && current_user.admin == true %>
         <li>
           <%=link_to "Sample page", new_restaurant_path %>
         </li>
+        <% end %>
         <li>
           <% if current_user %> 
               <li class="dropdown">
@@ -17,13 +19,13 @@
                     <%= current_user.name + "님" %> <b class="caret"></b>
                     <% else %>
                     <%= current_user.nickname + "님" %> <b class="caret"></b>
-                  <% end %>                    
+                  <% end %>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to "Setting", edit_facebook_user_path(:id => current_user.id) %></li>
+                  <li><%= link_to "설정", edit_facebook_user_path(:id => current_user.id) %></li>
                   <li class="divider"></li>
                   <li>
-                    <%= link_to "Log out", signout_path, id: "sign_out" %>
+                    <%= link_to "로그아웃", signout_path, id: "sign_out" %>
                   </li>
                 </ul>
               </li>                

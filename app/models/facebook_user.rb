@@ -12,6 +12,4 @@ class FacebookUser < ActiveRecord::Base
       user.save!
     end
   end
-
-
 end
