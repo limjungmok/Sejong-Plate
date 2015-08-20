@@ -322,3 +322,26 @@ img {
   width: 310px;
   float: right;
 }
+
+.comment_contents {
+  position: relative;
+  height: 650px;
+  width: 900px;
+  background: white;
+  margin: 20px auto;
+  border: solid 1px gainsboro;
+
+  strong {
+    margin-left: 30px;
+    line-height: 3.0;
+    font-size: 25px;
+  }
+}
+
+.r_contents {
+  color: orange;
+}
+
+.comment_content {
+  margin-left: 300px;
+}
