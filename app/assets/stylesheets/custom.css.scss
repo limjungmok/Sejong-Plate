@@ -103,7 +103,7 @@ table{
   margin-left: auto;
 }
 
-.col-xs-4{
+.col-md-4{
   background-color: transparent;
   height: 100%;
   margin-bottom: 30px;
@@ -117,8 +117,14 @@ table{
 
 .recommend-menu{
   position: relative;
-  height:25%;
-  width:25%;
+  opacity: 0.8;
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+}
+
+.recommend-menu:hover{  
   opacity: 1.0;
   -moz-opacity: 1.0;
   -khtml-opacity: 1.0;
@@ -126,24 +132,20 @@ table{
   filter: alpha(opacity=100);
 }
 
-.recommend-menu:hover{  
-  opacity: 0.6;
-  -moz-opacity: 0.6;
-  -khtml-opacity: 0.6;
-  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-}
-
 .recommend-menu .info{
     position: absolute;
-    left: 125px; top: 100px;
+    top: 100px;
     font-size: 0px;
+    padding-top: 130px;
+    width: 100%;
+    font-size: 25px;
+    color: #fff; 
 }
 
 .recommend-menu:hover .info{
     position: absolute;
     text-align:center;
-    padding-top: 100px;
+    padding-top: 130px;
     width: 100%;
     font-size: 25px;
     color: #fff;    
@@ -151,20 +153,32 @@ table{
 
 .recommend-menu .info-detail{
     position: absolute;
-    left: 100px; top: 100px;
+    top: 100px;
     font-size: 0px;
 }
 
 .recommend-menu:hover .info-detail{
     position: absolute;
     text-align:center;
-    width: 150%;
-    padding-top: 135px;
+    width: 100%;
+    padding-top: 170px;
     font-size: 15px;
     color: #fff;    
 }
 
-
+.recommend-menu:hover .info-box{
+    position: absolute;
+    text-align:center;
+    width: 98%;
+    height: 80px;
+    margin-top: 220px; 
+    background-color: #000;
+    opacity: 0.7;
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);    
+}
 
 section {
   overflow: auto;
@@ -185,24 +199,28 @@ textarea {
 /* footer */
 
 footer {
-
-  height: 10%;
+  height: 130px;
   padding-left: 25px;  
   padding-top: 5px;
+  background-color: #3c3c3e;
   border-top: 0px solid #eaeaea;
-  color: #777;
+  color: #a1a1a1;
 }
 
 #footer-line{
   padding-right: 50px;
 }
-
+.footer-box{
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
 footer a {
-  color: #555;
+  color: #a1a1a1;
 }
 
 footer a:hover {
-  color: #222;
+  color: #fff;
 }
 
 footer small {
@@ -210,6 +228,7 @@ footer small {
 }
 
 footer ul {
+  margin-top: 10px;
   float: right;
   list-style: none;
 }
