@@ -416,3 +416,48 @@ hr {
 .btn-default {
   margin-bottom: 8px;
 }
+/* 승진 */
+.restaurants_contents {
+  position: relative;
+  height: 220px;
+  width: 850px;
+  background: white;
+  margin: 10px;
+  margin-left: 100px;
+  border: solid 1px gainsboro;
+  border-radius: 10px;
+  h3{
+    font-size: 32px;
+    margin: 15px 0 18px;
+    a {
+      color: black;
+    }
+  }
+  }
+
+.restaurants_ul {
+  margin-top: 15px;
+  padding-left: 5px;
+  font-size: 12px;
+  line-height: 26px;
+  list-style: none;
+}
+
+.restaurants_info {
+  padding: 0px 20px 0px 350px;
+}
+
+.side_card {
+  background: #ff382e;
+  width: 220px;
+  height: 315px;
+  border-radius: 2px;
+  color: white;
+}
+.ranking_ul {
+  margin-top: 15px;
+  padding-left: 2px;
+  font-size: 12px;
+  line-height: 26px;
+  list-style: none;
+}
