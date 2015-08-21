@@ -1,0 +1,6 @@
+<%= form_for([@restaurant, @comment ]) do |c| %>
+
+	<%= c.text_field :c_content, class: "comment_create" %>
+
+	<%= c.submit "수정", id: "comment_submit", class: "btn btn-success", data:{disable_with: "수정중.."} , remote: true %>
+<% end %>

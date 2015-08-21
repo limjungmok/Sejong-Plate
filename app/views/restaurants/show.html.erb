@@ -85,7 +85,10 @@
 	<div class="comment_content">
 		<div class="comment_sentence">
 			<% @comments.each do |c| %>
-			<%= c.c_content %>		
+			<%= c.c_content %><p>
+			<%= link_to "편집", edit_restaurant_comment_path(@restaurant.id, :id=> c.id) ,class:"glyphicon glyphicon-wrench" %>
+			<%= link_to "삭제", restaurant_comment_path(@restaurant.id, :id=> c.id), method: :delete, data: {confirm: "삭제합니까?"},class:"glyphicon glyphicon-trash" %>
+
 		<hr>
 		<% end %>
 		</div>
@@ -95,7 +98,7 @@
 
 	<%= form_for ([@restaurant, @restaurant.comments.build]) do |c| %>
 		<%= c.text_field :c_content, class: "comment_create" %>
-		<%= c.submit "등록", id: "comment_submit", class: "btn btn-success", data:{disable_with: "등록중..."} %>
+		<%= c.submit "등록", id: "comment_submit", class: "btn btn-success", data:{disable_with: "등록중..."} , remote: true %>
 	<% end %>
 	</div>
 </div>
