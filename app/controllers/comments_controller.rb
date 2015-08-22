@@ -14,12 +14,12 @@ class CommentsController < ApplicationController
 
 	def edit
 		@restaurant = Restaurant.find(params[:restaurant_id])
-		@comment = @restaurant.comments.find_by(restaurant_id: @restaurant.id)
+		@comment = @restaurant.comments.find_by(:id => params[:id])
 	end
 
 	def update
 		@restaurant = Restaurant.find(params[:restaurant_id])
-		@comment = @restaurant.comments.find_by(restaurant_id: @restaurant.id)
+		@comment = @restaurant.comments.find_by(:id => params[:id])
 		if @comment.update_attributes(comment_params)
 			redirect_to @restaurant
 		else
@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
 
 	def destroy
 		@restaurant = Restaurant.find(params[:restaurant_id])
-		@comment = @restaurant.comments.find_by(restaurant_id: @restaurant.id).destroy
+		@restaurant.comments.find_by(:id => params[:id]).destroy
 
 		respond_to do |format|
 				format.js
