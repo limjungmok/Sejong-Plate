@@ -41,6 +41,7 @@
 							<%= r.r_time %>
 							</span>
 						</li>
+					  	<% if current_user.admin == true %>
 						<li>
 							<span id="restaurant_icon" class="glyphicon glyphicon-user"> </span>
 							<span class="restaurant_title"> 운영자메뉴 </span>
@@ -49,6 +50,7 @@
 								<%= link_to "", r,method: :delete, data: {confirm: "삭제하시겠습니까?"},class:"glyphicon glyphicon-trash" %>
 							</span>
 						</li>
+						<% end %>
 					</ul>
 				</div>
 		</div>	

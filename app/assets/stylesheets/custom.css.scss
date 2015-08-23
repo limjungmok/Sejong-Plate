@@ -318,19 +318,26 @@ img {
     line-height: 3.0;
     font-size: 25px;
   }
+  hr{
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;    
+  }
 }
 
 .r_contents {
   color: orange;
 }
 
-.comment_content {
-  margin-left: 300px;
-}
 
 hr {
-  margin-left: 0;
-  width: 80%;
+
+}
+
+#comment_user{
+  padding-left: 50px;
+}
+#comment_content {
 }
 
 .glyphicon-cutlery:before {
@@ -340,7 +347,7 @@ hr {
   margin-top: 60px;
 }
 
-.comment_create {
+#comment_create {
   width: 640px;
   height: 100px;
   margin-left: 60px;
@@ -352,8 +359,8 @@ hr {
 }
 
 #comment_submit {
-  margin-left: 695px;
-  margin-top: -90px;
+  margin-left: 60px;
+  margin-top: 30px;
 }
 
 .middle_info {

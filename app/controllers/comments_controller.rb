@@ -2,6 +2,9 @@ class CommentsController < ApplicationController
 	def create
 		@restaurant = Restaurant.find(params[:restaurant_id])
 		@comment = @restaurant.comments.create(comment_params)
+		@comment.facebook_user_id = current_user.id
+		@comment.facebook_user_nickname = current_user.nickname
+
 		if @comment.save
 			respond_to do |format|
 				format.js

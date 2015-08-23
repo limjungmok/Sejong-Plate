@@ -4,11 +4,11 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <%=link_to "coco page", restaurants_path %>
+          <%=link_to "맛집리스트", restaurants_path %>
         </li>
         <% if current_user && current_user.admin == true %>
         <li>
-          <%=link_to "Sample page", new_restaurant_path %>
+          <%=link_to "글쓰기", new_restaurant_path %>
         </li>
         <% end %>
         <li>
