@@ -41,7 +41,7 @@
 							<%= r.r_time %>
 							</span>
 						</li>
-					  	<% if current_user.admin == true %>
+					  	<% if logged_in? && current_user.admin == true %>
 						<li>
 							<span id="restaurant_icon" class="glyphicon glyphicon-user"> </span>
 							<span class="restaurant_title"> 운영자메뉴 </span>
