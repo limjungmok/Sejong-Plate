@@ -15,6 +15,10 @@
   margin-right: 30px;
 }
 
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus{
+  background-color: #f0ad4e;
+}
+/*별명*/
 #edit-form{
   width: 300px;
 }
@@ -166,6 +170,19 @@ table{
     color: #fff;
   }
 }
+
+/*Edit Comment*/
+.edit_comment{
+  margin: 30px;
+
+}
+#comment_edit{
+  text-indent: 10px;
+  width: 600px;
+  height: 150px;
+}
+
+
 
 section {
   overflow: auto;
@@ -370,6 +387,8 @@ hr {
 
 #comment_submit {
   margin-top: 15px;
+  background-color: #f0ad4e;
+  border-color: #d58512;
 }
 
 .middle_info {

@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'comments/create'
-
-  get 'comments/edit'
-
-  get 'comments/destroy'
+  #get 'comments/create'
+  #get 'comments/edit'
+  #get 'comments/destroy'
 
   get 'albums/new'
 
@@ -15,7 +13,6 @@ Rails.application.routes.draw do
   root             'static_pages#home'
   get 'about'   	=> 'static_pages#about'
   get 'contact' 	=> 'static_pages#contact'
-  get 'new_store' => 'static_pages#new_store'
 
   #Facebook
   get 'auth/:provider/callback', to: 'sessions#create'

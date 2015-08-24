@@ -19,6 +19,7 @@ class CommentsController < ApplicationController
 	def edit
 		@restaurant = Restaurant.find(params[:restaurant_id])
 		@comment = @restaurant.comments.find_by(:id => params[:id])
+		@comment.c_content = nil
 	end
 
 	def update
