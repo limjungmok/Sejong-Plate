@@ -73,47 +73,57 @@
 	</div>
 
 	<div class="comment_contents">
+		<div>
+			<strong> 리뷰 </strong>
+			<span class="r_contents">
+			(<%= @comments.count %>)
+			</span><br><br>
+		</div>
 
-	<strong> 리뷰 </strong>
-	<span class="r_contents">
-	(<%= @comments.count %>)
-	</span><br><br>
-	
+		<div class="comment_content">
+		    <% @comments.each do |c| %>
+			  <div class="col-xs-4", id="comment_user">
 
+			  	<%= c.facebook_user.nickname %><br>
+			  	
+			  	<% if logged_in? %>
+			  		<% if current_user?(c.facebook_user) || current_user.admin == true %>
+				  		<%= link_to " 편집", 
+			            edit_restaurant_comment_path(@restaurant.id, :id=> c.id),
+			            class:"glyphicon glyphicon-pencil"%>
 
+			            <%= link_to " 삭제", 
+			            restaurant_comment_path(@restaurant.id, :id=> c.id), 
+			            method: :delete, data: {confirm: "삭제합니까?"},
+			            class:"glyphicon glyphicon-trash" %><p>
 
-	<div class="comment_content">
-    <% @comments.each do |c| %>
-	  <div class="col-md-4", id="comment_user">
-	  	<%= c.facebook_user_nickname %><br><br>
-	  	<% if current_user.id == c.facebook_user_id || current_user.admin == true %>
-            <%= link_to " 편집", 
-            edit_restaurant_comment_path(@restaurant.id, :id=> c.id) ,
-            class:"glyphicon glyphicon-pencil"%>
+		            <% end %>
+			  	<% else %>
 
-            <%= link_to " 삭제", 
-            restaurant_comment_path(@restaurant.id, :id=> c.id), 
-            method: :delete, data: {confirm: "삭제합니까?"},
-            class:"glyphicon glyphicon-trash" %><p>
-        <% else %>
-        <% end %>
+			  	<% end %>
 
-	  </div>
-	  <div class="col-md-8", id="comment_content">
-
-        <%= c.c_content %><p>
-
-	  </div>
-	  <hr>
-	<% end %>
-
-	</div>
-
-	<div class="comment_new">
-
-	<%= form_for ([@restaurant, @restaurant.comments.build]) do |c| %>
-		<%= c.text_field :c_content, class: "form-control" , id:"comment_create"%>
-		<%= c.submit "등록", id: "comment_submit", class: "btn btn-success", data:{disable_with: "등록중..."} , remote: true %>
-	<% end %>
+			  </div>
+			  <div class="col-xs-8", id="comment_content">
+		        <%= c.c_content %><br><br>
+		        <%= timestamp_division(c) %><p>
+			  </div>
+			  <hr>
+			<% end %>
+		</div>
+		<div class="comment_input">
+			<div class="col-xs-4", id="comment_user">
+				<% if logged_in? %>
+					<%= current_user.nickname %>
+				<% else %>
+					손님
+				<% end %>
+			</div>
+			<div class="col-xs-8", id="comment_content">
+				<%= form_for ([@restaurant, @restaurant.comments.build]) do |c| %>
+					<%= c.text_field :c_content, class: "form-control" , id:"comment_create", placeholder: "자유롭게 평가해주세요 !" %>
+					<%= c.submit "등록", id: "comment_submit", class: "btn btn-success", data:{disable_with: "등록중..."} , remote: true %>
+				<% end %>
+			</div>
+		</div>
 	</div>
 </div>

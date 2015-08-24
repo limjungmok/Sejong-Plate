@@ -18,6 +18,10 @@
 #edit-form{
   width: 300px;
 }
+#logo_img{
+  margin-right: 10px;
+}
+
 #logo {
   float: left;
   margin-left: 15px;
@@ -116,7 +120,6 @@ table{
 
   .info-box{
     position: relative;
-
     width: 100%;
     height: 80px;
     background-color: transparent;
@@ -140,9 +143,10 @@ table{
 
   .info-box{
     position: relative;
-    top: 30%;
+    bottom: 0px;
     width: 100%;
     height: 80px;
+
     background-color: #000;
     opacity: 0.8;
     -moz-opacity: 0.8;
@@ -151,6 +155,7 @@ table{
     filter: alpha(opacity=80);
   }
   .info{
+    padding-top: 10px;
     text-align: center;
     font-size: 25px;
     color: #fff;
@@ -263,7 +268,7 @@ body {
 .restaurant_contents {
   position: relative;
   height: 350px;
-  width: 900px;
+  width: 70%;
   background: white;
   margin: 20px auto;
   border: solid 1px gainsboro;
@@ -307,8 +312,8 @@ img {
 
 .comment_contents {
   position: relative;
-  height: 750px;
-  width: 900px;
+  height: 100%;
+  width: 70%;
   background: white;
   margin: 20px auto;
   border: solid 1px gainsboro;
@@ -336,21 +341,26 @@ hr {
 
 #comment_user{
   padding-left: 50px;
+  width: 20%
 }
 #comment_content {
+  margin-left: 15px;
 }
 
 .glyphicon-cutlery:before {
   padding-right: 5px;
 }
-.comment_new {
+.comment_input{
+  height: 200px;
+}
+#comment_input{
   margin-top: 60px;
+  margin-bottom: 60px;    
 }
 
 #comment_create {
-  width: 640px;
+  width: 75%;
   height: 100px;
-  margin-left: 60px;
   border-radius: 4px;
 }
 
@@ -359,8 +369,7 @@ hr {
 }
 
 #comment_submit {
-  margin-left: 60px;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .middle_info {
@@ -437,7 +446,7 @@ hr {
 }
 
 .side_card {
-  background: #ff382e;
+  background: #3c3c3e;
   width: 220px;
   height: 315px;
   border-radius: 2px;
