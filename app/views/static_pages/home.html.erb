@@ -11,19 +11,44 @@
       </ol>
 
       <!-- 메인 슬라이더 내용들 -->
+      <!-- 추천수 높은 3개 보여준다 -->
       <div class="carousel-inner">
-        <div class="active item">
-          <%= link_to image_tag("a.jpg", :width => '100%', :height => '100%'), '#' %>
+        <div class="active item", id="slide_item">
+           <div class="c_box">
+              <div class="info_title">
+                <%= @restaurant_ranks.first.r_name %><br>
+              </div>
+              <div class="info_detail">
+                <%= @restaurant_ranks.first.r_like %>
+              </div>
+           </div>
+          <%= link_to image_tag(@restaurant_ranks.first.albums.first.picture,
+           :width => '100%', :height => '100%'), restaurant_path(@restaurant_ranks.first) %>
         </div>
-        <div class="item">
-          <%= link_to image_tag("b.jpg", :width => '100%', :height => '100%'), '#' %>
+        <div class="item", id="slide_item">
+           <div class="c_box">
+              <div class="info_title">
+                <%= @restaurant_ranks.second.r_name %><br>
+              </div>
+              <div class="info_detail">
+                <%= @restaurant_ranks.second.r_like %>
+              </div>
+           </div>          
+          <%= link_to image_tag(@restaurant_ranks.second.albums.first.picture,
+           :width => '100%', :height => '100%'), restaurant_path(@restaurant_ranks.second) %>
         </div>
-        <div class="item">
-          <%= link_to image_tag("c.jpg", :width => '100%', :height => '100%'), '#' %>
+        <div class="item", id="slide_item">
+           <div class="c_box">
+              <div class="info_title">
+                <%= @restaurant_ranks.third.r_name %><br>
+              </div>
+              <div class="info_detail">
+                <%= @restaurant_ranks.third.r_like %>
+              </div>
+           </div>          
+          <%= link_to image_tag(@restaurant_ranks.third.albums.first.picture,
+           :width => '100%', :height => '100%'), restaurant_path(@restaurant_ranks.third) %>
         </div>
-      </div>
-
-      <div class ="carousel-search">
       </div>
 
     </div>
@@ -56,5 +81,6 @@
         <% end %>
       </div>
     </div>
+
   </body>
 </html>
