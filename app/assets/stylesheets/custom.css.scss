@@ -303,7 +303,7 @@ img {
 }
 
 .restaurant_info {
-  padding: 13px 20px 0 480px;
+  padding: 2% 0% 0% 52%;
 }
 
 
@@ -327,6 +327,63 @@ img {
   float: right;
 }
 
+.middle_info {
+  line-height: 21px;
+  height: 50px;
+}
+
+#like_button {
+  float: left;
+  width: 75px;
+  text-align: center;
+  border-right: solid 1px gainsboro;
+  font-size: 15px;
+  padding-right: 6px;
+}
+
+.glyphicon-cutlery:before {
+  color: orange;
+  font-size: 18px;
+  padding-right: 2px;
+}
+
+.score_area {
+  width: 145px;
+  padding: 0 5px;
+  font-size: 11px;
+  margin-top: 4px;
+  text-align: center;
+  border-right: solid 1px gainsboro;
+}
+
+.restaurant_like {
+  font-size: 16px;
+  width: 80px;
+  text-align: center;
+  margin-left: 148px;
+  margin-top: -46px;
+  line-height: 26px;
+  border-right: solid 1px gainsboro;
+}
+
+.menu_list {
+  font-size: 16px;
+  width: 60px;
+  text-align: center;
+  margin-left: 244px;
+  margin-top: -38px;
+  line-height: 26px;
+}
+
+.btn-default {
+  margin-top: 5px;
+  width: 130%;
+  margin-left: -14px;
+  color: white;
+  background-color: orange;
+  border-color: transparent;
+}
+
 .comment_contents {
   position: relative;
   height: 100%;
@@ -340,6 +397,7 @@ img {
     line-height: 3.0;
     font-size: 25px;
   }
+
   hr{
     margin-left: auto;
     margin-right: auto;
@@ -351,11 +409,6 @@ img {
   color: orange;
 }
 
-
-hr {
-
-}
-
 #comment_user{
   padding-left: 50px;
   width: 20%
@@ -364,13 +417,11 @@ hr {
   margin-left: 15px;
 }
 
-.glyphicon-cutlery:before {
-  padding-right: 5px;
-}
-.comment_input{
+.comment_input {
   height: 200px;
 }
-#comment_input{
+
+#comment_input {
   margin-top: 60px;
   margin-bottom: 60px;    
 }
@@ -391,48 +442,7 @@ hr {
   border-color: #d58512;
 }
 
-.middle_info {
-  line-height: 21px;
-  height: 50px;
-}
 
-.glyphicon-cutlery:before {
-  color: orange;
-  font-size: 18px;
-  padding-right: 2px;
-}
-
-.score_area {
-  float: left;
-  width: 100px;
-  padding: 0 5px;
-  font-size: 11px;
-  margin-top: 4px;
-  text-align: center;
-  border-right: solid 1px gainsboro;
-}
-
-.restaurant_like {
-  font-size: 16px;
-  width: 160px;
-  text-align: center;
-  margin-left: 50px;
-  line-height: 26px;
-  border-right: solid 1px gainsboro;
-}
-
-.menu_list {
-  font-size: 16px;
-  width: 60px;
-  text-align: center;
-  margin-left: 236px;
-  margin-top: -38px;
-  line-height: 26px;
-}
-
-.btn-default {
-  margin-bottom: 8px;
-}
 /* 승진 */
 .restaurants_contents {
   position: relative;

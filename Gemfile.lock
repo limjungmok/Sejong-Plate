@@ -90,6 +90,7 @@ GEM
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    net-ssh (2.10.0.beta2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     oauth2 (0.9.4)
@@ -187,6 +188,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick
+  net-ssh (= 2.10.0.beta2)
   omniauth-facebook (~> 1.4.1)
   rails (= 4.2.1)
   sass-rails (~> 5.0)
