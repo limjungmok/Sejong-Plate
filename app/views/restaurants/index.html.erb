@@ -60,15 +60,12 @@
 	<div class="side_card">
 		<h4>식당 랭킹</h4>
 		<ul class="ranking_ul">
+			<% @restaurant_ranks.each do |r| %>
 			<li>
-				1
+				<%= link_to r.r_name, restaurant_path(:id => r.id) %>
+				<%= r.r_like %>
 			</li>
-			<li>
-				2
-			</li>
-			<li>
-				3
-			</li>
+			<% end %>
 		</ul>
 	</div>
 </div>

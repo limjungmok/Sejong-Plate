@@ -11,7 +11,8 @@ class CommentsController < ApplicationController
 				format.html{ redirect_to @restaurant }
 			end
 		else
-			redirect_to root_path
+			flash[:danger] = "글을 제대로 쓰세요"
+			redirect_to @restaurant
 		end
 	end
 
@@ -44,6 +45,6 @@ class CommentsController < ApplicationController
 	private
 
 	def comment_params
-		params.require(:comment).permit(:c_content)
+		params.require(:comment).permit(:facebook_user_nickname, :c_content)
 	end
 end
