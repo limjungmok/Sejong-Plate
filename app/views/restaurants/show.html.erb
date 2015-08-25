@@ -11,7 +11,7 @@
 
 			<div class="middle_info">
 				<div id="like_button">
-					<%= link_to image_tag("unlike.jpg", :width => "220px", :height => "220px"), like_path(:id => @restaurant.id), 
+					<%= link_to image_tag("unlike.jpg", :width => "30px", :height => "30px"), like_path(:id => @restaurant.id), 
 					method: :patch, remote: true %><p><br><p>
 				</div>
 
@@ -98,7 +98,7 @@
 				<% if logged_in? %>
 				<% if current_user?(c.facebook_user) || current_user.admin == true %>
 				<%= link_to " 편집", 
-				edit_restaurant_comment_path(@restaurant.id, :id=> c.id),
+				edit_restaurant_comment_path(@restaurant.id, :id=> c.id), remote: true,
 				class:"glyphicon glyphicon-pencil"%>
 
 				<%= link_to " 삭제", 
