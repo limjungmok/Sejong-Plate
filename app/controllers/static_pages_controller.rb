@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
 	@restaurants = Restaurant.all
+	@restaurant_ranks = Restaurant.order("r_like DESC")
   end
 
   def about
@@ -9,7 +10,4 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
-  def new_store
-  	@restaurant = Restaurant.new
-  end
 end

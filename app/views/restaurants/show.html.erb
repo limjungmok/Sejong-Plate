@@ -1,101 +1,139 @@
 <div class="show_container">
 	<div class="restaurant_contents">
 
-		<% @albums.each do |p| %>
-		<%= image_tag p.picture_url , :width => "450px", :height => "350px" %>
-		<% end %>
+		<%= image_tag @albums[0].picture_url, :width => "49%", :height => "100%" %>
 
 		<div class="restaurant_info">
-		<h3><%= @restaurant.r_name %></h3>
-		<hr>
+			<h3><%= @restaurant.r_name %></h3>
+			<hr>
 
-		<div class="middle_info">
-		<div class="score_area">
-		<span class="glyphicon glyphicon-cutlery"></span><span class="glyphicon glyphicon-cutlery"></span> <br>
-		<%= @comments.count %> 리뷰
-		</div>
-		<div class="restaurant_like">
-		<%= @restaurant.r_like %> <br> 맛나요
-		</div>
-		
-		<div class="menu_list">
-		<button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#myModal">
-  		메뉴판 보기
-		</button>
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  			<div class="modal-dialog">
-    			<div class="modal-content">
-      				<h5>소금구이 덮밥 : 3000원</h5>
-      				<h5>육회비빔밥 : 4000원</h5>
-      				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    			</div>
-  			</div>
-		</div>
-		</div>
+			<div class="middle_info">
+				<div id="like_button">
+					<%= link_to "맛나요", like_path(:id => @restaurant.id), 
+					method: :patch, remote: true, 
+					class:"glyphicon glyphicon-heart-empty" %><p><br><p>
+				</div>
+				<div class="score_area">		
+					<span class="glyphicon glyphicon-cutlery"></span><span class="glyphicon glyphicon-cutlery"></span><br>
+					<%= @comments.count %> 리뷰
+				</div>
 
-		</div>
-		<hr>
+				<div class="restaurant_like">
+					<%= @restaurant.r_like %> <br> 맛나요
+				</div>
+				
+				<div class="menu_list">
+					<button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target=".bs-example-modal-sm"> 사진 더보기 </button>
+					<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">		
+						<div class="modal-dialog modal-sm" role="document">
+							<div class="modal-content">
+								<% @albums.each do |p| %>
+								<%= image_tag p.picture_url , :width => "350px", :height => "330px" %>
+								<br>
+								<% end %>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>		
+				</div>
 
-		<ul class="restaurant_ul">
-			<li>
-				<span id="restaurant_icon" class="glyphicon glyphicon-phone-alt"> </span>
-				<span class="restaurant_title"> 연락처 </span>
-				<span class="restaurant_content">
-				<%= @restaurant.r_phone_number %>
-				</span>
-			</li>
+			</div>
+			<hr>
 
-			<li>
-				<span id="restaurant_icon" class="glyphicon glyphicon-briefcase"> </span>
-				<span class="restaurant_title"> 배달유무 </span>
-				<span class="restaurant_content">
-				<%= @restaurant.r_code %>
-				</span>
-			</li>
+			<ul class="restaurant_ul">
+				<li>
+					<span id="restaurant_icon" class="glyphicon glyphicon-phone-alt"> </span>
+					<span class="restaurant_title"> 연락처 </span>
+					<span class="restaurant_content">
+						<%= @restaurant.r_phone_number %>
+					</span>
+				</li>
 
-			<li>
-				<span id="restaurant_icon" class="glyphicon glyphicon-map-marker"> </span>
-				<span class="restaurant_title"> 소요시간 </span>
-				<span class="restaurant_content">
-				<%= @restaurant.r_distance %>
-				</span>
-			</li>
+				<li>
+					<span id="restaurant_icon" class="glyphicon glyphicon-briefcase"> </span>
+					<span class="restaurant_title"> 배달유무 </span>
+					<span class="restaurant_content">
+						<%= @restaurant.r_code %>
+					</span>
+				</li>
 
-			<li>
-				<span id="restaurant_icon" class="glyphicon glyphicon-time"> </span>
-				<span class="restaurant_title"> 영업시간 </span>
-				<span class="restaurant_content">
-				<%= @restaurant.r_time %>
-				</span>
-			</li>
-		</ul>
+				<li>
+					<span id="restaurant_icon" class="glyphicon glyphicon-map-marker"> </span>
+					<span class="restaurant_title"> 소요시간 </span>
+					<span class="restaurant_content">
+						<%= @restaurant.r_distance %>
+					</span>
+				</li>
+
+				<li>
+					<span id="restaurant_icon" class="glyphicon glyphicon-time"> </span>
+					<span class="restaurant_title"> 영업시간 </span>
+					<span class="restaurant_content">
+						<%= @restaurant.r_time %>
+					</span>
+				</li>
+			</ul>
 		</div>
 	</div>
 
 	<div class="comment_contents">
-
-	<strong> 리뷰 </strong>
-	<span class="r_contents">
-	(<%= @comments.count %>)
-	</span>
-	<br><br>
-	<div class="comment_user">
-	</div>
-
-	<div class="comment_content">
-		<div class="comment_sentence">
-			<% @comments.each do |c| %>
-			<%= c.c_content %>		
-		<hr>
-		<% end %>
+		<div>
+			<strong> 리뷰 </strong>
+			<span class="r_contents">
+				(<%= @comments.count %>)
+			</span><br><br>
 		</div>
-	</div>
 
-	<div class="comment_new">
+		<div class="comment_content">
+			<% @comments.each do |c| %>
+			<div class="col-xs-4", id="comment_user">
 
-	<%= form_for ([@restaurant, @restaurant.comments.build]) do |c| %>
-		<%= c.text_field :c_content, class: "comment_create" %>
-		<%= c.submit "등록", id: "comment_submit", class: "btn btn-success", data:{disable_with: "등록중..."} %>
-	<% end %>
+				<%= c.facebook_user.nickname %><br>
+				
+				<% if logged_in? %>
+				<% if current_user?(c.facebook_user) || current_user.admin == true %>
+				<%= link_to " 편집", 
+				edit_restaurant_comment_path(@restaurant.id, :id=> c.id),
+				class:"glyphicon glyphicon-pencil"%>
+
+				<%= link_to " 삭제", 
+				restaurant_comment_path(@restaurant.id, :id=> c.id), 
+				method: :delete, data: {confirm: "삭제합니까?"},
+				class:"glyphicon glyphicon-trash" %><p>
+
+				<% end %>
+				<% else %>
+
+				<% end %>
+
+			</div>
+			<div class="col-xs-8", id="comment_content">
+				<%= c.c_content %><br><br>
+				<%= timestamp_division(c) %><p>
+			</div>
+			<hr>
+			<% end %>
+		</div>
+		<div class="comment_input">
+			<div class="col-xs-4", id="comment_user">
+				<% if logged_in? %>
+				<%= current_user.nickname %>
+				<% else %>
+				손님
+				<% end %>
+			</div>
+			<div class="col-xs-8", id="comment_content">
+				<% if logged_in? %>
+				<%= form_for ([@restaurant, @restaurant.comments.build]) do |c| %>
+				<%= c.text_field :c_content, class: "form-control" , id:"comment_create", placeholder: "자유롭게 평가해주세요 !" %>
+				<%= c.submit "등록", id: "comment_submit", class: "btn btn-success", data:{disable_with: "등록중..."} , remote: true %>
+				<% end %>
+				<% else %>
+				<%= link_to "페이스북 로그인", "/auth/facebook" %>
+				<% end %>
+			</div>
+		</div>
 	</div>
 </div>

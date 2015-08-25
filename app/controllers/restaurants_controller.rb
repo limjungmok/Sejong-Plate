@@ -5,8 +5,19 @@ class RestaurantsController < ApplicationController
 		@comments = @restaurant.comments.all
 	end
 
+	def like
+		@restaurant = Restaurant.find(params[:id])
+		@restaurant.increment! :r_like
+	end
+
+	def unlike
+		@restaurant = Restaurant.find(params[:id])
+		@restaurant.decrement! :r_like
+	end
+
 	def index
 		@restaurants = Restaurant.all
+		@restaurant_ranks = Restaurant.order("r_like DESC")
 	end
 
 	def new
@@ -54,7 +65,7 @@ class RestaurantsController < ApplicationController
 	private
 
 		def restaurant_params
-			params.require(:restaurant).permit(:r_name, :r_phone_number, :r_click_count, :r_like, :r_distance, :r_time, :r_code, albums_attributes: [:id, :restaurant_id, :picture])
+			params.require(:restaurant).permit(:r_name, :r_phone_number, :r_like, :r_distance, :r_time, :r_code, albums_attributes: [:id, :restaurant_id, :picture])
 		end
 
 		def save_attachments

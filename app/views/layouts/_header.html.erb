@@ -1,14 +1,14 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "Sejong Plate", root_path, id: "logo" %>
+    <%= link_to image_tag("folk.png", width: "35px", id:"logo_img") + "Sejong Plate", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <%=link_to "coco page", restaurants_path %>
+          <%=link_to "맛집리스트", restaurants_path %>
         </li>
         <% if current_user && current_user.admin == true %>
         <li>
-          <%=link_to "Sample page", new_restaurant_path %>
+          <%=link_to "글쓰기", new_restaurant_path %>
         </li>
         <% end %>
         <li>
