@@ -7,7 +7,7 @@ class RestaurantsController < ApplicationController
 
 	def like
 		@restaurant = Restaurant.find(params[:id])
-		@restaurant.increment! :r_like
+			@restaurant.increment! :r_like
 	end
 
 	def unlike

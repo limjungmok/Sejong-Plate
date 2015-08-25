@@ -18,7 +18,6 @@
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus{
   background-color: #f0ad4e;
 }
-
 /*별명*/
 #edit-form{
   width: 300px;
@@ -69,14 +68,23 @@ body{
   padding-top: 60px;
 }
 
-#carousel-example-generic{
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
+.carousel-indicators{
+  padding-bottom: 80px;
 }
 
-.carousel-indicators{
-  padding-bottom: 30px;
+.carousel-search{
+  width: 100%;
+  height: 85px;
+  background-color: #ccc;
+  position: absolute;
+  left: 0px; top: 365px;
+  font-size: 0px;
+  color: #fff;
+  opacity: 0.4;
+  -moz-opacity: 0.4;
+  -khtml-opacity: 0.4;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
 }
 
 .carousel-inner{
@@ -85,40 +93,24 @@ body{
   height: 450px;
 }
 
-#slide_item{
-  position: relative;
-  .c_box{
-    top: 100px;
-    position: relative;
-    height: 30px;
-  }
-  .info_title{
-    text-align: center;
-    color: #fff;
-    font-size: 40px;
-  }
-  .info_detail{
-    text-align: center;
-    color: #fff;
-    font-size: 25px;
-  }
+.item{
+    filter:blur(3px);
+    -ms-filter:blur(3px);
+    -moz-filter:blur(3px);
+    -webkit-filter:blur(3px); 
 }
-
-
-
 
 /* 메인 슬라이더 밑 */
 table{
   border:#fff;
 }
-
-/* 메인슬라이더 밑 이미지부분 */
-
 .inner-view{
   margin-top: 50px;
   width: 60%;
   margin-right: auto;
   margin-left: auto;
+}
+.col-xs-4{
 }
 
 .thumbnail{
@@ -135,6 +127,7 @@ table{
     width: 100%;
     height: 80px;
     background-color: transparent;
+
   }
   .info{
     font-size: 0px;
@@ -154,9 +147,10 @@ table{
 
   .info-box{
     position: relative;
-    top: 208px;
+    bottom: 0px;
     width: 100%;
     height: 80px;
+
     background-color: #000;
     opacity: 0.8;
     -moz-opacity: 0.8;
@@ -177,7 +171,7 @@ table{
   }
 }
 
-/* 코멘트 부분 */
+/*Edit Comment*/
 .edit_comment{
   margin: 30px;
 
@@ -334,17 +328,19 @@ img {
 }
 
 .middle_info {
-  line-height: 21px;
-  height: 50px;
+  margin-bottom: 15px;
+  overflow: hidden;
 }
 
 #like_button {
   float: left;
-  width: 75px;
+  width: 100px;
+  padding: 15px 5px;
+  color: lightgray;
+  font-size: 15px;
+  margin-top: 4px;
   text-align: center;
   border-right: solid 1px gainsboro;
-  font-size: 15px;
-  padding-right: 6px;
 }
 
 .glyphicon-cutlery:before {
@@ -354,31 +350,23 @@ img {
 }
 
 .score_area {
-  width: 145px;
-  padding: 0 5px;
-  font-size: 11px;
-  margin-top: 4px;
+  float: left;
   text-align: center;
+  width: 100px;
+  margin-left: 10px;
+  padding-right: 10px;
   border-right: solid 1px gainsboro;
 }
 
 .restaurant_like {
-  font-size: 16px;
-  width: 80px;
+  float: left;
   text-align: center;
-  margin-left: 148px;
-  margin-top: -46px;
-  line-height: 26px;
   border-right: solid 1px gainsboro;
 }
 
 .menu_list {
-  font-size: 16px;
-  width: 60px;
+  float: left;
   text-align: center;
-  margin-left: 244px;
-  margin-top: -38px;
-  line-height: 26px;
 }
 
 .btn-default {

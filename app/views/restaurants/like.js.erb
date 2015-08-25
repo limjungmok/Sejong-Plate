@@ -1,4 +1,4 @@
-$("#like").html("<%= @restaurant.r_like %>");
+$(".restaurant_like").html("<%= @restaurant.r_like %> <br> 맛나요");
 $("#like_button").html('<p><div class = "thumbs"><%= link_to "맛나요취소",  unlike_path(:id => @restaurant.id), 
                 method: :patch, 
                 remote: true, class:"glyphicon glyphicon-heart" %> <p><br><p></div>');

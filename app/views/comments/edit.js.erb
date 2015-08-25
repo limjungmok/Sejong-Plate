@@ -1,0 +1,2 @@
+$("#comment_content").html('<%= form_for([@restaurant, @comment ]) do |c| %><%= c.text_field :c_content, class: "comment_create", id:"comment_edit" ,placeholder:"평가를 입력해주세요"%><br><%= c.submit "수정", id: "comment_submit", class: "btn btn-success", data:{disable_with: "수정중.."} , remote: true %><% end %>');
+
