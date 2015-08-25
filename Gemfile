@@ -30,6 +30,7 @@ gem 'bootstrap-will_paginate','0.0.10'
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'net-ssh', '2.10.0.beta2'
 
 
 # Use ActiveModel has_secure_password
