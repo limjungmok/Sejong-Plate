@@ -12,8 +12,7 @@
             <%= link_to "맛나요", like_path(:id => @restaurant.id), 
             method: :patch, remote: true, 
             class:"glyphicon glyphicon-heart-empty" %><p><br><p>
-         </div
-         >
+        </div>
 		<div class="score_area">		
 		<span class="glyphicon glyphicon-cutlery"></span><span class="glyphicon glyphicon-cutlery"></span><br>
 		<%= @comments.count %> 리뷰
