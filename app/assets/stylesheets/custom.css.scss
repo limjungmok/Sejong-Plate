@@ -18,7 +18,6 @@
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus{
   background-color: #f0ad4e;
 }
-
 /*별명*/
 #edit-form{
   width: 300px;
@@ -69,14 +68,23 @@ body{
   padding-top: 60px;
 }
 
-#carousel-example-generic{
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
+.carousel-indicators{
+  padding-bottom: 80px;
 }
 
-.carousel-indicators{
-  padding-bottom: 30px;
+.carousel-search{
+  width: 100%;
+  height: 85px;
+  background-color: #ccc;
+  position: absolute;
+  left: 0px; top: 365px;
+  font-size: 0px;
+  color: #fff;
+  opacity: 0.4;
+  -moz-opacity: 0.4;
+  -khtml-opacity: 0.4;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
 }
 
 .carousel-inner{
@@ -85,40 +93,24 @@ body{
   height: 450px;
 }
 
-#slide_item{
-  position: relative;
-  .c_box{
-    top: 100px;
-    position: relative;
-    height: 30px;
-  }
-  .info_title{
-    text-align: center;
-    color: #fff;
-    font-size: 40px;
-  }
-  .info_detail{
-    text-align: center;
-    color: #fff;
-    font-size: 25px;
-  }
+.item{
+    filter:blur(3px);
+    -ms-filter:blur(3px);
+    -moz-filter:blur(3px);
+    -webkit-filter:blur(3px); 
 }
-
-
-
 
 /* 메인 슬라이더 밑 */
 table{
   border:#fff;
 }
-
-/* 메인슬라이더 밑 이미지부분 */
-
 .inner-view{
   margin-top: 50px;
   width: 60%;
   margin-right: auto;
   margin-left: auto;
+}
+.col-xs-4{
 }
 
 .thumbnail{
@@ -135,6 +127,7 @@ table{
     width: 100%;
     height: 80px;
     background-color: transparent;
+
   }
   .info{
     font-size: 0px;
@@ -154,9 +147,10 @@ table{
 
   .info-box{
     position: relative;
-    top: 208px;
+    bottom: 0px;
     width: 100%;
     height: 80px;
+
     background-color: #000;
     opacity: 0.8;
     -moz-opacity: 0.8;
@@ -177,7 +171,7 @@ table{
   }
 }
 
-/* 코멘트 부분 */
+/*Edit Comment*/
 .edit_comment{
   margin: 30px;
 
@@ -309,7 +303,7 @@ img {
 }
 
 .restaurant_info {
-  padding: 13px 20px 0 480px;
+  padding: 2% 0% 0% 52%;
 }
 
 
@@ -333,6 +327,57 @@ img {
   float: right;
 }
 
+.middle_info {
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+#like_button {
+  float: left;
+  width: 100px;
+  padding: 15px 5px;
+  color: lightgray;
+  font-size: 15px;
+  margin-top: 4px;
+  text-align: center;
+  border-right: solid 1px gainsboro;
+}
+
+.glyphicon-cutlery:before {
+  color: orange;
+  font-size: 18px;
+  padding-right: 2px;
+}
+
+.score_area {
+  float: left;
+  text-align: center;
+  width: 100px;
+  margin-left: 10px;
+  padding-right: 10px;
+  border-right: solid 1px gainsboro;
+}
+
+.restaurant_like {
+  float: left;
+  text-align: center;
+  border-right: solid 1px gainsboro;
+}
+
+.menu_list {
+  float: left;
+  text-align: center;
+}
+
+.btn-default {
+  margin-top: 5px;
+  width: 130%;
+  margin-left: -14px;
+  color: white;
+  background-color: orange;
+  border-color: transparent;
+}
+
 .comment_contents {
   position: relative;
   height: 100%;
@@ -346,6 +391,7 @@ img {
     line-height: 3.0;
     font-size: 25px;
   }
+
   hr{
     margin-left: auto;
     margin-right: auto;
@@ -357,11 +403,6 @@ img {
   color: orange;
 }
 
-
-hr {
-
-}
-
 #comment_user{
   padding-left: 50px;
   width: 20%
@@ -370,13 +411,11 @@ hr {
   margin-left: 15px;
 }
 
-.glyphicon-cutlery:before {
-  padding-right: 5px;
-}
-.comment_input{
+.comment_input {
   height: 200px;
 }
-#comment_input{
+
+#comment_input {
   margin-top: 60px;
   margin-bottom: 60px;    
 }
@@ -397,48 +436,7 @@ hr {
   border-color: #d58512;
 }
 
-.middle_info {
-  line-height: 21px;
-  height: 50px;
-}
 
-.glyphicon-cutlery:before {
-  color: orange;
-  font-size: 18px;
-  padding-right: 2px;
-}
-
-.score_area {
-  float: left;
-  width: 100px;
-  padding: 0 5px;
-  font-size: 11px;
-  margin-top: 4px;
-  text-align: center;
-  border-right: solid 1px gainsboro;
-}
-
-.restaurant_like {
-  font-size: 16px;
-  width: 160px;
-  text-align: center;
-  margin-left: 50px;
-  line-height: 26px;
-  border-right: solid 1px gainsboro;
-}
-
-.menu_list {
-  font-size: 16px;
-  width: 60px;
-  text-align: center;
-  margin-left: 236px;
-  margin-top: -38px;
-  line-height: 26px;
-}
-
-.btn-default {
-  margin-bottom: 8px;
-}
 /* 승진 */
 .restaurants_contents {
   position: relative;

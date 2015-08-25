@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150823124802) do
     t.integer  "c_facebook_id"
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
+    t.integer  "c_restaurant_id"
     t.integer  "restaurant_id"
     t.string   "facebook_user_nickname"
     t.integer  "facebook_user_id"
