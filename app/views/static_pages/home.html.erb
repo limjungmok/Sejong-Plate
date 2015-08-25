@@ -13,41 +13,41 @@
       <!-- 메인 슬라이더 내용들 -->
       <!-- 추천수 높은 3개 보여준다 -->
       <div class="carousel-inner">
-        <div class="active item", id="slide_item">
+        <div class="active item", id="slide_item", onclick="location.href='/restaurants/<%= @random_restaurants.first.id %>'">
            <div class="c_box">
               <div class="info_title">
-                <%= @restaurant_ranks.first.r_name %><br>
+                <%= truncate(@random_restaurants.first.r_name, length: 10) %><br>
               </div>
               <div class="info_detail">
-                <%= @restaurant_ranks.first.r_like %>
+                <small>추천수 : <b style="color:red"><%= @random_restaurants.first.r_like %></b></small>
               </div>
            </div>
-          <%= link_to image_tag(@restaurant_ranks.first.albums.first.picture,
-           :width => '100%', :height => '100%'), restaurant_path(@restaurant_ranks.first) %>
+          <%= link_to image_tag(@random_restaurants.first.albums.first.picture,
+           :width => '100%', :height => '100%'), restaurant_path(@random_restaurants.first) %>
         </div>
-        <div class="item", id="slide_item">
+        <div class="item", id="slide_item", onclick="location.href='/restaurants/<%= @random_restaurants.second.id %>'">
            <div class="c_box">
               <div class="info_title">
-                <%= @restaurant_ranks.second.r_name %><br>
+                <%= truncate(@random_restaurants.second.r_name, length: 10)%><br>
               </div>
               <div class="info_detail">
-                <%= @restaurant_ranks.second.r_like %>
+                <small>추천수 : <b style="color:red"><%= @random_restaurants.second.r_like %></b></small>
               </div>
            </div>          
-          <%= link_to image_tag(@restaurant_ranks.second.albums.first.picture,
-           :width => '100%', :height => '100%'), restaurant_path(@restaurant_ranks.second) %>
+          <%= link_to image_tag(@random_restaurants.second.albums.first.picture,
+           :width => '100%', :height => '100%'), restaurant_path(@random_restaurants.second) %>
         </div>
-        <div class="item", id="slide_item">
+        <div class="item", id="slide_item", onclick="location.href='/restaurants/<%= @random_restaurants.third.id %>'">
            <div class="c_box">
               <div class="info_title">
-                <%= @restaurant_ranks.third.r_name %><br>
+                <%= truncate(@random_restaurants.third.r_name, length: 10) %><br>
               </div>
               <div class="info_detail">
-                <%= @restaurant_ranks.third.r_like %>
+                <small>추천수 : <b style="color:red"><%= @random_restaurants.third.r_like %></b></small>
               </div>
            </div>          
-          <%= link_to image_tag(@restaurant_ranks.third.albums.first.picture,
-           :width => '100%', :height => '100%'), restaurant_path(@restaurant_ranks.third) %>
+          <%= link_to image_tag(@random_restaurants.third.albums.first.picture,
+           :width => '100%', :height => '100%'), restaurant_path(@random_restaurants.third) %>
         </div>
       </div>
 
@@ -55,10 +55,13 @@
   </head>
   <body>
     <div class = "container">
+      <div class ="container_info">
+        가장 HOT 한 맛집 !
+      </div>
       <div class = "inner-view">
         <% @restaurants.each do |r| %>
         <div class = "col-xs-4">
-          <div class = "thumbnail"  onclick="location.href='/restaurants/<%= r.id %>'">
+          <div class = "thumbnail" onclick="location.href='/restaurants/<%= r.id %>'">
             
             <% if r.albums[0].nil? %>
             <% else %>
@@ -82,5 +85,7 @@
       </div>
     </div>
 
+
+    <%= @array %>
   </body>
 </html>
