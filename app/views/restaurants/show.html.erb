@@ -93,7 +93,7 @@
 			<% @comments.each do |c| %>
 			<div class="col-xs-4", id="comment_user">
 
-				<%= c.facebook_user.nickname %><br>
+				<%= c.facebook_user.nickname %><br><br>
 
 				<% if logged_in? %>
 				<% if current_user?(c.facebook_user) || current_user.admin == true %>

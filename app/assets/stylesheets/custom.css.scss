@@ -2,7 +2,6 @@
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
-
 /* header */
 
 #static{
@@ -68,10 +67,16 @@
   text-align: left;
   margin-left: auto;
   margin-right: auto;
-  color: #4f4f4f;
-  font-size: 30px;
-  margin-top: 50px;
+  margin-top: 50px; 
+
+  .container_title{
+    color: #4f4f4f;
+    font-size: 30px;
+    font-weight: bold; 
+  }
 }
+
+
 body{
   padding-top: 60px;
 }
@@ -87,7 +92,6 @@ body{
   margin-right: auto;
   margin-left: auto;
   border-radius: 3px;
-
 }
 
 #slide_item{
@@ -99,8 +103,8 @@ body{
     margin-left: auto;
     top: 240px;
     text-align: center;
-    width: 50%;
-    height: 80px;
+    width: 60%;
+    height: 120px;
     background-color: #000;
 
     opacity: 0.8;
@@ -120,6 +124,11 @@ body{
   .info_detail{
     text-align: center;
     color: #fff;
+
+    small{
+        color:#dedede;
+
+    }
   }
 
 }
@@ -192,7 +201,7 @@ table{
   .info-detail{
     text-align: center;
     font-size: 15px;
-    color: #fff;
+    color: #dedede;
   }
 }
 

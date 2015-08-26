@@ -19,7 +19,9 @@
                 <%= truncate(@random_restaurants.first.r_name, length: 10) %><br>
               </div>
               <div class="info_detail">
-                <small>추천수 : <b style="color:red"><%= @random_restaurants.first.r_like %></b></small>
+                <small>추천수 : <b style="color:#f0ad4e"><%= @random_restaurants.first.r_like %></b></small><br>
+                -<br>
+                <%= @random_restaurants.first.r_distance %>
               </div>
            </div>
           <%= link_to image_tag(@random_restaurants.first.albums.first.picture,
@@ -31,7 +33,9 @@
                 <%= truncate(@random_restaurants.second.r_name, length: 10)%><br>
               </div>
               <div class="info_detail">
-                <small>추천수 : <b style="color:red"><%= @random_restaurants.second.r_like %></b></small>
+                <small>추천수 : <b style="color:#f0ad4e"><%= @random_restaurants.second.r_like %></b></small><br>
+                -<br>
+                <%= @random_restaurants.second.r_distance %>            
               </div>
            </div>          
           <%= link_to image_tag(@random_restaurants.second.albums.first.picture,
@@ -43,7 +47,9 @@
                 <%= truncate(@random_restaurants.third.r_name, length: 10) %><br>
               </div>
               <div class="info_detail">
-                <small>추천수 : <b style="color:red"><%= @random_restaurants.third.r_like %></b></small>
+                <small>추천수 : <b style="color:#f0ad4e"><%= @random_restaurants.third.r_like %></b></small><br>
+                -<br>
+                <%= @random_restaurants.third.r_distance %>
               </div>
            </div>          
           <%= link_to image_tag(@random_restaurants.third.albums.first.picture,
@@ -56,7 +62,7 @@
   <body>
     <div class = "container">
       <div class ="container_info">
-        가장 HOT 한 맛집 !
+        <b class ="container_title">가장 HOT 한 맛집 !</b>
       </div>
       <div class = "inner-view">
         <% @restaurants.each do |r| %>
@@ -70,8 +76,8 @@
                 <%= truncate(r.r_name, length: 10) %><br>
               </div>
               <div class="info-detail"%>
-                <b style="color:red"><%= r.r_like %></b><small> 좋아요 </small> | 
-                <b style="color:red"><%= r.comments.count %></b><small> 의견 </small>
+                <b style="color:#f0ad4e"><%= r.r_like %></b><small> 추천 </small> | 
+                <b style="color:#f0ad4e"><%= r.comments.count %></b><small> 의견 </small>
               </div>
             </div>
             
