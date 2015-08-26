@@ -63,42 +63,67 @@
   width: 100%;
   padding: 0px;
 }
-
+.container_info{
+  width: 60%;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  color: #4f4f4f;
+  font-size: 30px;
+  margin-top: 50px;
+}
 body{
   padding-top: 60px;
 }
 
 .carousel-indicators{
-  padding-bottom: 80px;
-}
-
-.carousel-search{
-  width: 100%;
-  height: 85px;
-  background-color: #ccc;
-  position: absolute;
-  left: 0px; top: 365px;
-  font-size: 0px;
-  color: #fff;
-  opacity: 0.4;
-  -moz-opacity: 0.4;
-  -khtml-opacity: 0.4;
-  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  filter: alpha(opacity=50);
+  padding-bottom: 10px;
 }
 
 .carousel-inner{
-  width: 100%;
+  width: 60%;
   background-color: #transparent;
   height: 450px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 3px;
+
 }
 
-.item{
-    filter:blur(3px);
-    -ms-filter:blur(3px);
-    -moz-filter:blur(3px);
-    -webkit-filter:blur(3px); 
+#slide_item{
+  position: relative;
+
+  .c_box{
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    top: 240px;
+    text-align: center;
+    width: 50%;
+    height: 80px;
+    background-color: #000;
+
+    opacity: 0.8;
+    -moz-opacity: 0.8;
+    -khtml-opacity: 0.8;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+  }
+
+  .info_title{
+    padding-top: 15px;
+    top: 100px;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+  }
+  .info_detail{
+    text-align: center;
+    color: #fff;
+  }
+
 }
+
 
 /* 메인 슬라이더 밑 */
 table{
@@ -109,8 +134,7 @@ table{
   width: 60%;
   margin-right: auto;
   margin-left: auto;
-}
-.col-xs-4{
+
 }
 
 .thumbnail{
@@ -139,6 +163,7 @@ table{
 
 .thumbnail:hover{
   position: relative;
+
   opacity: 1.0;
   -moz-opacity: 1.0;
   -khtml-opacity: 1.0;
@@ -147,7 +172,7 @@ table{
 
   .info-box{
     position: relative;
-    bottom: 0px;
+    top: 165px;
     width: 100%;
     height: 80px;
 
@@ -179,7 +204,7 @@ table{
 #comment_edit{
   text-indent: 10px;
   width: 600px;
-  height: 150px;
+  height: 75px;
 }
 
 
@@ -433,7 +458,7 @@ img {
 #comment_submit {
   margin-top: 15px;
   background-color: #f0ad4e;
-  border-color: #d58512;
+  border-color: transparent;
 }
 
 
