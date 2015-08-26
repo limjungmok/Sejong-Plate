@@ -1,3 +1,5 @@
+<% provide(:title, @restaurant.r_name) %>
+
 <div class="show_container">
 	<div class="restaurant_contents">
 
@@ -96,12 +98,12 @@
 			<% @comments.each do |c| %>
 			<div class="col-xs-4", id="comment_user">
 
-				<%= c.facebook_user.nickname %><br>
+				<%= c.facebook_user.nickname %><br><br>
 
 				<% if logged_in? %>
 				<% if current_user?(c.facebook_user) || current_user.admin == true %>
 				<%= link_to " 편집", 
-				edit_restaurant_comment_path(@restaurant.id, :id=> c.id),
+				edit_restaurant_comment_path(@restaurant.id, :id=> c.id), remote: true,
 				class:"glyphicon glyphicon-pencil"%>
 
 				<%= link_to " 삭제", 
@@ -115,20 +117,26 @@
 				<% end %>
 
 			</div>
-			<div class="col-xs-8", id="comment_content">
-				<%= c.c_content %><br><br>
-				<%= timestamp_division(c) %><p>
+			<div class="col-xs-8", id="comment_content_<%= c.id %>">
+				<div id="comment_content">
+					<%= c.c_content %><br><br>
+				</div>
+				<div id="comment_time">
+				<%= timestamp_division(c) %>
+				</div>
 			</div>
 			<hr>
 			<% end %>
 		</div>
 		<div class="comment_input">
 			<div class="col-xs-4", id="comment_user">
+				<div id = "comment_nickname">
 				<% if logged_in? %>
-				<%= current_user.nickname %>
-				<% else %>
-				손님
-				<% end %>
+					<%= current_user.nickname %>
+					<% else %>
+					손님
+					<% end %>
+				</div>
 			</div>
 			<div class="col-xs-8", id="comment_content">
 				<% if logged_in? %>
@@ -143,3 +151,9 @@
 		</div>
 	</div>
 </div>
+
+<script>
+$( document ).ready(function() {
+		
+});
+</script>
