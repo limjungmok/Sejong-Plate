@@ -217,6 +217,15 @@ table{
 }
 
 
+#comment_content{
+  font-size: 15px;
+}
+
+#comment_time{
+  font-size: 11px;
+  color: #aaa;
+}
+
 
 section {
   overflow: auto;
@@ -439,12 +448,12 @@ img {
 
 #comment_user{
   padding-left: 50px;
-  width: 20%
-}
-#comment_content {
-  margin-left: 15px;
-}
+  width: 23%
 
+}
+#comment_nickname{
+  font-size: 18px;
+}
 .comment_input {
   height: 200px;
 }

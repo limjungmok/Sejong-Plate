@@ -113,19 +113,25 @@
 
 			</div>
 			<div class="col-xs-8", id="comment_content_<%= c.id %>">
-				<%= c.c_content %><br><br>
-				<%= timestamp_division(c) %><p>
+				<div id="comment_content">
+					<%= c.c_content %><br><br>
+				</div>
+				<div id="comment_time">
+				<%= timestamp_division(c) %>
+				</div>
 			</div>
 			<hr>
 			<% end %>
 		</div>
 		<div class="comment_input">
 			<div class="col-xs-4", id="comment_user">
+				<div id = "comment_nickname">
 				<% if logged_in? %>
-				<%= current_user.nickname %>
-				<% else %>
-				손님
-				<% end %>
+					<%= current_user.nickname %>
+					<% else %>
+					손님
+					<% end %>
+				</div>
 			</div>
 			<div class="col-xs-8", id="comment_content">
 				<% if logged_in? %>
