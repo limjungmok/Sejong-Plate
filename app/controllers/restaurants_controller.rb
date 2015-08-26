@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+
 	def show
 		@restaurant = Restaurant.find(params[:id])
 		@albums = @restaurant.albums.all
@@ -7,7 +8,7 @@ class RestaurantsController < ApplicationController
 
 	def like
 		@restaurant = Restaurant.find(params[:id])
-			@restaurant.increment! :r_like
+		@restaurant.increment! :r_like
 	end
 
 	def unlike
