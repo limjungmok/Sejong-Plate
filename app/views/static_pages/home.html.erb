@@ -2,94 +2,16 @@
 
 <html>
   <head>
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-      <!-- Indicators ( o o o ) -->
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>        
-      </ol>
-
-      <!-- 메인 슬라이더 내용들 -->
-      <!-- 추천수 높은 3개 보여준다 -->
-      <div class="carousel-inner">
-        <div class="active item", id="slide_item", onclick="location.href='/restaurants/<%= @random_restaurants.first.id %>'">
-           <div class="c_box">
-              <div class="info_title">
-                <%= truncate(@random_restaurants.first.r_name, length: 10) %><br>
-              </div>
-              <div class="info_detail">
-                <small>추천수 : <b style="color:#f0ad4e"><%= @random_restaurants.first.r_like %></b></small><br>
-                -<br>
-                <%= @random_restaurants.first.r_distance %>
-              </div>
-           </div>
-          <%= link_to image_tag(@random_restaurants.first.albums.first.picture,
-           :width => '100%', :height => '100%'), restaurant_path(@random_restaurants.first) %>
-        </div>
-        <div class="item", id="slide_item", onclick="location.href='/restaurants/<%= @random_restaurants.second.id %>'">
-           <div class="c_box">
-              <div class="info_title">
-                <%= truncate(@random_restaurants.second.r_name, length: 10)%><br>
-              </div>
-              <div class="info_detail">
-                <small>추천수 : <b style="color:#f0ad4e"><%= @random_restaurants.second.r_like %></b></small><br>
-                -<br>
-                <%= @random_restaurants.second.r_distance %>            
-              </div>
-           </div>          
-          <%= link_to image_tag(@random_restaurants.second.albums.first.picture,
-           :width => '100%', :height => '100%'), restaurant_path(@random_restaurants.second) %>
-        </div>
-        <div class="item", id="slide_item", onclick="location.href='/restaurants/<%= @random_restaurants.third.id %>'">
-           <div class="c_box">
-              <div class="info_title">
-                <%= truncate(@random_restaurants.third.r_name, length: 10) %><br>
-              </div>
-              <div class="info_detail">
-                <small>추천수 : <b style="color:#f0ad4e"><%= @random_restaurants.third.r_like %></b></small><br>
-                -<br>
-                <%= @random_restaurants.third.r_distance %>
-              </div>
-           </div>          
-          <%= link_to image_tag(@random_restaurants.third.albums.first.picture,
-           :width => '100%', :height => '100%'), restaurant_path(@random_restaurants.third) %>
-        </div>
-      </div>
-
-    </div>
+    <%= render 'static_pages/slider' %>
   </head>
+
   <body>
-    <div class = "container">
-      <div class ="container_info">
-        <b class ="container_title">가장 HOT 한 맛집 !</b>
-      </div>
-      <div class = "inner-view">
-        <% @restaurants.each do |r| %>
-        <div class = "col-xs-4">
-          <div class = "thumbnail" onclick="location.href='/restaurants/<%= r.id %>'">
-            
-            <% if r.albums[0].nil? %>
-            <% else %>
-            <div class ="info-box">
-              <div class = "info">
-                <%= truncate(r.r_name, length: 10) %><br>
-              </div>
-              <div class="info-detail"%>
-                <b style="color:#f0ad4e"><%= r.r_like %></b><small> 추천 </small> | 
-                <b style="color:#f0ad4e"><%= r.comments.count %></b><small> 의견 </small>
-              </div>
-            </div>
-            
-              <%= link_to image_tag r.albums.first.picture %>
+    <%= render 'static_pages/restaurant' %>
 
-            <% end %>
+  <div class="paginate">
+    <%= will_paginate @restaurants , :previous_label => '이전', :next_label => '다음' %>
+  </div>  
 
-          </div>
-        </div>
-        <% end %>
-      </div>
-    </div>
   </body>
   <script>
     $('.carousel').carousel({
