@@ -2,8 +2,7 @@
 	<div class="like">
 		<div id="like_button">
 			<%= link_to image_tag("unlike.jpg", :width => "55px", :height => "22px"),
-			like_path(:id => @restaurant.id), method: :patch, remote: true,
-			:onclick => 'alert("추천 되었습니다")' %>
+			like_path(:id => @restaurant.id),  method: :patch, remote: true %>
 			<br>
 		</div>
 		<div class="like_word"> 추천 </div>
