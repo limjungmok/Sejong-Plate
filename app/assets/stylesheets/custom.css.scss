@@ -329,6 +329,29 @@ body {
   line-height: 2.0;
 }
 
+.restaurant_name {
+  float: left;
+  font-size: 32px;
+  margin: 15px 0 18px;
+}
+
+.menu_list {
+  hr {
+    margin-top: -9px;
+  }
+}
+
+.glyphicon {
+  border: transparent;
+  background-color: transparent;
+}
+
+button, input, optgroup, select, textarea {
+  width: 30px;
+  height: 87px;
+  color: orange;
+}
+
 .restaurant_contents {
   position: relative;
   height: 350px;
@@ -336,13 +359,7 @@ body {
   background: white;
   margin: 20px auto;
   border: solid 1px gainsboro;
-
-  h3 {
-    font-size: 32px;
-    margin: 15px 0 18px;
-  }
 }
-
 
 img {
       vertical-align: top;
@@ -351,6 +368,63 @@ img {
 
 .restaurant_info {
   padding: 2% 0% 0% 52%;
+}
+
+hr {
+  margin-left: -5px;
+  width: 98%;
+}
+
+.middle_info {
+  margin-left: -8px;
+}
+
+.like {
+  float: left;
+  width: 105px;
+  height: 60px;
+  padding: 7px 22px;
+  color: lightgray;
+  font-size: 15px;
+  margin-top: -11px;
+  text-align: center;
+  border-right: solid 1px gainsboro;
+}
+
+.like_word {
+  color: black;
+  margin-left: -7px;
+  margin-top: 8px;
+}
+
+.glyphicon-cutlery:before {
+  color: orange;
+  font-size: 18px;
+  padding-right: 2px;
+}
+
+.score_area {
+  float: left;
+  text-align: center;
+  width: 100px;
+  height: 60px;
+  margin-left: 10px;
+  margin-top: -11px;
+  padding-top: 11px;
+  padding-right: 10px;
+  border-right: solid 1px gainsboro;
+}
+
+.restaurant_like {
+  float: left;
+  width: 100px;
+  height: 60px;
+  margin-top: -11px;
+  margin-left: 8px;
+  margin-bottom: 10px;
+  padding-top: 11px;
+  padding-right: 5px;
+  text-align: center;
 }
 
 
@@ -374,75 +448,11 @@ img {
   float: right;
 }
 
-.middle_info {
-  margin-left: -8px;
-}
-
-.like {
-  float: left;
-  width: 105px;
-  height: 60px;
-  padding: 7px 22px;
-  color: lightgray;
-  font-size: 15px;
-  margin-top: -3px;
-  text-align: center;
-  border-right: solid 1px gainsboro;
-}
-
-.like_word {
-  color: black;
-  margin-left: -7px;
-  margin-top: 8px;
-}
-
-.glyphicon-cutlery:before {
-  color: orange;
-  font-size: 18px;
-  padding-right: 2px;
-}
-
-.score_area {
-  float: left;
-  text-align: center;
-  width: 100px;
-  height: 60px;
-  margin-left: 10px;
-  margin-top: -3px;
-  padding-top: 11px;
-  padding-right: 10px;
-  border-right: solid 1px gainsboro;
-}
-
-hr {
-  margin-left: -5px;
-  width: 98%;
-}
-
-.restaurant_like {
-  float: left;
-  width: 100px;
-  height: 60px;
-  margin-top: -3px;
-  margin-left: 8px;
-  padding-top: 11px;
-  padding-right: 5px;
-  text-align: center;
-  border-right: solid 1px gainsboro;
-}
-
-.menu_list {
-  float: left;
-  width: 100px;
-  height: 60px;
-  margin-top: 15px;
-  margin-left: 18px;
-  text-align: center;
-}
 
 .btn-default {
   margin-top: 5px;
   width: 130%;
+  height: 35px;
   margin-left: -14px;
   color: white;
   background-color: orange;
