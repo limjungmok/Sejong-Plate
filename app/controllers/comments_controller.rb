@@ -35,8 +35,11 @@ class CommentsController < ApplicationController
 	def destroy
 		@restaurant = Restaurant.find(params[:restaurant_id])
 		@restaurant.comments.find_by(:id => params[:id]).destroy
-		redirect_to @restaurant
-		
+
+		respond_to do |format|
+				format.js
+				format.html{ redirect_to @restaurant }
+		end
 	end
 
 
