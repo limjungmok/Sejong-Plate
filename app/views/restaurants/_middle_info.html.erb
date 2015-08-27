@@ -1,0 +1,23 @@
+<div class="middle_info">
+	<div class="like">
+		<div id="like_button">
+			<%= link_to image_tag("unlike.jpg", :width => "55px", :height => "22px"),
+			like_path(:id => @restaurant.id), method: :patch, remote: true,
+			:onclick => 'alert("추천 되었습니다")' %>
+			<br>
+		</div>
+		<div class="like_word"> 추천 </div>
+	</div>
+
+	<div class="score_area">		
+		<span class="glyphicon glyphicon-cutlery"></span>
+		<span class="glyphicon glyphicon-cutlery"></span><br>
+		<%= @comments.count %> 리뷰
+	</div>
+
+	<div class="restaurant_like">
+		<%= @restaurant.r_like %> <br>
+		추천수
+	</div>
+	<hr>
+</div>

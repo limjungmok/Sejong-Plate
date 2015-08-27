@@ -1,0 +1,33 @@
+<ul class="restaurant_ul">
+	<li>
+		<span id="restaurant_icon" class="glyphicon glyphicon-phone-alt"> </span>
+		<span class="restaurant_title"> 연락처 </span>
+		<span class="restaurant_content">
+			<%= @restaurant.r_phone_number %>
+		</span>
+	</li>
+
+	<li>
+		<span id="restaurant_icon" class="glyphicon glyphicon-briefcase"> </span>
+		<span class="restaurant_title"> 배달유무 </span>
+		<span class="restaurant_content">
+			<%= @restaurant.r_code %>
+		</span>
+	</li>
+
+	<li>
+		<span id="restaurant_icon" class="glyphicon glyphicon-map-marker"> </span>
+		<span class="restaurant_title"> 소요시간 </span>
+		<span class="restaurant_content">
+			<%= @restaurant.r_distance %>
+		</span>
+	</li>
+
+	<li>
+		<span id="restaurant_icon" class="glyphicon glyphicon-time"> </span>
+		<span class="restaurant_title"> 영업시간 </span>
+		<span class="restaurant_content">
+			<%= @restaurant.r_time %>
+		</span>
+	</li>
+</ul>

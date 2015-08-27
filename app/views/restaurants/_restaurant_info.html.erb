@@ -1,0 +1,29 @@
+<div class="restaurant_info">
+	<span class="restaurant_name"><%= @restaurant.r_name %> </span>
+	<span class="menu_list">
+		<button type="button" class="glyphicon glyphicon-zoom-in", data-toggle="modal"
+		data-target=".bs-example-modal-sm"></button>
+		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
+		aria-labelledby="mySmallModalLabel">		
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content">
+				<% @albums.each do |p| %>
+				<%= image_tag p.picture_url , :width => "350px", :height => "330px" %>
+				<br>
+				<% end %>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">
+					Close</button>
+				</div>
+			</div>
+		</div>		
+		<hr>
+	</span>
+	
+	<%= render 'restaurants/middle_info' %>
+	
+	<%= render 'restaurants/restaurant_ul' %>
+
+	
+</div>
