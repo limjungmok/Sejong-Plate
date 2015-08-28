@@ -1,18 +1,21 @@
 <% provide(:title, @restaurant.r_name) %>
 
+<% if current_user.admin == true %>
+<%=link_to "좋아요 테스트", 
+	restaurant_path(:r_id => @restaurant.id) , method: :patch %><br>
+<% end %>
 <div class="show_container">
 	<div class="restaurant_contents">
-		<%= image_tag @albums[0].picture_url, :width => "49%", :height => "100%" %>
+		<%= image_tag @albums[0].picture_url, :width => "49%", :height => "100%", :crop => :fill %>
 
 		<%= render 'restaurants/restaurant_info' %>
+
 	</div>
 
 	<div class="comment_contents">
 		<%= render 'restaurants/comment_content' %>
 		<%= render 'restaurants/comment_input' %>
 	</div>
-
-	<%= render 'restaurants/restaurant_map' %>
 </div>
 
 <script>
