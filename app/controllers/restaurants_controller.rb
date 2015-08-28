@@ -7,15 +7,14 @@ class RestaurantsController < ApplicationController
 	end
 
 	def index
-      if logged_in? && current_user.nickname =="세종대학생"
-      redirect_to edit_facebook_user_path(:id => current_user.id)
-      end   
+		if logged_in? && current_user.nickname =="세종대학생"
+			redirect_to edit_facebook_user_path(:id => current_user.id)
+		end   
 		
-      @restaurants= Restaurant.paginate(page: params[:page], :per_page => 5 ).all
+		@restaurants= Restaurant.paginate(page: params[:page], :per_page => 5 ).all
 		@restaurant_ranks = Restaurant.order("r_like DESC")
 	end
 
-<<<<<<< HEAD
 	def new
 		@restaurant = Restaurant.new
 		@album = @restaurant.albums.build
@@ -23,35 +22,10 @@ class RestaurantsController < ApplicationController
 		@admin_info_comment = Comment.all
 	end
 
-<<<<<<< HEAD
-=======
->>>>>>> ad740cf18af866ccf710eac5e55da4092cc38956
-   def new
-      @restaurant = Restaurant.new
-      @album = @restaurant.albums.build
-      @admin_info_user = FacebookUser.all
-      @admin_info_comment = Comment.all
-   end
-
-   def create
-
-      @restaurant = Restaurant.new(restaurant_params)
-
-      respond_to do |format|
-         if @restaurant.save
-            unless params[:albums].nil?
-               save_attachments
-            end
-            format.html { redirect_to @restaurant, notice: '등록 완료!'}
-         else
-            format.html { render action: 'new'}
-         end
-      end
-   end
-=======
 	def create
 
 		@restaurant = Restaurant.new(restaurant_params)
+
 		respond_to do |format|
 			if @restaurant.save
 				unless params[:albums].nil?
@@ -63,7 +37,6 @@ class RestaurantsController < ApplicationController
 			end
 		end
 	end
->>>>>>> jy_x
 
 	def edit
 		@restaurant = Restaurant.find(params[:id])
