@@ -6,21 +6,16 @@ class RestaurantsController < ApplicationController
 		@comments = @restaurant.comments.all
 	end
 
-	def like
-		@restaurant = Restaurant.find(params[:id])
-		@restaurant.increment! :r_like
-	end
-
-	def unlike
-		@restaurant = Restaurant.find(params[:id])
-		@restaurant.decrement! :r_like
-	end
-
 	def index
-		@restaurants= Restaurant.paginate(page: params[:page], :per_page => 5 ).all
+      if logged_in? && current_user.nickname =="세종대학생"
+      redirect_to edit_facebook_user_path(:id => current_user.id)
+      end   
+		
+      @restaurants= Restaurant.paginate(page: params[:page], :per_page => 5 ).all
 		@restaurant_ranks = Restaurant.order("r_like DESC")
 	end
 
+<<<<<<< HEAD
 	def new
 		@restaurant = Restaurant.new
 		@album = @restaurant.albums.build
@@ -29,6 +24,8 @@ class RestaurantsController < ApplicationController
 	end
 
 <<<<<<< HEAD
+=======
+>>>>>>> ad740cf18af866ccf710eac5e55da4092cc38956
    def new
       @restaurant = Restaurant.new
       @album = @restaurant.albums.build
@@ -39,6 +36,7 @@ class RestaurantsController < ApplicationController
    def create
 
       @restaurant = Restaurant.new(restaurant_params)
+
       respond_to do |format|
          if @restaurant.save
             unless params[:albums].nil?

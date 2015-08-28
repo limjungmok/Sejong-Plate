@@ -17,9 +17,9 @@
 			placeholder: "자유롭게 평가해주세요 !" %>
 			<%= c.submit "등록", id: "comment_submit", class: "btn btn-success",
 			data: {disable_with: "등록중..."} , remote: true %>
-		<% end %>
+			<% end %>
 		<% else %>
-		<%= link_to "페이스북 로그인", "/auth/facebook" %>
+			<%= link_to "페이스북 로그인", "/auth/facebook" %>
 		<% end %>
 	</div>
 </div>
