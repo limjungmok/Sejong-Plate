@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'valuations/create'
+
   #get 'comments/create'
   #get 'comments/edit'
   #get 'comments/destroy'
@@ -30,5 +32,6 @@ Rails.application.routes.draw do
   resources :restaurants do
     resources :comments
   end
+  #resources :valuations
 
 end

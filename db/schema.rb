@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150823124802) do
+ActiveRecord::Schema.define(version: 20150827063927) do
 
   create_table "albums", force: :cascade do |t|
     t.integer  "restaurant_id"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20150823124802) do
     t.datetime "updated_at",                       null: false
     t.string   "nickname"
     t.boolean  "admin",            default: false
+    t.boolean  "recommend"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -68,5 +69,13 @@ ActiveRecord::Schema.define(version: 20150823124802) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+
+  create_table "valuations", force: :cascade do |t|
+    t.integer  "facebook_user_id"
+    t.integer  "restaurant_id"
+    t.boolean  "recommend"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
 end
