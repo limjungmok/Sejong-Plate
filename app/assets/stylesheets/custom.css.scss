@@ -516,8 +516,11 @@ hr {
   width: 23%
 
 }
-#comment_nickname{
-  font-size: 18px;
+.comment_nickname{
+  font-size: 16px;
+}
+#comment_nickname_visitor{
+  font-size: 15px;
 }
 .comment_input {
   height: 200px;
@@ -573,7 +576,7 @@ hr {
 }
 
 .restaurants_info {
-  padding: 0px 20px 0px 350px;
+  padding: 0px 20px 0px 300px;
 }
 
 .side_card {

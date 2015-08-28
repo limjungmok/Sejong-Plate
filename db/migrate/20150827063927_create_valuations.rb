@@ -3,7 +3,7 @@ class CreateValuations < ActiveRecord::Migration
     create_table :valuations do |t|
       t.integer :facebook_user_id
       t.integer :restaurant_id
-      t.boolean :recommend
+      t.boolean :recommend, :default => false
 
       t.timestamps null: false
     end

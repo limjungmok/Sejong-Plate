@@ -1,5 +1,6 @@
 class FacebookUser < ActiveRecord::Base
   has_many :comments, dependent: :destroy
+  has_many :valuations, dependent: :destroy
 
   validates :nickname, presence: true, length: {minimum: 1, maximum: 20 }, uniqueness: true
   def self.from_omniauth(auth)
