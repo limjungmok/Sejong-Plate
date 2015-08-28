@@ -12,6 +12,7 @@ class ValuationsController < ApplicationController
 				@test.first.set_recommend_valuation(false)
 				@restaurant.decrement! :r_like
 				@test.first.save
+
 			elsif @test.first.recommend == false
 				@test.first.set_recommend_valuation(true)
 				@restaurant.increment! :r_like

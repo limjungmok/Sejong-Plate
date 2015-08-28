@@ -2,8 +2,17 @@
 	<% if logged_in? %>
 	<div class="like">
 		<div id="like_button">
+			<% if @restaurant.valuations.find_by(:facebook_user_id => current_user.id) && @restaurant.valuations.find_by(:facebook_user_id => current_user.id).recommend == true %>
+			
+			<%= link_to image_tag("like.jpg", :width => "55px", :height => "22px"),
+			valuations_path(:restaurant_id => @restaurant.id) , method: :post, remote: true %>
+			
+			<% else %>
+
 			<%= link_to image_tag("unlike.jpg", :width => "55px", :height => "22px"),
 			valuations_path(:restaurant_id => @restaurant.id) , method: :post, remote: true %>
+			
+			<% end %>
 			<br>
 		</div>
 		<div class="like_word"> 추천 </div>
