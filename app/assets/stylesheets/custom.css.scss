@@ -12,9 +12,6 @@
 .navbar-inverse .navbar-nav > li > a{
   text-align: center;
   margin-right: 30px;
-  font-size: 16px;
-  color: #777;
-  font-weight: bold;
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus{
@@ -389,7 +386,7 @@ button {
 }
 
 .restaurant_content {
-  overflow: auto;
+  margin-right: 20px;
 }
 
 img {
