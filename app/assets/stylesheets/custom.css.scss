@@ -130,7 +130,7 @@ body{
     color: #fff;
 
     small{
-        color:#dedede;
+      color:#dedede;
 
     }
   }
@@ -221,7 +221,7 @@ table{
 }
 
 .pagination > li > a:hover, .pagination > li > a:focus, .pagination > li > span:hover, .pagination > li > span:focus{
-    color: #000;
+  color: #000;
 }
 /*hover*/
 .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus{
@@ -360,9 +360,20 @@ body {
 }
 
 .menu_list {
+  margin-left: 4px;
+  margin-right: -2px;
+}
+
+.map_view {
   hr {
     margin-top: -9px;
   }
+  margin-left: -11px;
+}
+
+.modal-open .modal {
+  margin-top: 20px;
+  margin-right: 130px;
 }
 
 .glyphicon {
@@ -372,11 +383,13 @@ body {
 
 button {
   width: 30px;
-  height: 87px;
+  height: 50px;
   color: orange;
+  margin-top: 17px;
 }
 
 .restaurant_contents {
+  display: block;
   position: relative;
   height: 350px;
   width: 70%;
@@ -390,8 +403,9 @@ button {
 }
 
 img {
-      vertical-align: top;
-      float: left;
+  display: block;
+  vertical-align: top;
+  float: left;
 }
 
 .restaurant_info {
@@ -404,6 +418,7 @@ hr {
 }
 
 .middle_info {
+  margin-top: -16px;
   margin-left: -8px;
 }
 
@@ -466,9 +481,9 @@ hr {
 
 
 .restaurant_title {
-    width: 90px;
-    float: left;
-    font-weight: 800;
+  width: 90px;
+  float: left;
+  font-weight: 800;
 }
 
 .restaurant_val {
@@ -476,10 +491,31 @@ hr {
   float: right;
 }
 
-
-.btn-default {
+#btn_1 {
   margin-top: 5px;
   width: 130%;
+  height: 35px;
+  margin-left: -14px;
+  color: white;
+  background-color: orange;
+  border-color: transparent;
+}
+
+.modal-content {
+}
+
+.map_view {
+  margin-top: 3px;
+  margin-left: -10px;
+}
+
+.modal-dialog modal-lg {
+  text-align: center;
+}
+
+#btn_2 {
+  margin-top: -10px;
+  width: 115%;
   height: 35px;
   margin-left: -14px;
   color: white;
@@ -566,7 +602,7 @@ hr {
       color: black;
     }
   }
-  }
+}
 
 .restaurants_ul {
   margin-top: 15px;

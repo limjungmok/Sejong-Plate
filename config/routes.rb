@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'valuations/create'
-
   #get 'comments/create'
   #get 'comments/edit'
   #get 'comments/destroy'

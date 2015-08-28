@@ -11,7 +11,11 @@ class ValuationsController < ApplicationController
 			@check_user.set_recommend_valuation(false)
 			@restaurant.decrement! :r_like
 		end
+<<<<<<< HEAD
 		@check_user.save
+=======
+		@check_user.save0
+>>>>>>> jy_x
 
 	end
 

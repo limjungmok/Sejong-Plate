@@ -28,8 +28,19 @@
 
 			<div class="field">
 				<%= f.label :배달유무 %> <br>
-				<%= f.text_area :r_code %>
-			</div>	
+				<%= f.text_field :r_code %>
+			</div>
+
+			<div class="field">
+				<%= f.label :위도 %> <br>
+				<%= f.text_field :r_latitude %>
+			</div>
+
+			<div class="field">
+				<%= f.label :경도 %> <br>
+				<%= f.text_field :r_longtitude %>
+			</div>
+>>>>>>> jy_x
 
 			<%= f.fields_for :사진 do |p| %>
 				<div class="field">

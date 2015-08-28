@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827063927) do
+ActiveRecord::Schema.define(version: 20150828093806) do
 
   create_table "albums", force: :cascade do |t|
     t.integer  "restaurant_id"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 20150827063927) do
     t.string   "r_distance"
     t.string   "r_time"
     t.string   "r_code"
+    t.float    "r_latitude"
+    t.float    "r_longtitude"
   end
 
   create_table "users", force: :cascade do |t|
