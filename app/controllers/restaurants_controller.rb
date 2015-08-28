@@ -6,15 +6,6 @@ class RestaurantsController < ApplicationController
       @comments = @restaurant.comments.all
    end
 
-   def like
-      @restaurant = Restaurant.find(params[:id])
-      @restaurant.increment! :r_like
-   end
-
-   def unlike
-      @restaurant = Restaurant.find(params[:id])
-      @restaurant.decrement! :r_like
-   end
 
 
 	def index
@@ -26,6 +17,8 @@ class RestaurantsController < ApplicationController
    def new
       @restaurant = Restaurant.new
       @album = @restaurant.albums.build
+      @admin_info_user = FacebookUser.all
+      @admin_info_comment = Comment.all
    end
 
    def create

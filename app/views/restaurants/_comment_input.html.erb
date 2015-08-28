@@ -1,7 +1,7 @@
 <div class="comment_input">
 
 	<div class="col-xs-4", id="comment_user">
-		<div id="comment_nickname">
+		<div id="comment_nickname_visitor">
 			<% if logged_in? %>
 			<%= current_user.nickname %>
 			<% else %>
@@ -13,7 +13,7 @@
 	<div class="col-xs-8", id="comment_content">
 		<% if logged_in? %>
 			<%= form_for ([@restaurant, @restaurant.comments.build]) do |c| %>
-			<%= c.text_field :c_content, class: "form-control" , id:"comment_create",
+			<%= c.text_area :c_content, class: "form-control" , id:"comment_create",
 			placeholder: "자유롭게 평가해주세요 !" %>
 			<%= c.submit "등록", id: "comment_submit", class: "btn btn-success",
 			data: {disable_with: "등록중..."} , remote: true %>

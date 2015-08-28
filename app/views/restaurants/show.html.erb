@@ -1,10 +1,15 @@
 <% provide(:title, @restaurant.r_name) %>
-
+<% if current_user.admin == true %>
+<%=link_to "좋아요 테스트", 
+	valuations_path(:restaurant_id => @restaurant.id) , method: :post %><br>
+<%= @restaurant.valuations.find_by(:facebook_user_id => current_user.id).recommend %>
+<% end %>
 <div class="show_container">
 	<div class="restaurant_contents">
 		<%= image_tag @albums[0].picture_url, :width => "49%", :height => "100%" %>
 
 		<%= render 'restaurants/restaurant_info' %>
+
 	</div>
 
 	<div class="comment_contents">
@@ -12,7 +17,10 @@
 		<%= render 'restaurants/comment_input' %>
 	</div>
 
+<<<<<<< HEAD
 	<%= render 'restaurants/restaurant_map' %>
+=======
+>>>>>>> 44cd8bd3485424a7cf42d9dd5c58d4e133a51343
 </div>
 
 <script>

@@ -9,7 +9,7 @@
 
 	<div class="col-xs-4", id="comment_user">
 
-		<%= c.facebook_user.nickname %><br><br>
+		<b class = "comment_nickname"><%= c.facebook_user.nickname %><br><br></b>
 
 		<% if logged_in? %>
 			<% if current_user?(c.facebook_user) || current_user.admin == true %>
@@ -31,8 +31,8 @@
 			<%= c.c_content %><br><br>
 		</div>
 		<div id="comment_time">
-			<%= timestamp_division(c) %>
-		</div>
+			<%= timestamp_division(c) %><br>
+		</div><br>
 	</div>
 	<hr>
 	<% end %>

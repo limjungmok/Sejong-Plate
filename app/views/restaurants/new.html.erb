@@ -31,9 +31,13 @@
 			<%= p.file_field :picture, :multiple => true, name: "albums[picture][]" %>
 		</div>
 	<% end %>
-
+	<br>
 	<div class="actions">
 		<%= f.submit %>
 	</div>
+	<br>
+
+	현재 유저 숫자 : <%= @admin_info_user.count %><br>
+	현재 댓글 숫자 : <%= @admin_info_comment.count %><br>
 
 <% end %>
