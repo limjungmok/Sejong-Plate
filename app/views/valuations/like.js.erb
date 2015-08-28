@@ -1,2 +1,0 @@
-$(".restaurant_like").html("<%= @restaurant.r_like %> <br>추천수");
-$("#like_button").html('<%= link_to image_tag("like.jpg", :width => "55px", :height => "22px"), valuations_path(:restaurant_id => @restaurant.id), method: :post, remote: true %> <br>');

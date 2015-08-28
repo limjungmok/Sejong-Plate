@@ -6,13 +6,10 @@ class RestaurantsController < ApplicationController
       @comments = @restaurant.comments.all
    end
 
-
-
 	def index
 		@restaurants= Restaurant.paginate(page: params[:page], :per_page => 5 ).all
 		@restaurant_ranks = Restaurant.order("r_like DESC")
 	end
-
 
    def new
       @restaurant = Restaurant.new
@@ -24,6 +21,7 @@ class RestaurantsController < ApplicationController
    def create
 
       @restaurant = Restaurant.new(restaurant_params)
+
       respond_to do |format|
          if @restaurant.save
             unless params[:albums].nil?

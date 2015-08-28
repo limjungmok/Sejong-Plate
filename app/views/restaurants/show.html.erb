@@ -1,9 +1,5 @@
 <% provide(:title, @restaurant.r_name) %>
-<% if current_user.admin == true %>
-<%=link_to "좋아요 테스트", 
-	valuations_path(:restaurant_id => @restaurant.id) , method: :post %><br>
-<%= @restaurant.valuations.find_by(:facebook_user_id => current_user.id).recommend %>
-<% end %>
+
 <div class="show_container">
 	<div class="restaurant_contents">
 		<%= image_tag @albums[0].picture_url, :width => "49%", :height => "100%" %>
@@ -34,6 +30,7 @@
         		},
 				message: ' 잠시만 기다려주세요..' }); 
         	setTimeout($.unblockUI, 500); 
-    	});   
+    	});
+    	
 	});
 </script>
