@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/rusanu/blockuijs-rails.git
+  revision: 56e727429fa876fa03eade459404c98d74bf32e8
+  specs:
+    blockuijs-rails (0.1.0)
+      rails (>= 3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -162,7 +169,7 @@ GEM
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (2.7.1)
+    uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     web-console (2.2.1)
@@ -177,6 +184,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (= 3.1.7)
+  blockuijs-rails!
   bootstrap-sass (= 3.2.0.0)
   bootstrap-will_paginate (= 0.0.10)
   byebug
