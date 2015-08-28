@@ -16,10 +16,12 @@ class RestaurantsController < ApplicationController
       @restaurant.decrement! :r_like
    end
 
-   def index
-      @restaurants = Restaurant.all
-      @restaurant_ranks = Restaurant.order("r_like DESC")
-   end
+
+	def index
+		@restaurants= Restaurant.paginate(page: params[:page], :per_page => 5 ).all
+		@restaurant_ranks = Restaurant.order("r_like DESC")
+	end
+
 
    def new
       @restaurant = Restaurant.new

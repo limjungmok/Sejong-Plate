@@ -2,27 +2,27 @@
 
 	<div class="field">
 		<%= f.label :상호명 %> <br>
-		<%= f.text_field :r_name %>
+		<%= f.text_area :r_name %>
 	</div>
 
 	<div class="field">
 		<%= f.label :연락처 %> <br>
-		<%= f.text_field :r_phone_number %>
+		<%= f.text_area :r_phone_number %>
 	</div>	
 
 	<div class="field">
 		<%= f.label :소요시간 %> <br>
-		<%= f.text_field :r_distance %>
+		<%= f.text_area :r_distance %>
 	</div>	
 
 	<div class="field">
 		<%= f.label :영업시간 %> <br>
-		<%= f.text_field :r_time %>
+		<%= f.text_area :r_time %>
 	</div>	
 
 	<div class="field">
 		<%= f.label :배달유무 %> <br>
-		<%= f.text_field :r_code %>
+		<%= f.text_area :r_code %>
 	</div>	
 
 	<%= f.fields_for :사진 do |p| %>

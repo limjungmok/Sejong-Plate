@@ -57,8 +57,12 @@
 				</div>
 		</div>	
 <% end %>
-  <div class="paginate">
-  </div>
+
+
+<div class="paginate">
+    <%= will_paginate @restaurants_page , :previous_label => '이전', :next_label => '다음' %>
+</div>  
+
 </div>
   <!--
 <div class="col-md-4">
