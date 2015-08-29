@@ -64,7 +64,7 @@ class RestaurantsController < ApplicationController
 	private
 
 	def restaurant_params
-		params.require(:restaurant).permit(:r_name, :r_phone_number, :r_like, "ddd"+:r_distance, :r_time, :r_code, :r_latitude, :r_longtitude, albums_attributes: [:id, :restaurant_id, :picture])
+		params.require(:restaurant).permit(:r_name, :r_phone_number, :r_like, :r_distance_door, :r_distance, :r_time, :r_code, :r_latitude, :r_longtitude, albums_attributes: [:id, :restaurant_id, :picture])
 	end
 
 	def save_attachments
