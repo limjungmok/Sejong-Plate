@@ -9,10 +9,13 @@
 		<%= f.label :연락처 %> <br>
 		<%= f.text_field :r_phone_number %>
 	</div>	
-
+	<div>
+	
+	</div>
 	<div class="field">
 		<%= f.label :소요시간 %> <br>
-		<%= f.text_field :r_distance %>
+		<%= f.select :r_distance_door, options_for_select([["정문", "정문"], ["후문", "후문"], ["쪽문", "쪽문"]]) %> 도보
+		<%= f.text_field :r_distance %> 분
 	</div>	
 
 	<div class="field">
