@@ -3,6 +3,9 @@ class ValuationsController < ApplicationController
 	def create
 
 		@restaurant = Restaurant.find(params[:restaurant_id])
+		@test_new = @restaurant.valuations.build(:restaurant_id => @restaurant.id, :facebook_user_id => current_user.id, :recommend => false)
+		@test_new.save
+
 		@test = @restaurant.valuations.where(:restaurant_id => @restaurant.id).where(:facebook_user_id => current_user.id)
 		if @test
 			if @test.first.recommend == true
