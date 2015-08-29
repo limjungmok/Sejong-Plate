@@ -17,7 +17,7 @@
           <div class="info_detail">
             <small>추천수 : <b style="color:#f0ad4e"><%= @random_restaurants.first.r_like %></b></small><br>
             -<br>
-            <%= @random_restaurants.first.r_distance %>
+            <%= " 도보 " + @random_restaurants.first.r_distance + " 분(" + @random_restaurants.first.r_distance_door + ")"%>
           </div>
        </div>
       <%= link_to image_tag(@random_restaurants.first.albums.first.picture,
@@ -31,7 +31,7 @@
           <div class="info_detail">
             <small>추천수 : <b style="color:#f0ad4e"><%= @random_restaurants.second.r_like %></b></small><br>
             -<br>
-            <%= @random_restaurants.second.r_distance %>            
+            <%= " 도보 " + @random_restaurants.second.r_distance + " 분(" + @random_restaurants.second.r_distance_door + ")" %>            
           </div>
        </div>          
       <%= link_to image_tag(@random_restaurants.second.albums.first.picture,
@@ -45,7 +45,7 @@
           <div class="info_detail">
             <small>추천수 : <b style="color:#f0ad4e"><%= @random_restaurants.third.r_like %></b></small><br>
             -<br>
-            <%= @random_restaurants.third.r_distance %>
+            <%= " 도보 " + @random_restaurants.third.r_distance + " 분(" + @random_restaurants.third.r_distance_door + ")" %>
           </div>
        </div>          
       <%= link_to image_tag(@random_restaurants.third.albums.first.picture,

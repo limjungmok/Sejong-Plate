@@ -17,8 +17,9 @@
 			</div>	
 
 			<div class="field">
-				<%= f.label :소요시간 %> <br>
-				<%= f.text_area :r_distance %>
+			<%= f.label :소요시간 %> <br>
+			<%= f.select :r_distance_door, options_for_select([["정문", "정문"], ["후문", "후문"], ["쪽문", "쪽문"]]) %> 도보
+			<%= f.text_field :r_distance %> 분
 			</div>	
 
 			<div class="field">
@@ -28,7 +29,10 @@
 
 			<div class="field">
 				<%= f.label :배달유무 %> <br>
-				<%= f.text_field :r_code %>
+				<%= f.radio_button :r_code, "O" %>
+				<%= f.label :O %>
+				<%= f.radio_button :r_code, "X", :checked => true %>
+				<%= f.label :X %>
 			</div>
 
 			<div class="field">
