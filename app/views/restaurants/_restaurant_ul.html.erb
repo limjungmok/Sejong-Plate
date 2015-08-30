@@ -19,7 +19,7 @@
 		<span id="restaurant_icon" class="glyphicon glyphicon-map-marker"> </span>
 		<span class="restaurant_title"> 소요시간 </span>
 		<span class="restaurant_content">
-			<%= @restaurant.r_distance %>
+			<%= " 도보 " + @restaurant.r_distance + " 분(" + @restaurant.r_distance_door + ")"%>
 		</span>
 	</li>
 

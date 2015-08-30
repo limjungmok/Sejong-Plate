@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150828093806) do
+ActiveRecord::Schema.define(version: 20150829171950) do
 
   create_table "albums", force: :cascade do |t|
     t.integer  "restaurant_id"
@@ -48,15 +48,16 @@ ActiveRecord::Schema.define(version: 20150828093806) do
   create_table "restaurants", force: :cascade do |t|
     t.string   "r_name"
     t.string   "r_phone_number"
-    t.integer  "r_click_count",  default: 0
-    t.integer  "r_like",         default: 0
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.integer  "r_click_count",   default: 0
+    t.integer  "r_like",          default: 0
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "r_distance"
     t.string   "r_time"
     t.string   "r_code"
     t.float    "r_latitude"
     t.float    "r_longtitude"
+    t.string   "r_distance_door"
   end
 
   create_table "users", force: :cascade do |t|
@@ -75,9 +76,9 @@ ActiveRecord::Schema.define(version: 20150828093806) do
   create_table "valuations", force: :cascade do |t|
     t.integer  "facebook_user_id"
     t.integer  "restaurant_id"
-    t.boolean  "recommend"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.boolean  "recommend",        default: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
 end
