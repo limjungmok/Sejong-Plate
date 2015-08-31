@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-	before_action :is_admin?, only: [:new, :create, :edit, :destroy]
+	#before_action :is_admin?, only: [:new, :create, :edit, :destroy]
 
 	def show
 		@restaurant = Restaurant.find(params[:id])
