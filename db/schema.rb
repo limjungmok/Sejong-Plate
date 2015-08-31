@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150829171950) do
     t.integer  "c_facebook_id"
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
+    t.integer  "c_restaurant_id"
     t.integer  "restaurant_id"
     t.string   "facebook_user_nickname"
     t.integer  "facebook_user_id"
@@ -42,6 +43,7 @@ ActiveRecord::Schema.define(version: 20150829171950) do
     t.datetime "updated_at",                       null: false
     t.string   "nickname"
     t.boolean  "admin",            default: false
+    t.boolean  "recommend",        default: false
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -75,9 +77,9 @@ ActiveRecord::Schema.define(version: 20150829171950) do
   create_table "valuations", force: :cascade do |t|
     t.integer  "facebook_user_id"
     t.integer  "restaurant_id"
-    t.boolean  "recommend",        default: false
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.boolean  "recommend"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
 end

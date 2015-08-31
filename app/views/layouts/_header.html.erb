@@ -22,7 +22,9 @@
                   <% end %>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to "설정", edit_facebook_user_path(:id => current_user.id) %></li>
+                  <li>
+                    <%= link_to "설정", edit_facebook_user_path(:id => current_user.id) %>
+                  </li>
                   <li class="divider"></li>
                   <li>
                     <%= link_to "로그아웃", signout_path, id: "sign_out" %>

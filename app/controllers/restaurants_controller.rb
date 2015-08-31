@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+	#before_action :is_admin?, only: [:new, :create, :edit, :destroy]
 
 	def show
 		@restaurant = Restaurant.find(params[:id])
@@ -7,11 +8,11 @@ class RestaurantsController < ApplicationController
 	end
 
 	def index
-		if logged_in? && current_user.nickname =="세종대학생"
+		if logged_in? && current_user.nickname == "세종대학생"
 			redirect_to edit_facebook_user_path(:id => current_user.id)
 		end   
 		
-		@restaurants= Restaurant.paginate(page: params[:page], :per_page => 5 ).all
+		@restaurants= Restaurant.paginate(page: params[:page], :per_page => 5).all
 		@restaurant_ranks = Restaurant.order("r_like DESC")
 	end
 
@@ -59,6 +60,13 @@ class RestaurantsController < ApplicationController
 		Restaurant.find(params[:id]).destroy
 		flash[:success] = "삭제 완료!"
 		redirect_to restaurants_path
+	end
+
+	def is_admin?
+		unless current_user.admin == true
+			flash[:danger] = "잘못된 접근입니다"
+			redirect_to root_path
+		end
 	end
 
 	private
