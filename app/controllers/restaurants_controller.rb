@@ -11,8 +11,8 @@ class RestaurantsController < ApplicationController
 		if logged_in? && current_user.nickname == "세종대학생"
 			redirect_to edit_facebook_user_path(:id => current_user.id)
 		end   
-		
-		@restaurants= Restaurant.paginate(page: params[:page], :per_page => 5).all
+		@restaurant = Restaurant.find(params[:id])
+		@restaurants= Restaurant.paginate(page: params[:page], :per_page => 5).where("r_distance_door = ? ", @restaurant.r_distance_door).order("r_distance DESC")
 		@restaurant_ranks = Restaurant.order("r_like DESC")
 	end
 

@@ -1,6 +1,62 @@
 <% provide(:title, "Sejong Plate") %>
 
 <div class="col-md-8">
+		<div class="restaurants_contents">
+				<% if @restaurant.albums[0].nil? %>
+				<% else %>
+				<div class="r_index_picture">
+					<%= link_to (image_tag(@restaurant.albums[0].picture_url , :width => "220px", :height => "220px")), restaurant_path(:id => @restaurant.id) %>
+				</div>
+				<% end %>
+				<div class="restaurants_info">
+					<h3><%= link_to @restaurant.r_name, restaurant_path(:id => @restaurant.id) %></h3>
+					<ul class="restaurants_ul">
+						<li>
+							<span id="restaurant_icon" class="glyphicon glyphicon-phone-alt"> </span>
+							<span class="restaurant_title"> 연락처 </span>
+							<span class="restaurant_content">
+							<%= @restaurant.r_phone_number %>
+							</span>
+						</li>
+
+						<li>
+							<span id="restaurant_icon" class="glyphicon glyphicon-send"> </span>
+							<span class="restaurant_title"> 배달유무 </span>
+							<span class="restaurant_content">
+							<%= @restaurant.r_code %>
+							</span>
+						</li>
+
+						<li>
+							<span id="restaurant_icon" class="glyphicon glyphicon-map-marker"> </span>
+							<span class="restaurant_title"> 소요시간 </span>
+							<span class="restaurant_content">
+							<%= " 도보 " + @restaurant.r_distance + " 분(" + @restaurant.r_distance_door + ")"%>
+							</span>
+						</li>
+
+						<li>
+							<span id="restaurant_icon" class="glyphicon glyphicon-time"> </span>
+							<span class="restaurant_title"> 영업시간 </span>
+							<span class="restaurant_content">
+							<%= @restaurant.r_time %>
+							</span>
+						</li>
+					  	<% if logged_in? && current_user.admin == true %>
+						<li>
+							<span id="restaurant_icon" class="glyphicon glyphicon-user"> </span>
+							<span class="restaurant_title"> 운영자메뉴 </span>
+							<span class="restaurant_content">
+								<%= link_to "", edit_restaurant_path(:id =>@restaurant.id), class:"glyphicon glyphicon-wrench" %>
+								<%= link_to "", @restaurant ,method: :delete, data: {confirm: "삭제하시겠습니까?"},class:"glyphicon glyphicon-trash" %>
+							</span>
+						</li>
+						<% end %>
+					</ul>
+				</div>
+		</div>	
+</div>
+<div class="col-md-8">
 <% @restaurants.each do |r| %>
 	<div class="restaurants_contents">
 				<% if r.albums[0].nil? %>
