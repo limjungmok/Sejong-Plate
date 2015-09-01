@@ -4,10 +4,9 @@ class StaticPagesController < ApplicationController
   		redirect_to edit_facebook_user_path(:id => current_user.id)
   	end
 
-	@restaurants = Restaurant.paginate(page: params[:page], :per_page => 9 ).all
-	@restaurant_ranks = Restaurant.order("r_like DESC")
-	@random_restaurants = Restaurant.all.shuffle
-
+  	@restaurants = Restaurant.reorder("created_at DESC").paginate(page: params[:page], :per_page => 9).all
+  	@restaurant_ranks = Restaurant.order("r_like DESC")
+  	@random_restaurants = Restaurant.all.shuffle
 
   end
 
