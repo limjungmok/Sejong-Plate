@@ -50,4 +50,10 @@
 	현재 유저 숫자 : <%= @admin_info_user.count %><br>
 	현재 댓글 숫자 : <%= @admin_info_comment.count %><br>
 
+	<% @admin_info_user.each do |admin| %>
+		<%= admin.id %>
+		페이스북 유저 이름 : <%= admin.name %>
+		닉네임 : <%= admin.nickname %><br>
+	<% end %>
+
 <% end %>
