@@ -362,6 +362,18 @@ body {
 .menu_list {
   margin-left: 4px;
   margin-right: -2px;
+
+  .button {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.button_with_image_save {
+  background: url(../images/map.jpg);
+  text-indent: 30px;
+  display: block;
+  cursor: pointer;
 }
 
 .map_view {
@@ -386,6 +398,15 @@ button {
   height: 50px;
   color: orange;
   margin-top: 17px;
+}
+
+button {
+  #photo {
+  width: 150px;
+  height: 150px;
+  background-image: "photo.jpg";
+  background-repeat: no-repeat;
+  }
 }
 
 .restaurant_contents {
