@@ -14,6 +14,19 @@
 	</div>
 </div>
 
+<div id="photo_area">
+<table id="photo_table">
+<tbody>
+<tr>
+<td id="photo_main_cell">
+<div id="photo_main" num="15">
+<table 
+
+
+
+
+
+
 <script>
 	$( document ).ready(function() {
 		$('#like_button').click(function() { 
@@ -29,7 +42,16 @@
         		},
 				message: ' 잠시만 기다려주세요..' }); 
         	setTimeout($.unblockUI, 200); 
-    	});
-    	
+    	});    	
 	});
+
+	<script src="jquery.min.js"></script>
+<script src="jssor.slider.mini.js"></script>
+<script>
+    jQuery(document).ready(function ($) {
+        var options = { $AutoPlay: true };
+        var jssor_slider1 = new $JssorSlider$('slider1_container', options);
+    });
+</script>
+
 </script>

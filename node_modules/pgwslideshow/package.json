@@ -1,0 +1,55 @@
+{
+  "name": "pgwslideshow",
+  "title": "PgwSlideshow",
+  "description": "Responsive slideshow / gallery / carousel for jQuery / Zepto",
+  "version": "2.0.0",
+  "main": "pgwslideshow.js",
+  "homepage": "https://pgwjs.com/pgwslideshow",
+  "author": {
+    "name": "Jonathan M. Piat"
+  },
+  "license": "GNU GPLv3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pagawa/PgwSlideshow.git"
+  },
+  "keywords": [
+    "slider",
+    "slideshow",
+    "gallery",
+    "carousel",
+    "responsive",
+    "mobile",
+    "image",
+    "animation",
+    "ui",
+    "jquery",
+    "jquery-plugin",
+    "zepto"
+  ],
+  "bugs": {
+    "url": "https://github.com/Pagawa/PgwSlideshow/issues"
+  },
+  "gitHead": "9ede1f88cfd9ae80c4bbb3da2f20c5fca36921fe",
+  "_id": "pgwslideshow@2.0.0",
+  "scripts": {},
+  "_shasum": "8b7806cb2bb493f2f6ca4d9d0627da5cc426021d",
+  "_from": "pgwslideshow@",
+  "_npmVersion": "1.4.28",
+  "_npmUser": {
+    "name": "pagawa",
+    "email": "pgwjs@pagawa.com"
+  },
+  "maintainers": [
+    {
+      "name": "pagawa",
+      "email": "pgwjs@pagawa.com"
+    }
+  ],
+  "dist": {
+    "shasum": "8b7806cb2bb493f2f6ca4d9d0627da5cc426021d",
+    "tarball": "http://registry.npmjs.org/pgwslideshow/-/pgwslideshow-2.0.0.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/pgwslideshow/-/pgwslideshow-2.0.0.tgz"
+}
