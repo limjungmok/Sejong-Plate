@@ -33,6 +33,7 @@ gem 'mini_magick'
 gem 'net-ssh', '2.10.0.beta2'
 gem 'blockuijs-rails',  :git => 'git://github.com/rusanu/blockuijs-rails.git'
 gem 'bootstrap-slider-rails', '5.0.13'
+gem 'flexslider'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -1,8 +1,9 @@
 <div class="restaurant_info">
 	<span class="restaurant_name"><%= @restaurant.r_name %> </span>
+
 	<span class="menu_list">
-		<button type="button", image_tag("map.jpg", width: "24px", height: "24px"),
-		data-toggle="modal" data-target=".bs-example-modal-sm"></button>
+		<button type="button", class="glyphicon glyphicon-camera", data-toggle="modal"
+		data-target=".bs-example-modal-sm"></button>
 		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
 		aria-labelledby="mySmallModalLabel">		
 		<div class="modal-dialog modal-sm">
@@ -10,7 +11,6 @@
 				<% @albums.each do |p| %>
 				<%= image_tag p.picture_url , :width => "350px", :height => "330px" %>
 				<% end %>
-
 			</div>
 			<div class="modal-footer">
 				<button type="button" id="btn_1" class="btn btn-default" data-dismiss="modal">
@@ -37,8 +37,6 @@
 		</div>		
 		<hr>
 	</span>	
-
-	
 	
 	<%= render 'restaurants/middle_info' %>
 	
