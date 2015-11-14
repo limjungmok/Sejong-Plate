@@ -1,90 +1,3 @@
-body {
-  font-family: 'Nanum Gothic', sans-serif;
-  line-height: 1.3;
-  font-style: normal;
-  letter-spacing: normal;
-}
-
-.show_container {
-  height: 1800px;
-  background-color: whitesmoke;
-}
-
-#restaurant_icon {
-  float: left;
-  width: 23px;
-  line-height: 2.0;
-}
-
-.restaurant_name {
-  float: left;
-  font-size: 32px;
-  margin: 15px 0 18px;
-}
-
-.menu_list {
-  margin-left: 4px;
-  margin-right: -2px;
-
-  .button {
-    width: 100px;
-    height: 100px;
-  }
-}
-
-.button_with_image_save {
-  background: url(../images/map.jpg);
-  text-indent: 30px;
-  display: block;
-  cursor: pointer;
-}
-
-.map_view {
-  hr {
-    margin-top: -9px;
-  }
-  margin-left: -11px;
-}
-
-.modal-open .modal {
-  margin-top: 20px;
-  margin-right: 130px;
-}
-
-.glyphicon {
-  border: transparent;
-  background-color: transparent;
-}
-
-button {
-  width: 30px;
-  height: 50px;
-  color: orange;
-  margin-top: 17px;
-}
-
-button {
-  #photo {
-  width: 150px;
-  height: 150px;
-  background-image: "photo.jpg";
-  background-repeat: no-repeat;
-  }
-}
-
-.restaurant_contents {
-  display: block;
-  position: relative;
-  height: 1200px;
-  width: 100%;
-  background: white;
-  margin: 0 auto;
-  border: solid 1px gainsboro;
-}
-
-.restaurant_content {
-  margin-right: 20px;
-}
 
 img {
   display: block;
@@ -92,18 +5,131 @@ img {
   float: left;
 }
 
-.restaurant_info {
-  padding: 2% 0% 0% 52%;
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+  line-height: 1.3;
+  font-style: normal;
+  letter-spacing: normal;
 }
 
-hr {
-  margin-left: -5px;
-  width: 98%;
+.flexslider {
+    max-width: 1080px;
+    min-width: 320px;
+    margin-bottom: 60px;
+    position: relative;
+    zoom: 1;
+    display: block;
 }
 
-.middle_info {
-  margin-top: -16px;
-  margin-left: -8px;
+.flexslider {
+  .flex-viewport {
+    max-height: 2000px;
+    transition: all 0s ease;
+  }
+}
+
+.flexslider {
+  .slides {
+    zoom: 1;
+    z-index: 3;
+  }
+}
+
+.flexslider {
+  .slides li {
+      margin: 15px 45px 0 -40px;
+      height: 600px;
+      cursor: pointer;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      float: left;
+  }
+}
+
+.restaurant_info_top {
+  margin-left: 50px;
+  margin-bottom: 30px;
+}
+
+.restaurant_name {  
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.restaurant_like_count {
+  color: #CCCCCC;
+  font-size: 40px;
+  font-weight: bold;
+  vertical-align: text-bottom;
+}
+
+.restaurant_info_middle {
+  margin-left: 55px;
+  padding-left: 5px;
+  font-size: 40px;
+  line-height: 91px;
+}
+
+.restaurant_info_middle_deliver {
+  width: 800px;
+  float: left;
+}
+
+.restaurant_info_middle_phone {
+  width: 800px;
+  float: left;
+}
+
+.restaurant_info_middle_distance {
+  width: 800px;
+  float: left;
+}
+
+.restaurant_info_middle_time {
+  width: 800px;
+  float: left;
+}
+
+.restaurant_title {
+  font-weight: bold;
+}
+
+.restaurant_content {
+  font-size: 36px;
+}
+
+#restaurant_icon {
+  float: left;
+  width: 50px;
+  line-height: 90px;
+}
+
+.glyphicon {
+  border: transparent;
+  background-color: transparent;
+  color: #FF6633;
+}
+
+.restaurant_info_bottom {
+  width: 900px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 450px;
+  margin-bottom: 50px;
+}
+
+.restaurant_info_bottom {
+  img {
+    width: 200px;
+  }
+}
+
+.restaurant_like {
+  float: left;
+  width: 200px;
+  height: 120px;
+  margin: 11px 80px 10px 0;
+  padding: 11px 5px 0 0;
 }
 
 .like {
@@ -118,152 +144,44 @@ hr {
   border-right: solid 1px gainsboro;
 }
 
-.like_word {
-  color: black;
-  margin-left: -7px;
-  margin-top: 8px;
-}
-
-.glyphicon-cutlery:before {
-  color: orange;
-  font-size: 18px;
-  padding-right: 2px;
-}
-
-.score_area {
+.restaurant_map {
   float: left;
-  text-align: center;
-  width: 100px;
-  height: 60px;
-  margin-left: 10px;
-  margin-top: -11px;
-  padding-top: 11px;
-  padding-right: 10px;
-  border-right: solid 1px gainsboro;
+  width: 190px;
+  height: 190px;
+  margin: 11px 80px 10px 0;
+  padding: 14px 0 0 14px;
 }
 
-.restaurant_like {
-  float: left;
-  width: 100px;
-  height: 60px;
-  margin-top: -11px;
-  margin-left: 8px;
-  margin-bottom: 10px;
-  padding-top: 11px;
-  padding-right: 5px;
-  text-align: center;
-}
-
-
-.restaurant_ul {
-  margin-top: 25px;
-  padding-left: 5px;
-  font-size: 12px;
-  line-height: 26px;
-  list-style: none;
-}
-
-
-.restaurant_title {
-  width: 90px;
-  float: left;
-  font-weight: 800;
-}
-
-.restaurant_val {
-  width: 310px;
-  float: right;
-}
-
-#btn_1 {
-  margin-top: 5px;
-  width: 130%;
-  height: 35px;
-  margin-left: -14px;
-  color: white;
-  background-color: orange;
-  border-color: transparent;
-}
-
-.modal-content {
-}
-
-.map_view {
-  margin-top: 3px;
-  margin-left: -10px;
-}
-
-.modal-dialog modal-lg {
-  text-align: center;
-}
-
-#btn_2 {
-  margin-top: -10px;
-  width: 115%;
-  height: 35px;
-  margin-left: -14px;
-  color: white;
-  background-color: orange;
-  border-color: transparent;
-}
-
-.comment_contents {
-  position: relative;
-  height: 100%;
-  width: 70%;
-  background: white;
-  margin: 20px auto;
-  border: solid 1px gainsboro;
-
-  strong {
-    margin-left: 30px;
-    line-height: 3.0;
-    font-size: 25px;
-  }
-
-  hr{
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;    
+.restaurant_map_button {
+  img {
+    margin-top: -20px;
   }
 }
 
-.r_contents {
-  color: orange;
+.modal-dialog
+{
+  width: 550px;
+  margin: 300px 0;
 }
 
-#comment_user{
-  padding-left: 50px;
-  width: 23%
-
-}
-.comment_nickname{
-  font-size: 16px;
-}
-#comment_nickname_visitor{
-  font-size: 15px;
-}
-.comment_input {
-  height: 200px;
+.modal-footer {
+  margin-left: 200px;
+  margin-right: auto;
 }
 
-#comment_input {
-  margin-top: 60px;
-  margin-bottom: 60px;    
-}
-
-#comment_create {
-  width: 75%;
+#map_modal_button {
+  background-color: #FF6633;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  width: 500px;
   height: 100px;
-  border-radius: 4px;
 }
 
-.comment_score {
-  margin-top: -20px;
-}
-
-#comment_submit {
-  margin-top: 15px;
-  background-color: #f0ad4e;
-  border-color: transparent;
+.restaurant_share {
+  float: left;
+  width: 190px;
+  height: 190px;
+  margin: 11px 0 10px 0;
+  padding: 14px 0 0 14px;
 }

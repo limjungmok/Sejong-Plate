@@ -2,87 +2,74 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-	<link rel="stylesheet" href="flexslider.css" type="text/css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-	<script src="jquery.flexslider.js"></script>
-	<script type='text/javascript' src='http://2nlizv2n463m4ezbxb1ci6m1.wpengine.netdna-cdn.com/wp-content/themes/woo/includes/js/jquery.flexslider.min.js?ver=2.2.0'></script>
+	<head>
+		<script src="jquery.min.js"></script>
+		<script src="jssor.slider.mini.js"></script>
+		<link rel="stylesheet" href="flexslider.css" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script src="jquery.flexslider.js"></script>
+		<script type='text/javascript' src='http://2nlizv2n463m4ezbxb1ci6m1.wpengine.netdna-cdn.com/wp-content/themes/woo/includes/js/jquery.flexslider.min.js?ver=2.2.0'></script>
 
-	<script type="text/javascript" charset="utf-8">
-		jQuery(window).load(function() {
-			jQuery('.flexslider').flexslider({
-				animation: "slide",
-				controlNav: false,
-				directionNav: false,
-				itemWidth: 1080,
-				itemMargin: 5,
-				start: function(slider) {
-					$('body').removeClass('loading');
-				}
-			});			
-		});
-	</script>
-</head>
+		<script type="text/javascript" charset="utf-8">
+			$(window).load(function() {
+				$('.flexslider').flexslider({
+					animation: "slide",
+					smoothHeight: true,
+					controlNav: false,
+					directionNav: false,
+					itemWidth: 1080,
+					itemMargin: 5,
+					start: function(slider) {
+						$('body').removeClass('loading');
+					}			
+				});
+			});
+		</script>
 
-<body>
-<div class="flexslider">
-  <ul class="slides">
-  	<li>
-  	<%= image_tag ("a.jpg") %>
-  	</li>
-  	<li>
-  	<%= image_tag ("b.jpg") %>
-  	</li>
-  	<li>
-  	<%= image_tag ("c.jpg") %>
-  	</li>
-  	<!-- <%= image_tag @albums[0].picture_url, :width => "92%", :height => "40%" %> -->
-  </ul>
-</div>
-</body>
+		<script>
+			$( document ).ready(function() {
+				$('#like_button').click(function() { 
+					$.blockUI({ 
+						css: { 
+		            		border: 'none', 
+		            		padding: '15px', 
+		            		backgroundColor: '#000', 
+		            		'-webkit-border-radius': '10px', 
+		            		'-moz-border-radius': '10px', 
+		            		opacity: .5, 
+		            		color: '#fff' 
+        				},
+						message: ' 잠시만 기다려주세요..' }); 
+        			setTimeout($.unblockUI, 200); 
+    			});    	
+			});
+		</script>
+
+		<meta property="og:url"    content="http://www.your-domain.com/your-page.html" />
+    	<meta property="og:type"         content="website" />
+    	<meta property="og:title"        content="Your Website Title" />
+    	<meta property="og:description"  content="Your description" />
+    	<meta property="og:image" content="http://www.your-domain.com/path/image.jpg" />
+
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+ 			var js, fjs = d.getElementsByTagName(s)[0];
+  			if (d.getElementById(id)) return;
+ 			js = d.createElement(s); js.id = id;
+  			js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.5";
+  			fjs.parentNode.insertBefore(js, fjs);
+			} (document, 'script', 'facebook-jssdk'));
+		</script>
+	</head>
+
+	<body>
+		<%= render 'restaurants/restaurant_info_imageslider' %>
+		<%= render 'restaurants/restaurant_info_top' %>
+		<%= render 'restaurants/restaurant_info_middle' %>
+		<%= render 'restaurants/restaurant_info_bottom' %>
+
+		<div class="fb-share-button" data-href="http://sejongplate.com/restaurants" data-layout="icon">
+    	</div>
+
+	</body>
 </html>
-
-
-
-<!--
-<div class="restaurant_contents">
-	
-	<%= render 'restaurants/restaurant_info' %>
-
-</div>
-
-<div class="comment_contents">
-	<%= render 'restaurants/comment_content' %>
-	<%= render 'restaurants/comment_input' %>
-</div>
-
-<div id="photo_area">
-<table id="photo_table">
-<tbody>
-<tr>
-<td id="photo_main_cell">
-<div id="photo_main" num="15">
-</table>
--->
-
-<script>
-	$( document ).ready(function() {
-		$('#like_button').click(function() { 
-			$.blockUI({ 
-				css: { 
-		            border: 'none', 
-		            padding: '15px', 
-		            backgroundColor: '#000', 
-		            '-webkit-border-radius': '10px', 
-		            '-moz-border-radius': '10px', 
-		            opacity: .5, 
-		            color: '#fff' 
-        		},
-				message: ' 잠시만 기다려주세요..' }); 
-        	setTimeout($.unblockUI, 200); 
-    	});    	
-	});
-</script>
-
-	<script src="jquery.min.js"></script>
-	<script src="jssor.slider.mini.js"></script>
