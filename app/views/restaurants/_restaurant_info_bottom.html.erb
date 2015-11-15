@@ -1,3 +1,4 @@
+
 <div class="restaurant_info_bottom">
 
 	<div class="restaurant_like">
@@ -31,7 +32,9 @@
 						<%= render 'restaurants/restaurant_map' %>
 					</div>
 					<div class="modal-footer">
-						<button type="button" id="map_modal_button" class="btn btn-lg" data-dismiss="modal">	Close	</button>
+						<button type="button" id="map_modal_button" class="btn btn-lg" data-dismiss="modal">
+							Close
+						</button>
 					</div>
 				</div>
 			</div>		
@@ -41,7 +44,8 @@
 
 	<div class="restaurant_share">
 		<div class="restaurant_share_button">
-			<%= link_to image_tag("share.png"), 'http://www.facebook.com/sharer.php?u='+request.fullpath, :target => :blank %>
+			<%= link_to image_tag("share.png"), 'http://www.facebook.com/sharer/sharer.php?u=' +
+			'http://www.sejongplate.com/restaurants/r_id', :target => :blank %>
 		</div>
 	</div>
 </div>

@@ -19,31 +19,25 @@ body {
     position: relative;
     zoom: 1;
     display: block;
-}
 
-.flexslider {
-  .flex-viewport {
-    max-height: 2000px;
-    transition: all 0s ease;
-  }
-}
+    .flex-viewport {
+      max-height: 2000px;
+      transition: all 0s ease;
+    }
 
-.flexslider {
-  .slides {
-    zoom: 1;
-    z-index: 3;
-  }
-}
+    .slides {
+      zoom: 1;
+      z-index: 3;
+    }
 
-.flexslider {
-  .slides li {
+    .slides li {
       margin: 15px 45px 0 -40px;
       height: 600px;
       cursor: pointer;
       background-position: 50% 50%;
       background-repeat: no-repeat;
-      float: left;
-  }
+      float: left;      
+    }
 }
 
 .restaurant_info_top {
