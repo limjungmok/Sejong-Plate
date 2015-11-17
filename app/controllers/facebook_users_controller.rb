@@ -15,6 +15,10 @@ class FacebookUsersController < ApplicationController
   	end
   end
 
+  def omniauth_failure
+    redirect_to root_path
+  end
+
   private
 	  def facebook_user_params
 	  	params.require(:facebook_user).permit(:nickname)

@@ -15,4 +15,14 @@ module RestaurantsHelper
 			comment.created_at.strftime("%m/%d %H:%M")
 		end
 	end
+
+	def is_new_restaurant?(restaurant)
+		difference = Time.zone.now - restaurant.created_at
+
+		if difference < 259200
+			return true
+		else
+			return false
+		end
+	end
 end

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'facebook_users/update'
 
   #static_pages controller
-  root             'static_pages#home'
+  root             'restaurants#index'
   get 'contact' 	=> 'static_pages#contact'
 
   #Facebook

@@ -8,8 +8,10 @@
   color: #fff;
   text-align: center;
 }
-
-.navbar-inverse .navbar-nav > li > a{
+.navbar{
+  margin-bottom: 0px;
+}
+.navbar-nav.navbar-right:last-child{
   text-align: center;
   margin-right: 30px;
 }
@@ -17,6 +19,7 @@
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus{
   background-color: #f0ad4e;
 }
+
 /*별명*/
 #edit-form{
   width: 300px;
@@ -27,33 +30,35 @@
 
 #logo {
   float: left;
-  margin-left: 15px;
+  margin-left: 5px;
   font-size: 1.7em;
-  color: #fff;
+  color: #222;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
 }
-.navbar-inverse{
-  background-color: #fff;
-  border-color: #fff;
+.row{
+  height: 700px;
 }
-
-#logo{
-  color: #000;
+#nav{
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  border-color: transparent;
 }
 
 #logo:hover {
   color: #555;
   text-decoration: none;
 }
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus{
-  color: #777;
-}
-
-.navbar-inverse .navbar-nav > li > a{
+.navbar-nav > li > a{
+  font-weight: bold;
   color: #222;
+}
+.navbar-nav > li > a:hover{
+  color: #555;
+  background-color: transparent;
 }
 
 /* body */
@@ -62,12 +67,17 @@
   width: 100%;
   padding: 0px;
 }
+
+#home_container{
+  background-color: whitesmoke;
+}
+
 .container_info{
   width: 60%;
   text-align: left;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px; 
+  margin-top: 100px; 
 
   .container_title{
     color: #4f4f4f;
@@ -76,37 +86,43 @@
   }
 }
 
-
 body{
-  padding-top: 60px;
+  background-color: whitesmoke;
 }
 
+#index{
+  margin-top: 60px;
+}
+.carousel{
+  top: -50px;
+}
 .carousel-indicators{
   padding-bottom: 10px;
 }
 
 .carousel-inner{
+  position: relative;
+  z-index: -1;
   width: 100%;
-  background-color: #transparent;
-  height: 450px;
+  background-color: whitesmoke;
+  height: 500px;
   margin-right: auto;
   margin-left: auto;
-  border-radius: 3px;
-
 }
 
 #slide_item{
   position: relative;
+  top: -140px;
   -webkit-transition: 0.6s ease-in-out left;
   -moz-transition: 0.6s ease-in-out left;
   -o-transition: 0.6s ease-in-out left;
   transition: 0.6s ease-in-out left;
-  
+
   .c_box{
     position: relative;
     margin-right: auto;
     margin-left: auto;
-    top: 240px;
+    top: 450px;
     text-align: center;
     width: 40%;
     height: 120px;
@@ -134,10 +150,8 @@ body{
 
     small{
       color:#dedede;
-
     }
   }
-
 }
 
 
@@ -150,9 +164,14 @@ table{
   width: 60%;
   margin-right: auto;
   margin-left: auto;
-
+}
+.thumbnail > img, .thumbnail a > img{
+  width: 100%;
 }
 
+#thumbnail-info{
+  top: -50px;
+}
 .thumbnail{
   position: relative;
   border: 0px;  
@@ -161,6 +180,7 @@ table{
   -khtml-opacity: 0.6;
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
   filter: alpha(opacity=60);
+  background-color: whitesmoke;
 
   .info-box{
     position: relative;
@@ -175,6 +195,11 @@ table{
   .info-detail{
     font-size: 0px;
   }
+  .info-new{
+    position: absolute;
+    visibility: visible;
+    top: 85px;
+  }  
 }
 
 .thumbnail:hover{
@@ -211,16 +236,17 @@ table{
     font-size: 15px;
     color: #dedede;
   }
+
 }
 
 /* Paginate */
-.paginate{
-  width: 55%;
+#home_paginate{
+  width: 100%;
   height: 150px;
-  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  background-color: whitesmoke;
 
 }
 
@@ -315,15 +341,17 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 15px;
-}
 
+}
 .helpers{
-  width: 60%;
+  width: 500px;
   margin-top: 50px;
   margin-bottom: 100px;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
+  background-color: whitesmoke;
+  border-radius: 3px;
 }
 
 $gray-medium-light: #eaeaea;
@@ -355,8 +383,12 @@ body {
 }
 
 .show_container {
-  padding-top: 20px;
-  padding-bottom: 520px;
+  padding-top: 60px;
+  padding-bottom: 320px;
+  background-color: whitesmoke;
+}
+.index_container{
+  width: 100%;
   background-color: whitesmoke;
 }
 
@@ -425,10 +457,6 @@ img {
   padding: 2% 0% 0% 52%;
 }
 
-hr {
-  margin-left: -5px;
-  width: 98%;
-}
 
 .middle_info {
   margin-top: -16px;

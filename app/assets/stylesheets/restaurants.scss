@@ -1,3 +1,73 @@
-// Place all the styles related to the Restaurants controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#restaurant_index_card{
+	border-radius: 3px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	background: whitesmoke;
+	width: 100%;
+
+}
+#index_card{
+	background-color: #fff;
+}
+
+#restaurant_index_card_photo{
+	width: 40%;
+	text-align: center;
+	height: 375px;
+	border-radius: 3px;
+	background-color: #fff;
+}
+
+#restaurant_index_card_info{
+	width: 60%;
+	padding-top: 50px;
+	background: #fff;
+	height: 375px;
+	li {
+    	list-style-type: none;
+	}
+}
+
+
+#index_paginate{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+#index_title_li{
+	height: 70px;
+}
+#index_title{
+	font-size: 35px;
+}
+#index_phone_li{
+	height: 30px;
+}
+#index_phone{
+	margin-left:10px;
+	font-size: 25px;
+}
+#index_code_li{
+	height: 55px;
+}
+#index_code{
+	margin-left:10px;
+	font-size: 23px;
+}
+#index_distance_li{
+	height: 50px;
+}
+#index_distance{
+	margin-left:10px;
+	font-size: 25px;
+}
+#index_close_li{
+	height: 50px;
+}
+#index_close_time{
+	margin-left:10px;
+	font-size: 25px;
+}

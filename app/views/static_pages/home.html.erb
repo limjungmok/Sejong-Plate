@@ -4,9 +4,9 @@
   <head>
     <%= render 'static_pages/slider'%>
   </head>
-  <body>
+  <body class = "home"> 
     <%= render 'static_pages/restaurant' %>
-    <div class="paginate">
+    <div class="paginate", id="home_paginate">
       <%= will_paginate @restaurants , :previous_label => '이전', :next_label => '다음' %>
     </div>  
   </body>

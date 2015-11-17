@@ -8,12 +8,8 @@ class RestaurantsController < ApplicationController
 	end
 
 	def index
-		if logged_in? && current_user.nickname == "세종대학생"
-			redirect_to edit_facebook_user_path(:id => current_user.id)
-		end   
 		
 		@restaurants= Restaurant.paginate(page: params[:page], :per_page => 5).all
-		@restaurant_ranks = Restaurant.order("r_like DESC")
 	end
 
 	def new
