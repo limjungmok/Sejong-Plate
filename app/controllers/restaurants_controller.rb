@@ -8,7 +8,6 @@ class RestaurantsController < ApplicationController
 	end
 
 	def index
-		
 		@restaurants= Restaurant.paginate(page: params[:page], :per_page => 5).all
 	end
 

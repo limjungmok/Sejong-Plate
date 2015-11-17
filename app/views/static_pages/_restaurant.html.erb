@@ -8,6 +8,7 @@
       <% @restaurants.each do |r| %>
         <div class = "col-xs-4", id="thumbnail-info">
           <div class = "thumbnail" onclick="location.href='/restaurants/<%= r.id %>'">
+
             
             <% if r.albums[0].nil? %>
             <% else %>
@@ -28,7 +29,7 @@
                 <b style="color:#f0ad4e"><%= r.comments.count %></b><small> 의견 </small>
               </div>
             </div>            
-              <%= link_to image_tag r.albums.first.picture %>
+              <%= link_to (image_tag (r.albums.first.picture)), restaurants_path(:id => r.id)%>
             <% end %>
 
           </div>

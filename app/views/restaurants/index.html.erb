@@ -36,19 +36,6 @@
                             	<span id="index_distance"><%= " 도보 " + restaurant.r_distance + " 분(" + restaurant.r_distance_door + ")"%></span>
                             </li>			
                             <li id="index_clock_li"><span><%= image_tag "clock.png", :width => "28px", :height => "28px" ,:id=>"index_close_time_img" %></span>
-
-                                <span id="index_close_time"><%= restaurant.r_time %></span>
-                            </li>
-                            <li>
-                                <% if logged_in? && current_user.admin == true %>
-	                                <%= link_to "편집", edit_restaurant_path(:id =>restaurant.id), class:"glyphicon glyphicon-wrench" %>
-	                                <%= link_to "삭제", restaurant, method: :delete, data: {confirm: "삭제하시겠습니까?"},class:"glyphicon glyphicon-trash" %>
-                                <% end %>
-                            </li>
-						</ul>
-					</div>
-				</span>
-			</div>
 			<% end %>
 		</div>
 	</div>

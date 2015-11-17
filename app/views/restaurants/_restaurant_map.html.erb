@@ -1,3 +1,4 @@
+
 <html lang="ko" xmlns:v="urn:schemas-microsoft-com:vml">
     <head>
         <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=ab36337e7f5a470f7a2749a1373c5584"></script>
@@ -8,7 +9,7 @@
                 var oPoint = new nhn.api.map.LatLng(<%= @restaurant.r_latitude %>, <%=@restaurant.r_longtitude %>);
                 var oMap = new nhn.api.map.Map(document.getElementById('map'), { 
                                 point : oPoint,
-                                zoom : 11,
+                                zoom : 12,
                                 enableWheelZoom : true,
                                 enableDragPan : true,
                                 enableDblClickZoom : true,
@@ -17,7 +18,7 @@
                                 activateBicycleMap : false,
                                 activateRealtyMap : true,
                                 minMaxLevel : [ 1, 14 ],
-                                size : new nhn.api.map.Size(1000, 500)
+                                size : new nhn.api.map.Size(1000, 900)
                             });
                 // 줌 컨트롤러
                 var oSlider = new nhn.api.map.ZoomControl();
