@@ -54,7 +54,7 @@ class RestaurantsController < ApplicationController
 	def destroy
 		Restaurant.find(params[:id]).destroy
 		flash[:success] = "삭제 완료!"
-		redirect_to restaurants_path
+		redirect_to root_path
 	end
 
 	def is_admin?

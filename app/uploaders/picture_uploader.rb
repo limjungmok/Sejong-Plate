@@ -7,7 +7,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   
   # 업로드 상단에 아래의 after 매크로를 추가한다.
-after :remove, :delete_empty_upstream_dirs
+  after :remove, :delete_empty_upstream_dirs
 
   def delete_empty_upstream_dirs
     path = ::File.expand_path(store_dir, root)
@@ -25,9 +25,13 @@ after :remove, :delete_empty_upstream_dirs
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  def base_store_dir
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}"
+  end
+  
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:

@@ -4,7 +4,7 @@
 	<div class="restaurant_like">
 
 		<div class="like">
-			<div id="restaurant_like_button">
+			<div id="like_button">
 				<% if logged_in? %>
 		
 					<% if @restaurant.valuations.find_by(:facebook_user_id => current_user.id) && @restaurant.valuations.find_by(:facebook_user_id => current_user.id).recommend == true %>
