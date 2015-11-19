@@ -5,7 +5,7 @@
 		<% if logged_in? %>
 			<div class="like">
 				<div id="restaurant_like_button">
-					<% if @restaurant.valuations.find_by(:facebook_user_id => current_user.id) && @restaurant.valuations.find_by(:facebook_user_id => current_user.id).recommend == true %>
+					<% if @restaurant.id.valuations.find_by(:facebook_user_id => current_user.id) && @restaurant.valuations.find_by(:facebook_user_id => current_user.id).recommend == true %>
 			
 					<%= link_to image_tag("like.png", :width => "200px"), valuations_path(:restaurant_id => @restaurant.id) , method: :post, remote: true %>
 			
@@ -45,7 +45,7 @@
 	<div class="restaurant_share">
 		<div class="restaurant_share_button">
 			<%= link_to image_tag("share.png"), 'http://www.facebook.com/sharer/sharer.php?u=' +
-			'http://www.sejongplate.com/restaurants/r_id', :target => :blank %>
+			'http://www.sejongplate.com/restaurants/' , :target => :blank %>
 		</div>
 	</div>
 </div>

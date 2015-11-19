@@ -1,47 +1,55 @@
+
 <% provide(:title, "Sejong Plate") %>
-<html>
-	<head>
-		<title></title>
-	</head>
-	<body>
+
+<div id="restaurant_index">
+	<% @restaurants.each do |r| %>
 	<div id="index_card">
-		<div class = "row" id="restaurant_index_card">
-			<% @restaurants.each do |restaurant| %>
+		<div id="card_img">
+			<%= link_to (image_tag(r.albums[0].picture_url, 
+						:width => "100%", :height => "100%")),
+			 			restaurant_path(:id => r.id) %>
+		</div>
+		<div id="card_content">
+			<div id="index_card_title_div">
+				<span id="index_card_title">
+					<%= link_to r.r_name , restaurant_path(:id => r.id) %>
+				</span>			
+			</div>
 			<div>
-				<span>
-					<div class="col-xs-4" id="restaurant_index_card_photo">
-							<% if restaurant.albums[0].nil? %>
-							<% else %>
-							<div>
-								<%= link_to image_tag(restaurant.albums[0].picture_url, :width =>"100%", :height =>"100%"), 
-											restaurant_path(:id=> restaurant.id) %>
-							</div>
-							<% end %>
-					</div>
-					<div class="col-xs-8" id="restaurant_index_card_info">
-						<ul>
-							<li id="index_title_li">							
-								<span id="index_title"><%= restaurant.r_name %><span>
-							</li>
-							<li id="index_phone_li">
-								<%= image_tag "phone.png", :width => "28px", :height => "28px" ,
-								:id => "index_phone_img"%><span id="index_phone"><%= restaurant.r_phone_number %></span>
-							</li>
-							<li id="index_motorcycle_li">
-								<span><%= image_tag "motorcycle.png", :width => "28px", :height => "28px" %></span>
-                                <span id="index_code"><%= restaurant.r_code %></span>
-                            </li>
-                            <li id="index_gps_li">
-                            	<span><%= image_tag "gps.png", :width => "28px", :height => "28px" %></span>
-                            	<span id="index_distance"><%= " 도보 " + restaurant.r_distance + " 분(" + restaurant.r_distance_door + ")"%></span>
-                            </li>			
-                            <li id="index_clock_li"><span><%= image_tag "clock.png", :width => "28px", :height => "28px" ,:id=>"index_close_time_img" %></span>
-			<% end %>
+				<span class="glyphicon glyphicon-phone-alt"> </span>
+				<span id="index_card_phone"> 연락처 </span>
+				<span id="index_card_value">
+					<%= r.r_phone_number %>
+				</span>
+			</div>
+			<div>
+				<span class="glyphicon glyphicon-briefcase"> </span>
+				<span id="index_card_code"> 배달유무 </span>
+				<span id="index_card_value">
+					<%= r.r_code %>
+				</span>
+			</div>
+			<div>
+				<span class="glyphicon glyphicon-map-marker"> </span>
+				<span id="index_card_distance"> 소요시간 </span>
+				<span id="index_card_value">
+					<%= " 도보 " + r.r_distance + " 분(" + r.r_distance_door + ")"%>
+				</span>
+			</div>
+			<div>
+				<span class="glyphicon glyphicon-time"> </span>
+				<span id="index_card_time"> 영업시간 </span>
+				<span id="index_card_value">
+					<%= r.r_time %>
+				</span>
+			</div>
 		</div>
 	</div>
-		<div class="paginate", id="index_paginate">
-               <%= will_paginate @restaurants_page , :previous_label => '이전', :next_label => '다음'%>
-        </div>
-	</body>
-</html>
+	<hr>
+	<% end %>
 
+	<div class="index_paginate">
+	    <%= will_paginate @restaurants_page , :previous_label => '이전', :next_label => '다음' %>
+	</div>  
+
+</div>

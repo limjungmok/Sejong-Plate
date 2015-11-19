@@ -1,4 +1,77 @@
+#restaurant_index{
+	width: 100%;
+	background-color: whitesmoke
+}
 
+#index_card{
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	height: 300px;
+	background-color: #fff;
+
+}
+#card_img{
+	width: 30%;
+	height: 100%;
+	float: left;
+}
+
+#card_content{
+	width: 70%;
+	height: 100%;
+	background-color: #fff;
+	float: left;
+	padding-left: 40px;
+	padding-top: 20px;
+}
+
+#index_card_title_div{
+	margin-bottom: 30px;
+}
+#index_card_title{
+	font-size: 35px;
+	font-weight: bold;
+	a{
+		color: #000;
+		text-decoration: none;
+	}
+	a:hover{
+		color: #333;
+	}
+}
+#index_card_phone{
+	margin-left: 10px;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+#index_card_code{
+	margin-left: 10px;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+#index_card_distance{
+	margin-left: 10px;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+#index_card_time{
+	margin-left: 10px;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+#index_card_value{
+	font-size: 28px;
+	margin-left: 10px;
+}
+#index_paginate{
+	margin-right: auto;
+	margin-left: auto;
+}
 img {
   display: block;
   vertical-align: top;
