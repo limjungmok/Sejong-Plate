@@ -1,14 +1,10 @@
 
 <div class="flexslider">
     <ul class="slides">
-        <li>
-            <%= image_tag @albums[0].picture_url%>
-        </li>
-        <li>
-            <%= image_tag @albums[1].picture_url%>
-        </li>
-        <li>
-            <%= image_tag @albums[3].picture_url%>
-        </li>
+        <% @albums.each do |p| %>
+            <li>
+                <%= image_tag p.picture_url %>
+            </li>
+        <% end %>
     </ul>
 </div>

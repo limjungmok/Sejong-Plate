@@ -5,8 +5,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
-  process resize_to_fill: [300, 300]
-
+  
   # 업로드 상단에 아래의 after 매크로를 추가한다.
 after :remove, :delete_empty_upstream_dirs
 

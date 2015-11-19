@@ -2,22 +2,28 @@
 <div class="restaurant_info_bottom">
 
 	<div class="restaurant_like">
-		<% if logged_in? %>
-			<div class="like">
-				<div id="restaurant_like_button">
-					<% if @restaurant.id.valuations.find_by(:facebook_user_id => current_user.id) && @restaurant.valuations.find_by(:facebook_user_id => current_user.id).recommend == true %>
-			
-					<%= link_to image_tag("like.png", :width => "200px"), valuations_path(:restaurant_id => @restaurant.id) , method: :post, remote: true %>
-			
+
+		<div class="like">
+			<div id="restaurant_like_button">
+				<% if logged_in? %>
+		
+					<% if @restaurant.valuations.find_by(:facebook_user_id => current_user.id) && @restaurant.valuations.find_by(:facebook_user_id => current_user.id).recommend == true %>
+
+					<%= link_to image_tag("like.png"), valuations_path(:restaurant_id => @restaurant.id) , method: :post, remote: true %>
+
 					<% else %>
 
-					<%= link_to image_tag("unlike.png", :width => "200px"),valuations_path(:restaurant_id => @restaurant.id) , method: :post, remote: true %>
-			
+					<%= link_to image_tag("unlike.png"),valuations_path(:restaurant_id => @restaurant.id) , method: :post, remote: true %>
+
 					<% end %>
-					<br>
-				</div>
+
+				<% else %>
+
+					<%= link_to image_tag("unlike.png"), "/auth/facebook" %>
+
+				<% end %>
 			</div>
-		<% end %>
+		</div>
 	</div>
 
 	<div class="restaurant_map">
@@ -46,6 +52,7 @@
 		<div class="restaurant_share_button">
 			<%= link_to image_tag("share.png"), 'http://www.facebook.com/sharer/sharer.php?u=' +
 			'http://www.sejongplate.com/restaurants/' , :target => :blank %>
+
 		</div>
 	</div>
 </div>
