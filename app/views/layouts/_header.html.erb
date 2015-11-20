@@ -7,7 +7,9 @@
           <%=link_to "맛집리스트", restaurants_path%>
         </li>
         <li>
-          <%=link_to "글쓰기", new_restaurant_path %>
+          <%if logged_in? && current_user.admin? %>
+            <%=link_to "글쓰기", new_restaurant_path %>
+          <% end %>
         </li>
         <li>
           <% if current_user %> 
