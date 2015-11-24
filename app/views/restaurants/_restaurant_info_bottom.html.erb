@@ -2,7 +2,6 @@
 <div class="restaurant_info_bottom">
 
 	<div class="restaurant_like">
-
 		<div class="like">
 			<div id="like_button">
 				<% if logged_in? %>
@@ -48,11 +47,22 @@
 		</div>
 	</div>
 
-	<div class="restaurant_share">
-		<div class="restaurant_share_button">
-			<%= link_to image_tag("share.png"), 'http://www.facebook.com/sharer/sharer.php?u=' +
-			'http://www.sejongplate.com/restaurants/' , :target => :blank %>
+	<script>
+		var id = @restaurant.id
+	</script>
 
+	<div class="restaurant_share">
+		<div class="restaurantexitshare_button">
+			<% if logged_in? %>
+
+				<%= link_to image_tag("share.png"), "http://www.facebook.com/sharer/sharer.php?u=" +
+				"http://www.sejongplate.com/restaurants/'<%= @restaurant.id %>'" , :target => :blank %>
+
+			<% else %>
+
+				<%= link_to image_tag("share.png"), "/auth/facebook" %>
+
+			<% end %>	
 		</div>
 	</div>
 </div>
