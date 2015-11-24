@@ -1,3 +1,4 @@
+
 #top{
 	position:fixed;
 	bottom: 45px;
@@ -21,6 +22,7 @@
   	padding-top: 17px;
 }
 #restaurant_index{
+  text-align: -webkit-auto;
 	margin-top: 30px;
 	width: 100%;
 	background-color: whitesmoke;
@@ -318,4 +320,29 @@ body {
   height: 190px;
   margin: 11px 0 10px 0;
   padding: 14px 0 0 14px;
+}
+
+.restaurant_info_imgcard {
+  width: 985px;
+  float: left;
+  margin-top: 100px;
+}
+
+.panel-title {
+  margin-bottom:10px;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.panel {
+  border: none;
+}
+
+.panel-body {
+  padding: 0;
+}
+
+.panel-heading {
+  border-bottom: none;
 }

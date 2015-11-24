@@ -1,3 +1,10 @@
 <% provide(:title, "Sejong Plate") %>
 
+<div id="index_button" align="center">
+	<%= link_to "모두보기", restaurants_path , class: "btn btn-default", type: "submit" %>
+	<%= link_to "정문", restaurants_path(:r_distance_door => "정문") , class: "btn btn-default", type: "submit" %>
+	<%= link_to "쪽문", restaurants_path(:r_distance_door => "쪽문") , class: "btn btn-default", type: "submit" %>
+	<%= link_to "후문", restaurants_path(:r_distance_door => "후문") , class: "btn btn-default", type: "submit" %>
+</div>
+
 <%= render 'restaurants/restaurant_index_card' %>
