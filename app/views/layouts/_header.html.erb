@@ -1,10 +1,10 @@
 <header class="navbar-collapse collapse", id="nav">
   <div class="container">
-    <%= link_to image_tag("folk.png", width: "35px", id:"logo_img") + "Sejong Plate", root_path, id: "logo" %>
+    <%= link_to image_tag("folk.png", width: "60px" ,height: "60px", id:"logo_img") + "SEJONG PLATE", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <%=link_to "맛집리스트", restaurants_path%>
+          <a href="http://m.sejong.ac.kr/front/cafeteria.do">학생식당</a>        
         </li>
         <li>
           <%if logged_in? && current_user.admin? %>
@@ -12,7 +12,7 @@
           <% end %>
         </li>
         <li>
-          <% if current_user %> 
+          <% if current_user %>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <%if current_user.nickname == nil%>

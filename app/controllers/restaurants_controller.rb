@@ -8,7 +8,11 @@ class RestaurantsController < ApplicationController
 	end
 
 	def index
-		@restaurants= Restaurant.paginate(page: params[:page], :per_page => 5).all
+		if(params[:r_distance_door])
+			@restaurants= Restaurant.where("r_distance_door = ?", params[:r_distance_door])				
+			else
+			@restaurants= Restaurant.order('id DESC')
+		end
 	end
 
 	def new
