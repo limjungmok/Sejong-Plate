@@ -6,6 +6,13 @@ class RestaurantsController < ApplicationController
 		@albums = @restaurant.albums.all
 		@comments = @restaurant.comments.all
 		@share_img = Restaurant.find(params[:id]).albums[0].picture_url
+
+		
+		if(params[:r_distance_door])
+			@restaurants= Restaurant.where("r_distance_door = ?", params[:r_distance_door])				
+			else
+			@restaurants= Restaurant.order('id DESC')
+		end
 	end
 
 	def index
