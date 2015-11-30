@@ -5,6 +5,7 @@ class RestaurantsController < ApplicationController
 		@restaurant = Restaurant.find(params[:id])
 		@albums = @restaurant.albums.all
 		@comments = @restaurant.comments.all
+		@share_img = Restaurant.find(params[:id]).albums[0].picture_url
 	end
 
 	def index

@@ -48,15 +48,15 @@
 	</div>
 
 	<script>
-		var id = @restaurant.id
-	</script>
+		var a = <%= @restaurant.id %>
+		</script>
 
 	<div class="restaurant_share">
 		<div class="restaurantexitshare_button">
 			<% if logged_in? %>
 
 				<%= link_to image_tag("share.png"), 'http://www.facebook.com/sharer/sharer.php?u=' +
-				'http://www.sejongplate.com/restaurants/', :target => :blank %>
+				'http://www.sejongplate.com/restaurants/'+ "#{@restaurant.id}", :target => :blank %>
 
 			<% else %>
 
