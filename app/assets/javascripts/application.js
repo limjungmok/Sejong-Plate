@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.flexslider
 //= require jquery.blockUI
 //= require bootstrap
 //= require turbolinks
