@@ -1,10 +1,11 @@
 
-<div class="flexslider">
-    <ol class="slides">
-        <% @albums.each do |p| %>
-            <li  >
-                <%= image_tag p.picture_url %>
-            </li>
-        <% end %>
-    </ol>
-</div>
+
+	<div class="flexslider">
+    	<ol class="slides">
+        	<% @albums.each do |p| %>
+           		<li>
+                	<%= image_tag p.picture_url %>
+            	</li>
+        	<% end %>
+    	</ol>
+	</div>

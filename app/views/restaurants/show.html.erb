@@ -9,13 +9,25 @@
 			$(window).load(function() {
 				$('.flexslider').flexslider({
 					animation: "slide",
+					slideshow: false,
 					smoothHeight: true,
 					controlNav: true,
 					directionNav: false,
 					itemWidth: 1080,
 					itemMargin: 5,
+					initDelay: 0,
+
 					start: function(slider) {
-						$('body').removeClass('loading');
+						$('.flexslider .slides').removeClass('end');
+					},
+
+					end: function(slider) {
+						$('.flexslider .slides').addClass('end');
+					},
+
+					after: function(slider) {
+						var newslide = slider.currentSlide;
+						$(newslide).find("img").lazyload({});					
 					}			
 				});
 			});
