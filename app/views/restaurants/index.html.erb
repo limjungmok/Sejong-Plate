@@ -1,10 +1,15 @@
 <% provide(:title, "Sejong Plate") %>
 
 <div id="index_button" align="center">
-	<%= link_to "모두보기", restaurants_path , class: "btn btn-default", type: "submit" %>
-	<%= link_to "정문", restaurants_path(:r_distance_door => "정문") , class: "btn btn-default", type: "submit" %>
-	<%= link_to "쪽문", restaurants_path(:r_distance_door => "쪽문") , class: "btn btn-default", type: "submit" %>
-	<%= link_to "후문", restaurants_path(:r_distance_door => "후문") , class: "btn btn-default", type: "submit" %>
+    <%= link_to "모두보기", restaurants_path , class: "btn btn-default", type: "submit", remote: true %>
+    <%= link_to "정문", restaurants_path(:r_distance_door => "정문") , class: "btn btn-default", type: "submit" , id: "front" , remote: true %>
+    <%= link_to "쪽문", restaurants_path(:r_distance_door => "쪽문") , class: "btn btn-default", type: "submit" , id: "side" , remote: true %>
+    <%= link_to "후문", restaurants_path(:r_distance_door => "후문") , class: "btn btn-default", type: "submit" , id: "back" , remote: true %>
 </div>
 
-<%= render 'restaurants/restaurant_index_card' %>
+<div id="ex1">
+	<%= render 'restaurants/restaurant_index_card' %>
+</div>
+<div align="center">
+    <%= will_paginate (@restaurants)%>
+</div>

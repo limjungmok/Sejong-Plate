@@ -5,6 +5,7 @@ class FacebookUser < ActiveRecord::Base
   validates :nickname, presence: true, length: {minimum: 1, maximum: 20}
   
   def self.from_omniauth(auth)
+    #where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
     where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
       user.provider = auth.provider
       user.uid = auth.uid

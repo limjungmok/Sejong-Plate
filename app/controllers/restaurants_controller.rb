@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
 	#before_action :is_admin?, only: [:new, :create, :edit, :destroy]
 
+
 	def show
 		@restaurant = Restaurant.find(params[:id])
 		@albums = @restaurant.albums.all
@@ -15,11 +16,15 @@ class RestaurantsController < ApplicationController
 		end
 	end
 
-	def index
+	def index			
 		if(params[:r_distance_door])
-			@restaurants= Restaurant.where("r_distance_door = ?", params[:r_distance_door])				
+			@restaurants= Restaurant.paginate(page: params[:page], :per_page => 5).where("r_distance_door = ?", params[:r_distance_door])
 			else
-			@restaurants= Restaurant.order('id DESC')
+			@restaurants= Restaurant.paginate(page: params[:page], :per_page => 5).order('id DESC')
+		end
+		respond_to do |format|
+			format.html
+			format.js
 		end
 	end
 

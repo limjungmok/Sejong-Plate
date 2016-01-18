@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150829171950) do
+ActiveRecord::Schema.define(version: 20160106070114) do
 
   create_table "albums", force: :cascade do |t|
     t.integer  "restaurant_id"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20150829171950) do
     t.integer  "c_facebook_id"
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
-    t.integer  "c_restaurant_id"
     t.integer  "restaurant_id"
     t.string   "facebook_user_nickname"
     t.integer  "facebook_user_id"
@@ -70,6 +69,7 @@ ActiveRecord::Schema.define(version: 20150829171950) do
     t.string   "remeber_digest"
     t.string   "remember_digest"
     t.boolean  "admin",           default: false
+    t.string   "u_nickname"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

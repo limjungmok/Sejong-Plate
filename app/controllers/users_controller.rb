@@ -4,23 +4,29 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :uddate]
   before_action :admin_user,     only: :destroy
 
+
+  def login
+    
+  end
+
   def new
   	@user = User.new
   end
-
+  
+  def create
+    @user = User.new(user_params)
+    @user.email = "basic@email.com"
+    if @user.save
+      flash[:success] = "회원가입 완료"
+      redirect_to :back
+    else
+      flash[:danger] = "실패"
+      redirect_to root_url
+    end
+  end
+  
   def show
   	@user = User.find(params[:id])
-  end
-
-  def create
-  	@user = User.new(user_params)
-  	if @user.save
-  		log_in(@user)
-      flash[:success] = "Welcome to the Sample App!"
-  		redirect_to @user
-  	else
-  		render 'new'
-  	end
   end
 
   def index
@@ -50,7 +56,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :u_nickname, :password, :password_confirmation)
     end
 
     def logged_in_user

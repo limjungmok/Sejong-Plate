@@ -1,3 +1,18 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#login_form{
+	margin-top: 100px;
+}
+#login_text{
+	font-size: 20px;
+	font-weight: bold;
+}
+#inputId, #inputPwd, #inputNick{
+	width : 450px;
+	height: 50px;
+	margin-top: 15px;
+}
+#bt_login, #bt_register{
+	width: 450px;
+	height: 50px;
+	margin-top: 15px;
+	padding-top: 5px;
+}

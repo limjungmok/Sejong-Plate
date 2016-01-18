@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
 
-  #get 'comments/create'
-  #get 'comments/edit'
-  #get 'comments/destroy'
-
   get 'albums/new'
-
+  get 'login' => 'users#login'
+  
   get 'facebook_users/edit'
   get 'facebook_users/update'
 
@@ -14,9 +11,9 @@ Rails.application.routes.draw do
   get 'contact' 	=> 'static_pages#contact'
 
   #Facebook
-  get 'auth/:provider/callback', to: 'sessions#create'
-  get 'auth/failure', to: redirect('/')
-  get 'signout', to: 'sessions#destroy', as: 'signout'
+  get 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  get 'auth/failure', to: redirect('/'), via: [:get, :post]
+  get 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
   patch 'like' => 'restaurants#like'
   patch 'unlike' => 'restaurants#unlike'
@@ -24,7 +21,9 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   
   #users controller(로그인 페이스북만 쓰면 필요없음)
-  get 'signup'		=> 'users#new'
+  
+  resources :users
+  
 
   resources :facebook_users
   resources :restaurants do
