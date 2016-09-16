@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  will_paginate:
+    previous_label: <span>이전</span>
+    next_label: <span>다음</span>

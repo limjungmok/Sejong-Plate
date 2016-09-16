@@ -1,0 +1,133 @@
+@media all and (max-width: 768px) {
+	.navbar-inverse{
+		padding:{
+			left:20px;
+			right:20px;
+		}
+	}
+
+	#logo_img{
+	  width: 25px;
+		height: 25px;
+
+	  margin:{
+	  	right: 5px;
+	  	bottom: 5px;
+	  }
+	}
+
+	#logo {
+		color:white;
+	  letter-spacing: -1px;
+	  text-decoration: none;
+	  text-transform: uppercase;
+		float:left;
+
+		margin:{
+			left:5px;
+			right:5px;
+		}
+		padding:{
+			top:5px;
+		}
+		font:{
+			size:25px;
+		}
+	}
+
+	#logo:hover {
+	  color: #222;
+	}
+	
+	.dropdown-toggle{
+		color: white;
+	}
+	.dropdown-toggle:active{
+		color: #222;
+	}
+	.navbar-inverse .navbar-nav .open .dropdown-menu > li > a{
+		color: #333;
+	}
+	.navbar-nav .open .dropdown-menu{
+		background-color: whitesmoke;
+	}
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+	#logo_img{
+	  width: 28px;
+		height: 28px;
+	  margin:{
+	  	right: 7px;
+	  	bottom: 5px;
+	  }
+	}
+
+	#logo {
+		color:white;
+	  letter-spacing: -1px;
+	  text-decoration: none;
+	  text-transform: uppercase;
+		float:left;
+
+		margin:{
+			left:5px;
+			right:5px;
+		}
+		padding:{
+			top:8px;
+		}
+		font:{
+			size:30px;
+		}
+	}
+
+	#logo:hover {
+	  color: #222;
+	}
+	.navbar-nav > li{
+		font-size: 20px;
+		margin-top: 3px;
+	}
+}
+
+@media all and (min-width: 1025px) {
+
+	#logo_img{
+	  margin:{
+	  	right: 10px;
+	  	bottom: 5px;
+	  }
+	}
+
+	#logo {
+	  color:white;
+	  letter-spacing: -1px;
+	  text-decoration: none;
+	  text-transform: uppercase;
+		float:left;
+
+		margin:{
+			left:5px;
+			right:5px;
+		}
+		padding:{
+			top:5px;
+		}
+		font:{
+			size:30px;
+		}
+	}
+
+	#logo:hover {
+	  color: #222;
+	}
+	.navbar-nav > li > .dropdown-menu{
+		border-color:white;
+		border-top-right-radius: 5px;
+	}
+	.navbar-nav > li > a{
+		font-size: 17px;
+	}
+
+}

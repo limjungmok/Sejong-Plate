@@ -1,0 +1,39 @@
+
+
+/*Edit Comment*/
+.edit_comment{
+  margin: 30px;
+
+}
+#comment_edit{
+  text-indent: 10px;
+  width: 600px;
+  height: 75px;
+}
+
+
+#comment_content{
+  font-size: 15px;
+}
+
+#comment_time{
+  font-size: 11px;
+  color: #aaa;
+}
+
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}

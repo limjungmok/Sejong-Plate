@@ -1,77 +1,135 @@
-<% provide(:title, @restaurant.r_name) %>
-
 <!DOCTYPE html>
 <html>
 	<head>
-		<script type='text/javascript' src='http://2nlizv2n463m4ezbxb1ci6m1.wpengine.netdna-cdn.com/wp-content/themes/woo/includes/js/jquery.flexslider.min.js?ver=2.2.0', data-turbolinks="true"></script>
-
-		<script type="text/javascript" charset="utf-8">
-			$(window).load(function() {
-				$('.flexslider').flexslider({
-					animation: "slide",
-					slideshow: false,
-					smoothHeight: true,
-					controlNav: true,
-					directionNav: false,
-					itemWidth: 1080,
-					itemMargin: 5,
-					initDelay: 0,
-
-					start: function(slider) {
-						$('.flexslider .slides').removeClass('end');
-					},
-
-					end: function(slider) {
-						$('.flexslider .slides').addClass('end');
-					},
-
-					after: function(slider) {
-						var newslide = slider.currentSlide;
-						$(newslide).find("img").lazyload({});					
-					}			
-				});
-			});
-		</script>
-
-		<script>
-			$( document ).ready(function() {
-				$('#restaurant_like_button').click(function() { 
-					$.blockUI({ 
-						css: { 
-		            		border: 'none', 
-		            		padding: '15px', 
-		            		backgroundColor: '#000', 
-		            		'-webkit-border-radius': '10px', 
-		            		'-moz-border-radius': '10px', 
-		            		opacity: .5, 
-		            		color: '#fff' 
-        				},
-						message: ' 잠시만 기다려주세요..' }); 
-        			setTimeout($.unblockUI, 200); 
-    			});    	
-			});
-		</script>
-
-		<meta name="subject" content="#{@restaurant.r_name}">
-		<meta name="description" content="#{@restaurant.r_name}" + "의 메뉴, 사진, 주소, 전화번호, 영업시간 등의 정보를 세종플레이트에서 확인해보세요.">
-		<meta name="url" content="#{@share_img}">
-		<meta name="image" content="#{@share_img}">
-
-		<meta property="fb:app_id" content="479527275585707" />
-		<meta property="og:url"  content='http://www.sejongplate.com/restaurants/' + "#{@restaurant.id}" />
-    	<meta property="og:type" content="website" />
-
-    	<meta property="og:title" content="#{@restaurant.r_name}" />
-    	<meta property="og:description" content="#{@restaurant.r_name}" + "의 메뉴, 사진, 주소, 전화번호, 영업시간 등의 정보를 세종플레이트에서 확인해보세요." />
-    	<meta property="og:image" content="#{@share_img}" />
+  <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=ab36337e7f5a470f7a2749a1373c5584"></script>
+  
 	</head>
-
 	<body>
-		<%= render 'restaurants/restaurant_info_imageslider' %>
-		<%= render 'restaurants/restaurant_info_top' %>
-		<%= render 'restaurants/restaurant_info_middle' %>
-		<%= render 'restaurants/restaurant_info_bottom' %>
-
-		
+    <!-- show 페이지 전체 영역 -->
+		<div id="show_card">
+      <!-- show 페이지 상단 이미지 슬라이드 영역 -->
+			<div id="img_slider">
+        <% @albums.each do |p| %>
+					<div class="item">
+						<%= image_tag p.picture_url %>
+					</div>
+				<% end %>
+			</div>
+      <!-- //show 페이지 상단 이미지 슬라이드 영역 -->
+      <!-- show 페이지 하단 상세정보 영역 -->
+			<div id="show_info">
+        <!-- 가게 타이틀, 추천수 -->
+				<div>
+					<span id="title"><%= @restaurant.r_name %></span>
+          <span class="restaurant_like_count" onClick="clickFunction()" id="title_like">
+              (<%= @restaurant.r_like %> 추천)
+          </span>
+				</div>
+        <!-- //가게 타이틀, 추천수 -->
+				<div>
+          <!-- 배달 유무 -->
+					<div style="margin-top:20px;">
+            <span class="glyphicon glyphicon-briefcase"></span>
+            <span id="delivery"> 배달유무 </span>
+            <span id="value">
+           	 <%= @restaurant.r_code %>
+            </span>
+          </div>
+          <!-- //배달 유무 -->
+          <!-- 연락처 -->
+					<div style="margin-top:10px;">
+            <span class="glyphicon glyphicon-phone-alt"> </span>
+            <span id="address"> 연락처 </span>
+            <span id="value">
+              <%= @restaurant.r_phone_number %>
+            </span>
+          </div>
+          <!-- //연락처 -->
+          <!-- 소요시간 -->
+					<div style="margin-top:10px;">
+            <span class="glyphicon glyphicon-map-marker"> </span>
+            <span id="distance"> 소요시간 </span>
+            <span id="value">
+              <%= " 도보 " + @restaurant.r_distance + " 분(" + @restaurant.r_distance_door + ")"%>
+            </span>
+          </div>
+          <!-- //소요시간 -->
+          <!-- 영업시간 -->
+					<div style="margin-top:10px;" id="open_div">
+            <span class="glyphicon glyphicon-time"> </span>
+            <span id="open"> 영업시간 </span>
+            <span id="value">
+              <%= @restaurant.r_time %>
+            </span>
+          </div>
+          <!-- //영업시간 -->
+				</div>
+			</div>
+      <!-- //show 페이지 하단 상세정보 영역 -->
+      <!-- 네이버 지도 API -->
+			<div id="show_map">
+        <div id="map"></div>
+			</div>
+      <!-- //네이버 지도 API -->
+		</div>
+    <!-- //show 페이지 전체 영역 -->
+		<!--<%= render 'restaurants/restaurant_info_bottom' %>-->
 	</body>
 </html>
+<script>
+  //헤더 처음부터 배경 하얀색 하려고 만듬.
+  $('.navbar-inverse').css('background-color','white');
+  $('.navbar-inverse .navbar-brand').css('color','#222');
+  $('.navbar-inverse .navbar-nav > li > a').css('color','#222');
+  $('#logo').css('color','black');
+  
+  //이미지 슬라이더 jQuery Plugin
+  $(document).ready(function() {
+    $("#img_slider").owlCarousel({
+        autoPlay: 2500, //Set AutoPlay to 3 seconds
+        items : 4,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,3]
+    });
+  });
+</script>
+<script>
+    //브라우저 너비에 맞춘 Dynamical Function
+		$(window).resize(function () {
+      $('#map').css('width',100+'%');
+      $('.nmap').css('width',100+'%');
+      console.log($(window).width());
+    });
+
+    //네이버 지도API
+    var oPoint = new nhn.api.map.LatLng(<%= @restaurant.r_latitude %>, <%=@restaurant.r_longtitude %>);
+    var oMap = new nhn.api.map.Map(document.getElementById('map'), { 
+        point : oPoint,
+        zoom : 12,
+        enableWheelZoom : true,
+        enableDragPan : true,
+        enableDblClickZoom : true,
+        mapMode : 0,
+        activateTrafficMap : false,
+        activateBicycleMap : false,
+        activateRealtyMap : true,
+        minMaxLevel : [ 1, 14 ],
+        size : new nhn.api.map.Size(300, 300)
+    });
+    // 줌 컨트롤러
+    var oSlider = new nhn.api.map.ZoomControl();
+    oMap.addControl(oSlider);
+    oSlider.setPosition({ top:15, left:15 });
+    //아래는 위에서 지정한 좌표에 마커를 표시하는 소스 입니다.
+    var oSize = new nhn.api.map.Size(28, 37);
+    var oOffset = new nhn.api.map.Size(14, 37);
+    var oIcon = new nhn.api.map.Icon('http://static.naver.com/maps2/icons/pin_spot2.png', oSize, oOffset);
+    //icon 이미지를 바꿔서 사용할 수 있습니다.
+    var oMarker = new nhn.api.map.Marker(oIcon, { title : '<%= @restaurant.r_name %>' }); 
+    oMarker.setPoint(oPoint);
+    oMap.addOverlay(oMarker);
+    // 마커라벨 표시
+    var oLabel1 = new nhn.api.map.MarkerLabel(); // 마커 라벨 선언
+    oMap.addOverlay(oLabel1);// 마커 라벨 지도에 추가. 기본은 라벨이 보이지 않는 상태로 추가됨
+    oLabel1.setVisible(true, oMarker);// 마커 라벨 보이기 
+</script>

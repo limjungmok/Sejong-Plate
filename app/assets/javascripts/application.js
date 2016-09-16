@@ -16,4 +16,5 @@
 //= require jquery.blockUI
 //= require bootstrap
 //= require turbolinks
+//= require owl.carousel
 //= require_tree .

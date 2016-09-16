@@ -4,11 +4,6 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :uddate]
   before_action :admin_user,     only: :destroy
 
-
-  def login
-    
-  end
-
   def new
   	@user = User.new
   end
@@ -18,10 +13,10 @@ class UsersController < ApplicationController
     @user.email = "basic@email.com"
     if @user.save
       flash[:success] = "회원가입 완료"
-      redirect_to :back
+      redirect_to root_path
     else
-      flash[:danger] = "실패"
-      redirect_to root_url
+      flash[:error] = @user.errors.full_messages.to_sentence
+      redirect_to root_path
     end
   end
   

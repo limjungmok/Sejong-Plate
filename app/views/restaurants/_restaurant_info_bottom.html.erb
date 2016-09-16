@@ -1,65 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
 
-<div class="restaurant_info_bottom">
+</head>
+<body>
 
-	<div class="restaurant_like">
-		<div class="like">
-			<div id="like_button">
-				<% if logged_in? %>
-		
-					<% if @restaurant.valuations.find_by(:facebook_user_id => current_user.id) && @restaurant.valuations.find_by(:facebook_user_id => current_user.id).recommend == true %>
+	<div class="restaurant_info_bottom">
 
-					<%= link_to image_tag("like.png"), valuations_path(:restaurant_id => @restaurant.id) , method: :post, remote: true %>
+		<div class="restaurant_like">
+			<div class="like">
+				<div id="like_button">
+					<% if logged_in? %>
+						<% if @restaurant.valuations.find_by(:facebook_user_id => current_user.id) && @restaurant.valuations.find_by(:facebook_user_id => current_user.id).recommend == true %>
+
+						<%= link_to image_tag("like.png"), valuations_path(:restaurant_id => @restaurant.id) , method: :post, remote: true %>
+
+						<% else %>
+
+						<%= link_to image_tag("unlike.png"),valuations_path(:restaurant_id => @restaurant.id) , method: :post, remote: true %>
+
+						<% end %>
 
 					<% else %>
 
-					<%= link_to image_tag("unlike.png"),valuations_path(:restaurant_id => @restaurant.id) , method: :post, remote: true %>
+						<%= link_to image_tag("unlike.png"), "/auth/facebook" %>
 
 					<% end %>
+				</div>
+			</div>
+		</div>
+
+		<div class="restaurant_map">
+			<div class="restaurant_map_button">
+				<a data-toggle="modal" data-target="#myModal">
+					<%= image_tag("map.png") %>
+				</a>
+
+				<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" area-hidden="true">	
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<%= render 'restaurants/restaurant_map' %>
+						</div>
+						<div class="modal-footer">
+							<button type="button" id="map_modal_button" class="btn btn-lg" data-dismiss="modal">
+								Close
+							</button>
+						</div>
+					</div>
+				</div>		
+				<hr>
+			</div>
+		</div>
+
+		<div class="restaurant_share">
+			<div>
+				<% if logged_in? %>
+
+					<%= link_to image_tag("share.png"), 'http://www.facebook.com/sharer/sharer.php?u=' +
+					'http://www.sejongplate.com/restaurants/' + "#{@restaurant.id}" , :target => :blank %>
 
 				<% else %>
 
-					<%= link_to image_tag("unlike.png"), "/auth/facebook" %>
+					<%= link_to image_tag("share.png"), "/auth/facebook" %>
 
-				<% end %>
+				<% end %>	
 			</div>
 		</div>
 	</div>
-
-	<div class="restaurant_map">
-		<div class="restaurant_map_button">
-			<a data-toggle="modal" data-target="#myModal">
-				<%= image_tag("map.png") %>
-			</a>
-
-			<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" area-hidden="true">	
-				<div class="modal-dialog modal-lg">
-					<div class="modal-content">
-						<%= render 'restaurants/restaurant_map' %>
-					</div>
-					<div class="modal-footer">
-						<button type="button" id="map_modal_button" class="btn btn-lg" data-dismiss="modal">
-							Close
-						</button>
-					</div>
-				</div>
-			</div>		
-			<hr>
-		</div>
-	</div>
-
-
-	<div class="restaurant_share">
-		<div>
-			<% if logged_in? %>
-
-				<%= link_to image_tag("share.png"), 'http://www.facebook.com/sharer/sharer.php?u=' +
-				'http://www.sejongplate.com/restaurants/' + "#{@restaurant.id}" , :target => :blank %>
-
-			<% else %>
-
-				<%= link_to image_tag("share.png"), "/auth/facebook" %>
-
-			<% end %>	
-		</div>
-	</div>
-</div>
+</body>
+</html>

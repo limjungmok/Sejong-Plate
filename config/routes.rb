@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   get 'contact' 	=> 'static_pages#contact'
 
   #Facebook
-  get 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
-  get 'auth/failure', to: redirect('/'), via: [:get, :post]
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get '/auth/failure', to: redirect('/'), via: [:get, :post]
   get 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
   patch 'like' => 'restaurants#like'
@@ -24,7 +24,6 @@ Rails.application.routes.draw do
   
   resources :users
   
-
   resources :facebook_users
   resources :restaurants do
     resources :comments

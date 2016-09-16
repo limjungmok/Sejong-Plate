@@ -1,0 +1,581 @@
+@media all and (max-width: 400px) {
+	#show_card{
+		width: 99%;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+		
+	}
+
+	#img_slider{
+		margin-top: 60px;
+		margin-bottom: 15px;
+	}
+
+	#img_slider .item{
+		width: 100%;
+
+	}
+	#img_slider .item img{
+	  display: block;
+	  width: 100%;
+	  height: 300px;
+	  border-radius: 5px;
+
+	}
+
+	#show_info{
+		width: 98%;
+		height: 300px;
+		background-color: white;
+		padding-top:20px;
+		padding-left: 20px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	#show_map{
+		width: 98%;
+		height: 300px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#title{
+		font-size: 30px;
+		font-weight: bold;
+		margin-right: 5px;
+
+	}
+	#title_like{
+		font-size: 25px;
+		color: #777;
+	}
+
+	#delivery, #address, #distance, #open{
+		font-size: 23px;
+	}
+	#value{
+		margin-left: 20px;
+		font-size: 15px;
+		color: #888;
+	}
+	#open_div{
+		#value{
+			white-space: nowrap;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    word-wrap: break-word;
+	    display: inline-block;
+	    margin-bottom: -4.5px;
+		}
+	}
+}
+
+@media all and (min-width: 401px) and (max-width: 449px){
+	#show_card{
+		width: 100%;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#img_slider{
+		margin-top: 60px;
+		margin-bottom: 15px;
+	}
+
+	#img_slider .item{
+		width: 98%;
+		margin-left: 3px;
+
+	}
+
+	#img_slider .item img{
+	  display: block;
+	  width: 100%;
+	  height: 300px;
+	  border-radius: 5px;
+	}
+
+	#show_info{
+		width: 98%;
+		height: 300px;
+		background-color: white;
+		padding-top:20px;
+		padding-left: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#show_map{
+		width: 98%;
+		height: 300px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#title{
+		font-size: 30px;
+		font-weight: bold;
+		margin-right: 5px;
+
+	}
+	#title_like{
+		font-size: 25px;
+		color: #777;
+	}
+
+	#delivery, #address, #distance, #open{
+		font-size: 23px;
+	}
+	#value{
+		margin-left: 20px;
+		font-size: 15px;
+		color: #888;
+	}
+	#open_div{
+		#value{
+			width: 230px;
+			white-space: nowrap;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    word-wrap: break-word;
+	    display: inline-block;
+	    margin-bottom: -4.5px;
+		}
+	}
+}
+@media all and (min-width: 450px) and (max-width: 500px){
+	#show_card{
+		width: 100%;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#img_slider{
+		margin-top: 60px;
+		margin-bottom: 15px;
+	}
+
+	#img_slider .item{
+		width: 98%;
+		margin-left: 3px;
+
+	}
+
+	#img_slider .item img{
+	  display: block;
+	  width: 100%;
+	  height: 300px;
+	  border-radius: 5px;
+	}
+
+	#show_info{
+		width: 98%;
+		height: 300px;
+		background-color: white;
+		padding-top:20px;
+		padding-left: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#show_map{
+		width: 98%;
+		height: 300px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#title{
+		font-size: 30px;
+		font-weight: bold;
+		margin-right: 5px;
+
+	}
+	#title_like{
+		font-size: 25px;
+		color: #777;
+	}
+
+	#delivery, #address, #distance, #open{
+		font-size: 23px;
+	}
+	#value{
+		margin-left: 20px;
+		font-size: 15px;
+		color: #888;
+	}
+	#open_div{
+		#value{
+			width: 280px;
+			white-space: nowrap;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    word-wrap: break-word;
+	    display: inline-block;
+	    margin-bottom: -4.5px;
+		}
+	}
+}
+
+@media all and (min-width: 501px) and (max-width: 549px){
+	#show_card{
+		width: 100%;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#img_slider{
+		margin-top: 60px;
+		margin-bottom: 15px;
+	}
+
+	#img_slider .item{
+		width: 98%;
+		margin-left: 3px;
+
+	}
+
+	#img_slider .item img{
+	  display: block;
+	  width: 100%;
+	  height: 300px;
+	  border-radius: 5px;
+	}
+
+	#show_info{
+		width: 98%;
+		height: 300px;
+		background-color: white;
+		padding-top:20px;
+		padding-left: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#show_map{
+		width: 98%;
+		height: 300px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#title{
+		font-size: 30px;
+		font-weight: bold;
+		margin-right: 5px;
+
+	}
+	#title_like{
+		font-size: 25px;
+		color: #777;
+	}
+
+	#delivery, #address, #distance, #open{
+		font-size: 23px;
+	}
+	#value{
+		margin-left: 20px;
+		font-size: 15px;
+		color: #888;
+	}
+	#open_div{
+		#value{
+			width: 320px;
+			white-space: nowrap;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    word-wrap: break-word;
+	    display: inline-block;
+	    margin-bottom: -4.5px;
+		}
+	}
+}
+
+@media all and (min-width: 550px) and (max-width: 767px){
+	#show_card{
+		width: 100%;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#img_slider{
+		margin-top: 60px;
+		margin-bottom: 15px;
+	}
+
+	#img_slider .item{
+		width: 98%;
+		margin-left: 3px;
+
+	}
+
+	#img_slider .item img{
+	  display: block;
+	  width: 100%;
+	  height: 300px;
+	  border-radius: 5px;
+	}
+
+	#show_info{
+		width: 98%;
+		height: 300px;
+		background-color: white;
+		padding-top:20px;
+		padding-left: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#show_map{
+		width: 98%;
+		height: 300px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#title{
+		font-size: 30px;
+		font-weight: bold;
+		margin-right: 5px;
+
+	}
+	#title_like{
+		font-size: 25px;
+		color: #777;
+	}
+
+	#delivery, #address, #distance, #open{
+		font-size: 23px;
+	}
+	#value{
+		margin-left: 20px;
+		font-size: 15px;
+		color: #888;
+	}
+	
+}
+
+@media all and (min-width: 768px) and (max-width: 900px) {
+	#show_card{
+		width: 95%;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+		
+	}
+
+	#img_slider{
+		margin-top: 100px;
+		margin-bottom: 30px;
+
+	}
+
+	#img_slider .item{
+		width: 95%;
+		margin-left: 4px;
+		margin-right: 1px;
+	}
+	
+	#img_slider .item img{
+	  display: block;
+	  width: 100%;
+	  height: 300px;
+	  border-radius: 5px;
+	}
+
+	#show_info{
+		width: 60%;
+		height: 300px;
+		background-color: white;
+		padding-top:20px;
+		padding-left: 20px;
+		float: left;
+	}
+
+	#show_map{
+		width: 40%;
+		height: 300px;
+		float: left;
+	}
+	#title{
+		font-size: 30px;
+		font-weight: bold;
+		margin-right: 5px;
+
+	}
+	#title_like{
+		font-size: 25px;
+		color: #777;
+	}
+
+	#delivery, #address, #distance, #open{
+		font-size: 23px;
+	}
+	#value{
+		margin-left: 20px;
+		font-size: 15px;
+		color: #888;
+	}
+
+	#open_div{
+		#value{
+			width: 250px;
+			white-space: nowrap;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    word-wrap: break-word;
+	    display: inline-block;
+	    margin-bottom: -4.5px;
+		}
+	}
+}
+
+
+	
+@media all and (min-width: 901px) and (max-width: 1024px) {
+	#show_card{
+		width: 95%;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+		
+	}
+
+	#img_slider{
+		margin-top: 100px;
+		margin-bottom: 30px;
+
+	}
+
+	#img_slider .item{
+		width: 95%;
+		margin-left: 4px;
+		margin-right: 1px;
+	}
+	
+	#img_slider .item img{
+	  display: block;
+	  width: 100%;
+	  height: 300px;
+	  border-radius: 5px;
+	}
+
+	#show_info{
+		width: 65%;
+		height: 300px;
+		background-color: white;
+		padding-top:20px;
+		padding-left: 20px;
+		float: left;
+	}
+
+	#show_map{
+		width: 35%;
+		height: 300px;
+		float: left;
+	}
+	#title{
+		font-size: 30px;
+		font-weight: bold;
+		margin-right: 5px;
+
+	}
+	#title_like{
+		font-size: 25px;
+		color: #777;
+	}
+
+	#delivery, #address, #distance, #open{
+		font-size: 23px;
+	}
+	#value{
+		margin-left: 20px;
+		font-size: 15px;
+		color: #888;
+	}
+}
+
+
+@media all and (min-width: 1025px) {
+
+	#show_card{
+		width: 95%;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+		
+	}
+	#img_slider{
+		margin-top: 100px;
+		margin-bottom: 50px;
+	}
+	#img_slider .item{
+		width: 98%;
+
+	}
+	#img_slider .item img{
+	  display: block;
+	  width: 100%;
+	  height: 300px;
+	  border-radius: 3px;
+
+	}
+
+	#show_info{
+		width: 70%;
+		height: 300px;
+		background-color: white;
+		padding-top:20px;
+		padding-left: 20px;
+		float: left;
+	}
+
+	#show_map{
+		width: 30%;
+		height: 300px;
+
+		float: left;
+	}
+	#title{
+		font-size: 27px;
+		font-weight: bold;
+		margin-right: 5px;
+
+	}
+	#title_like{
+		font-size: 23px;
+		color: #777;
+	}
+
+	#delivery, #address, #distance, #open{
+		font-size: 20px;
+	}
+	#value{
+		margin-left: 10px;
+		font-size: 18px;
+		color: #888;
+	}
+
+	#map{
+		width: 500px;
+		height: 500px;
+	}
+}
+
+#value{
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

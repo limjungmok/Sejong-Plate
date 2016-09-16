@@ -1,61 +1,68 @@
-<div class="show_container">
-	<div class="restaurant_contents">
-		<% @albums.each do |p| %>
-				<%= image_tag p.picture_url , :width => "310px", :height => "310px" %>
-		<% end %>
-
-		<%= form_for(@restaurant, :html => { :multipart => true}) do |f| %>
-			<%= hidden_field_tag :id, @restaurant.id %>
-			<div class="field">
-				<%= f.label :상호명 %> <br>
-				<%= f.text_area :r_name %>
-			</div>
-
-			<div class="field">
-				<%= f.label :연락처 %> <br>
-				<%= f.text_area :r_phone_number %>
-			</div>	
-
-			<div class="field">
-			<%= f.label :소요시간 %> <br>
-			<%= f.select :r_distance_door, options_for_select([["정문", "정문"], ["후문", "후문"], ["쪽문", "쪽문"]]) %> 도보
-			<%= f.text_field :r_distance %> 분
-			</div>	
-
-			<div class="field">
-				<%= f.label :영업시간 %> <br>
-				<%= f.text_area :r_time %>
-			</div>	
-
-			<div class="field">
-				<%= f.label :배달유무 %> <br>
-				<%= f.radio_button :r_code, "O" %>
-				<%= f.label :O %>
-				<%= f.radio_button :r_code, "X", :checked => true %>
-				<%= f.label :X %>
-			</div>
-
-			<div class="field">
-				<%= f.label :위도 %> <br>
-				<%= f.text_field :r_latitude %>
-			</div>
-
-			<div class="field">
-				<%= f.label :경도 %> <br>
-				<%= f.text_field :r_longtitude %>
-			</div>
-
-			<%= f.fields_for :사진 do |p| %>
-				<div class="field">
-					<%= p.label :picture %>
-					<%= p.file_field :picture, :multiple => true, name: "albums[picture][]" %>
-				</div>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<div class="show_container">
+		<div class="restaurant_contents">
+			<% @albums.each do |p| %>
+					<%= image_tag p.picture_url , :width => "310px", :height => "310px" %>
 			<% end %>
 
-			<div class="actions">
-				<%= f.submit %>
-			</div>
+			<%= form_for(@restaurant, :html => { :multipart => true}) do |f| %>
+				<%= hidden_field_tag :id, @restaurant.id %>
+				<div class="field">
+					<%= f.label :상호명 %> <br>
+					<%= f.text_area :r_name %>
+				</div>
 
-		<% end %>
+				<div class="field">
+					<%= f.label :연락처 %> <br>
+					<%= f.text_area :r_phone_number %>
+				</div>	
+
+				<div class="field">
+				<%= f.label :소요시간 %> <br>
+				<%= f.select :r_distance_door, options_for_select([["정문", "정문"], ["후문", "후문"], ["쪽문", "쪽문"]]) %> 도보
+				<%= f.text_field :r_distance %> 분
+				</div>	
+
+				<div class="field">
+					<%= f.label :영업시간 %> <br>
+					<%= f.text_area :r_time %>
+				</div>	
+
+				<div class="field">
+					<%= f.label :배달유무 %> <br>
+					<%= f.radio_button :r_code, "O" %>
+					<%= f.label :O %>
+					<%= f.radio_button :r_code, "X", :checked => true %>
+					<%= f.label :X %>
+				</div>
+
+				<div class="field">
+					<%= f.label :위도 %> <br>
+					<%= f.text_field :r_latitude %>
+				</div>
+
+				<div class="field">
+					<%= f.label :경도 %> <br>
+					<%= f.text_field :r_longtitude %>
+				</div>
+
+				<%= f.fields_for :사진 do |p| %>
+					<div class="field">
+						<%= p.label :picture %>
+						<%= p.file_field :picture, :multiple => true, name: "albums[picture][]" %>
+					</div>
+				<% end %>
+
+				<div class="actions">
+					<%= f.submit %>
+				</div>
+
+			<% end %>
+		</div>
 	</div>
-</div>
+</body>
+</html>

@@ -1,15 +1,152 @@
 <% provide(:title, "Sejong Plate") %>
+<!DOCTYPE html>
+<html>
+	<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    //헤더 Dynamical Function
+    $(window).scroll(function(){
+      var height = $(document).scrollTop();
 
-<div id="index_button" align="center">
-    <%= link_to "모두보기", restaurants_path , class: "btn btn-default", type: "submit", remote: true %>
-    <%= link_to "정문", restaurants_path(:r_distance_door => "정문") , class: "btn btn-default", type: "submit" , id: "front" , remote: true %>
-    <%= link_to "쪽문", restaurants_path(:r_distance_door => "쪽문") , class: "btn btn-default", type: "submit" , id: "side" , remote: true %>
-    <%= link_to "후문", restaurants_path(:r_distance_door => "후문") , class: "btn btn-default", type: "submit" , id: "back" , remote: true %>
-</div>
+      //헤더가 내려오자마자
+      if(height > 1){
+        $('.navbar-inverse').css('background-color','white');
+        $('.navbar-inverse .navbar-brand').css('color','#222');
+        $('.navbar-inverse .navbar-nav > li > a').css('color','#222');
+        $('#logo').css('color','black');
+        $('.navbar-inverse').css('border-top-color','#F16F34');
+      }else{
+        $('.navbar-inverse').css('background-color','transparent');
+        $('.navbar-inverse .navbar-brand').css('color','white');
+        $('.navbar-inverse .navbar-nav > li > a').css('color','white');
+        $('#logo').css('color','white');
+        $('.navbar-inverse').css('border-top-color','transparent');
+      }
+    });
+  </script>
+  </head>
+	<body role="document">
+    <div>
+      <!-- 첫번째 배경슬라이드 -->
+      <div id="main_top">
+        <!-- 배경슬라이드 위 문구 -->
+        <div id="main_top_copy">
+          <div id="box">
+            <b>세종대 재학생들의 솔직한 추천!</b><br>
+            직접 먹어보고 올립니다<br>
+            <span class="glyphicon glyphicon-chevron-down"></span><br>
+            <button class="btn btn-default" type="submit" id="copy_report" onclick="window.open('https://goo.gl/forms/YyZMmsjgrv2fpJFV2')">맛집 제보하기
+            </button>
+          </div>
+        </div>
+        <!-- //배경슬라이드 위 문구 -->
+        <!-- 배경슬라이드 이미지 -->
+        <div id="main_img">
+          <div><%= link_to image_tag("back_img3.jpg"), id: 'main_img_slider' %></div>
+        </div>
+        <!-- //배경슬라이드 이미지 -->
+      </div>
+      <!-- //첫번째 배경슬라이드 -->
+      <!-- 가게리스트 -->
+      <div id="main_bottom">
+      	<% @restaurants.each do|r| %> 
+        	<div id="restaurant_card" onclick="location.href='/restaurants/<%= r.id %>'">
+            <!-- 가게별 대표 이미지 -->      			
+            <div id="rest_card_img">
+      				<%if r.albums[0].nil? %>
+              <%else%>
+               <%= link_to (image_tag(r.albums[0].picture_url,
+                :width => "100%", :height => "100%")),
+                restaurant_path(:id => r.id),'data-no-turbolink'=>true %>
+              <% end %>
+      			</div>
+            <!-- //가게별 대표 이미지 -->            
+            <!-- 가게별 세부정보 -->
+	      		<div id="rest_card_info">
+	      			<div id="info_title">
+	      				<span id="name"><%= link_to r.r_name ,restaurant_path(:id => r.id) %></span>
+                <span id="like">(추천 <%=r.r_like %>)</span>
+              </div>
+	      			<div id="info_address">
+	      				<span class="glyphicon glyphicon-phone-alt"> </span>
+                <span id="phone"> 연락처 </span>
+                <span id="value"><%= r.r_phone_number %></span>
+	      			</div>
+	      			<div id="info_drive">
+	      				<span class="glyphicon glyphicon-briefcase"> </span>
+                <span id="code"> 배달유무 </span>
+                <span id="value"><%= r.r_code %></span>
+	      			</div>
+	      			<div id="info_direct">
+	      				<span class="glyphicon glyphicon-map-marker"> </span>
+                <span id="time"> 소요시간 </span>
+                <span id="value">
+                    <%= " 도보 " + r.r_distance + " 분(" + r.r_distance_door + ")"%>
+                </span>
+	      			</div>
+	      			<div id="info_open">
+	      				<span class="glyphicon glyphicon-time"> </span>
+                <span id="constant"> 영업시간 </span>
+                <span id="value"><%= r.r_time %></span>
+	      			</div>
+	      		</div>
+            <!-- 가게별 세부정보 -->            
+        	</div>
+        <% end %>
+      </div>
+      <!-- //가게리스트 -->
+    </div>
+    <!-- 페이지네이션 -->
+		<div align="center">
+		    <%= will_paginate (@restaurants)%>
+		</div>
+		<!-- //페이지네이션 -->
+	</body>
+</html>
+<script>
+  var width = $(window).width();
+  var origin_setting = false;
 
-<div id="ex1">
-	<%= render 'restaurants/restaurant_index_card' %>
-</div>
-<div align="center">
-    <%= will_paginate (@restaurants)%>
-</div>
+  if(width < 768){
+    $('.navbar-toggle').click(function(){    
+      if(!origin_setting){
+        //alert('없애주고');
+        $('#main_top_copy #box').css('display','none');
+        origin_setting = true;
+      }else{
+        //alert('만들어주고');
+        $('#main_top_copy #box').css('display','block');
+        origin_setting = false;
+      }
+    });
+  }else{}
+
+  //브라우저 너비에 맞춘 Dynamical Function
+  $(window).resize(function () {
+    if(width < 768){
+      $('.navbar-toggle').click(function(){    
+        if(!origin_setting){
+          //alert('없애주고');
+          $('#main_top_copy #box').css('display','none');
+          origin_setting = true;
+        }else{
+          //alert('만들어주고');
+          $('#main_top_copy #box').css('display','block');
+          origin_setting = false;
+        }
+      });
+    }else{}
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
