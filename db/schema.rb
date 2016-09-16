@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20160106070114) do
     t.datetime "updated_at",                       null: false
     t.string   "nickname"
     t.boolean  "admin",            default: false
-    t.boolean  "recommend",        default: false
+    t.boolean  "recommend"
   end
 
   create_table "restaurants", force: :cascade do |t|
