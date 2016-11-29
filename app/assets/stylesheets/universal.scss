@@ -108,7 +108,13 @@ body{
 	border-top-width: 3px;
 	border-top-color: transparent;
 	border-bottom-color: transparent;
+	-o-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+	transition: all 1s ease;
 }
+
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus{
 	background-color: #ff6633;
@@ -124,6 +130,7 @@ body{
 .dropdown-menu > li > a{
 	font-size: 16px;
 }
+
 
 
 /* Paginate */
@@ -146,6 +153,10 @@ body{
 .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus{
   background-color: #f78f6c;
   border-color: transparent;
+}
+
+button:focus{
+	outline:0;
 }
 
 /*paginate previous, next text*/

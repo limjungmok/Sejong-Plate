@@ -1,142 +1,22 @@
-@media all and (max-width: 768px) {
-  .container{
-		width: 100%;
+@media all and (min-width: 320px) and (max-width: 400px){
+	#rest_card_info #name a{
+		font-size: 16px;
 	}
-	#main_top_copy{
+	#botton_scroll{
 		position: absolute;
-		width: 100%;
-		height: 200px;
-		text-align: center;
-		color: #fff;
-		font-size:23px;
-		margin-top: 70px;
-		font-weight: lighter;
-
-		#box{
-			width: 98%;
-			height: 100%;
-			margin-left: auto;
-			margin-right: auto;
-			background-color: rgba(0, 0, 0, 0.4);
-			padding-top: 15px;
-	        border-radius: 3px;
-		}
-
-		#copy_report{
-			width: 200px;
-			height: 50px;
-			border-width: 0.5px;
-			border-color: white;
-			border-style: solid;
-			text-align: center;
-			font-size: 15px;
-			margin: 0 auto;
-			background-color: transparent;
-			color: white;
-		}
-		#copy_report:hover{
-			border-color: #ff7c51;
-			background-color: #ff7c51;
-			color: white;
-			font-weight: bold;
-		}
-		.glyphicon{
-			color: white;
-		}
+		right: 1%;
 	}
-
- 	#main_img img{
-		width: 100%;
-		height: 300px;
-	}
-	#main_bottom{
-		width: 100%;
-		height: auto;
-		background-color: #eee;
-		margin-top: 30px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	#restaurant_card{
-		width: 98%;
-		height: 140px;
-		background-color: white;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: 10px;
-		margin-bottom: 10px;
-		padding: 5px;
-	}
-	#restaurant_card:hover{
-		cursor: pointer;
-		box-shadow: 0 3px 5px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
-	}
-
-	#rest_card_img{
-		width: 30%;
-		height: 100%;
-		float: left;
-	}
-
-	#rest_card_info{
-		width: 70%;
-		height: 100%; 
-		float: left;
-		padding-top: 1px;
-		padding-left: 15px;
-
-		#name a{
-			font-size: 20px;
-			color: #222;
-			text-decoration: none;
-			font-weight: bold;
-		}
-		#name a:hover{
-			color: #aaa;
-		}
-		#like{
-			color:#a1a1a1;
-			font-size:14px;
-		}
-
-		#phone, #code, #time, #constant{
-			font-size: 13px;
-			font-weight: bold;
-		}
-		#value{
-			margin-left: 10px;
-			font-size: 12px;
-			color:#888;
-		}
-	}
-
-	#info_title{
-		margin-bottom: 4px;
-
-	}
-	#info_address{
-		margin-bottom: 4px;
-	}
-	#info_drive{
-		margin-bottom: 4px;
-	}
-	#info_direct{
-		margin-bottom: 4px;
-	}
-	#info_open{
-		margin-bottom: 4px;
-
-		#value{
-		display: inline-block;
-		width: 115px;
-		white-space: nowrap;
-	    overflow: hidden;
-	    text-overflow: ellipsis;
-	    word-wrap: break-word;
-	    margin-bottom: -3.5px
-		}
-	}
+	#scroll_top{
+		width: 50px;
+	    height: 50px;
+	    background-image: url(/assets/back_top.png);
+	    background-color: transparent;
+	    border: none;
+	    background-size: 50px;
+	    background-repeat: no-repeat;
+	}	
 }
+
 @media all and (min-width: 401px) and (max-width: 500px) {
 	#main_top_copy{
 		position: absolute;
@@ -175,6 +55,11 @@
 			background-color: #ff7c51;
 			color: white;
 			font-weight: bold;
+			-o-transition:.5s;
+			-ms-transition:.5s;
+			-moz-transition:.5s;
+			-webkit-transition:.5s;
+			transition:.5s;
 		}
 		.glyphicon{
 			color: white;
@@ -188,13 +73,27 @@
 			display: inline-block;
 			width: 140px;
 			white-space: nowrap;
-	    overflow: hidden;
-	    text-overflow: ellipsis;
-	    word-wrap: break-word;
-	    margin-bottom: -3.5px	    
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    word-wrap: break-word;
+		    margin-bottom: -3.5px
 		}
 	}
+	#botton_scroll{
+		position: absolute;
+		right: 1%;
+	}
+	#scroll_top{
+		width: 50px;
+	    height: 50px;
+	    background-image: url(/assets/back_top.png);
+	    background-color: transparent;
+	    border: none;
+	    background-size: 50px;
+	    background-repeat: no-repeat;
+	}	
 }
+
 
 @media all and (min-width: 501px) and (max-width: 550px) {
 	#main_top_copy{
@@ -235,6 +134,12 @@
 			background-color: #ff7c51;
 			color: white;
 			font-weight: bold;
+			-o-transition:.3s;
+			-ms-transition:.3s;
+			-moz-transition:.3s;
+			-webkit-transition:.3s;
+			transition:.3s;
+
 		}
 		.glyphicon{
 			color: white;
@@ -247,12 +152,25 @@
 			display: inline-block;
 			width: 180px;
 			white-space: nowrap;
-	    overflow: hidden;
-	    text-overflow: ellipsis;
-	    word-wrap: break-word;
-	    margin-bottom: -3.5px
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    word-wrap: break-word;
+		    margin-bottom: -3.5px
 		}
 	}
+	#botton_scroll{
+		position: absolute;
+		right: 1%;
+	}
+	#scroll_top{
+		width: 50px;
+	    height: 50px;
+	    background-image: url(/assets/back_top.png);
+	    background-color: transparent;
+	    border: none;
+	    background-size: 50px;
+	    background-repeat: no-repeat;
+	}	
 }
 @media all and (min-width: 551px) and (max-width: 600px) {
 	#main_top_copy{
@@ -292,6 +210,12 @@
 			background-color: #ff7c51;
 			color: white;
 			font-weight: bold;
+			-o-transition:.3s;
+			-ms-transition:.3s;
+			-moz-transition:.3s;
+			-webkit-transition:.3s;
+			transition:.3s;
+
 		}
 		.glyphicon{
 			color: white;
@@ -305,11 +229,25 @@
 			display: inline-block;
 			width: 230px;
 			white-space: nowrap;
-	    overflow: hidden;
-	    text-overflow: ellipsis;
-	    word-wrap: break-word;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    word-wrap: break-word;
 		}
 	}
+
+	#botton_scroll{
+		position: absolute;
+		right: 1%;
+	}
+	#scroll_top{
+		width: 50px;
+	    height: 50px;
+	    background-image: url(/assets/back_top.png);
+	    background-color: transparent;
+	    border: none;
+	    background-size: 50px;
+	    background-repeat: no-repeat;
+	}	
 }
 
 @media all and (min-width: 601px) and (max-width: 767px) {
@@ -350,6 +288,12 @@
 			background-color: #ff7c51;
 			color: white;
 			font-weight: bold;
+			-o-transition:.3s;
+			-ms-transition:.3s;
+			-moz-transition:.3s;
+			-webkit-transition:.3s;
+			transition:.3s;
+
 		}
 		.glyphicon{
 			color: white;
@@ -363,13 +307,205 @@
 			display: inline-block;
 			width: 270px;
 			white-space: nowrap;
-	    overflow: hidden;
-	    text-overflow: ellipsis;
-	    word-wrap: break-word;
-	    margin-bottom: -3.5px
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    word-wrap: break-word;
+		    margin-bottom: -3.5px
 		}
 	}
+
+	#botton_scroll{
+		position: absolute;
+		right: 1%;
+	}
+	#scroll_top{
+		width: 50px;
+	    height: 50px;
+	    background-image: url(/assets/back_top.png);
+	    background-color: transparent;
+	    border: none;
+	    background-size: 50px;
+	    background-repeat: no-repeat;
+	}
+
 }
+
+
+@media all and (max-width: 768px) {
+  .container{
+		width: 100%;
+	}
+	#main_top_copy{
+		position: absolute;
+		width: 100%;
+		height: 200px;
+		text-align: center;
+		color: #fff;
+		font-size:23px;
+		margin-top: 70px;
+		font-weight: lighter;
+ 
+		#box{
+			width: 98%;
+			height: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			background-color: rgba(0, 0, 0, 0.4);
+			padding-top: 15px;
+	        border-radius: 3px;
+		}
+
+		#copy_report{
+			width: 200px;
+			height: 50px;
+			border-width: 0.5px;
+			border-color: white;
+			border-style: solid;
+			text-align: center;
+			font-size: 15px;
+			margin: 0 auto;
+			background-color: transparent;
+			color: white;
+		}
+		#copy_report:hover{
+			border-color: #ff7c51;
+			background-color: #ff7c51;
+			color: white;
+			font-weight: bold;
+			-o-transition:.3s;
+			-ms-transition:.3s;
+			-moz-transition:.3s;
+			-webkit-transition:.3s;
+			transition:.3s;
+
+		}
+		.glyphicon{
+			color: white;
+		}
+	}
+
+ 	#main_img{
+		width: 100%;
+		height: 300px;
+		background-image: url('/assets/back_img3.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	#main_bottom{
+		width: 100%;
+		height: auto;
+		background-color: #eee;
+		margin-top: 30px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#restaurant_card{
+		width: 98%;
+		height: 140px;
+		background-color: white;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		padding: 5px;
+
+	}
+
+	#restaurant_card:hover{
+		cursor: pointer;
+  		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+
+		#rest_card_info #name a{
+			color: #ff6633;
+			-o-transition:.3s;
+			-ms-transition:.3s;
+			-moz-transition:.3s;
+			-webkit-transition:.3s;
+			transition:.3s;
+		}
+
+	}
+
+	#rest_card_img{
+		width: 30%;
+		height: 100%;
+		float: left;
+	}
+
+	#rest_card_info{
+		width: 70%;
+		height: 100%;
+		float: left;
+		padding-top: 1px;
+		padding-left: 15px;
+
+		#name a{
+			font-size: 20px;
+			color: #222;
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+		#like{
+			color:#a1a1a1;
+			font-size:14px;
+		}
+
+		#phone, #code, #time, #constant{
+			font-size: 13px;
+			font-weight: bold;
+		}
+		#value{
+			margin-left: 10px;
+			font-size: 12px;
+			color:#888;
+		}
+	}
+
+	#info_title{
+		margin-bottom: 4px;
+
+	}
+	#info_address{
+		margin-bottom: 4px;
+	}
+	#info_drive{
+		margin-bottom: 4px;
+	}
+	#info_direct{
+		margin-bottom: 4px;
+	}
+	#info_open{
+		margin-bottom: 4px;
+
+		#value{
+			display: inline-block;
+			width: 115px;
+			white-space: nowrap;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    word-wrap: break-word;
+		    margin-bottom: -3.5px
+		}
+	}
+	#botton_scroll{
+		position: absolute;
+		right: 1%;
+	}
+	#scroll_top{
+		width: 50px;
+	    height: 50px;
+	    background-image: url(/assets/back_top.png);
+	    background-color: transparent;
+	    border: none;
+	    background-size: 50px;
+	    background-repeat: no-repeat;
+	}	
+}
+
+
+
 @media all and (min-width: 768px) and (max-width: 900px) {
 
 	#info_open{
@@ -379,10 +515,10 @@
 			display: inline-block;
 			width: 150px;
 			white-space: nowrap;
-	    overflow: hidden;
-	    text-overflow: ellipsis;
-	    word-wrap: break-word;
-	    margin-bottom: -3.5px
+			overflow: hidden;
+			text-overflow: ellipsis;
+			word-wrap: break-word;
+			margin-bottom: -3.5px
 		}
 	}
 }
@@ -396,10 +532,10 @@
 			display: inline-block;
 			width: 180px;
 			white-space: nowrap;
-	    overflow: hidden;
-	    text-overflow: ellipsis;
-	    word-wrap: break-word;
-	    margin-bottom: -3.5px
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    word-wrap: break-word;
+		    margin-bottom: -3.5px
 		}
 	}
 }
@@ -413,10 +549,10 @@
 			display: inline-block;
 			width: 160px;
 			white-space: nowrap;
-	    overflow: hidden;
-	    text-overflow: ellipsis;
-	    word-wrap: break-word;
-	    margin-bottom: -3.5px
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    word-wrap: break-word;
+		    margin-bottom: -3.5px
 		}
 	}
 }
@@ -428,12 +564,13 @@
 			display: inline-block;
 			width: 200px;
 			white-space: nowrap;
-	    overflow: hidden;
-	    text-overflow: ellipsis;
-	    word-wrap: break-word;
-	    margin-bottom: -3.5px
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    word-wrap: break-word;
+		    margin-bottom: -3.5px
 		}
 	}
+
 }
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
@@ -444,7 +581,7 @@
 	#main_top_copy{
 		position: absolute;
 		width: 100%;
-		hㄴeight: 190px;
+		height: 190px;
 		text-align: center;
 		color: #fff;
 		font-size:25px;
@@ -457,7 +594,7 @@
 			margin-left: auto;
 			margin-right: auto;
 			background-color: rgba(0, 0, 0, 0.4);
-			padding-top: 20px;
+			padding-top: 15px;
 	        border-radius: 3px;
 		}
 		#copy_report{
@@ -477,15 +614,25 @@
 			background-color: #ff7c51;
 			color: white;
 			font-weight: bold;
+			-o-transition:.3s;
+			-ms-transition:.3s;
+			-moz-transition:.3s;
+			-webkit-transition:.3s;
+			transition:.3s;
+
 		}
 		.glyphicon{
 			color: white;
 		}
 	}
 
- 	#main_img img{
+ 	#main_img{
 		width: 100%;
 		height: 400px;
+		background-image: url('/assets/back_img3.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
 	}
 	#main_bottom{
 		width: 100%;
@@ -509,7 +656,16 @@
 
 	#restaurant_card:hover{
 		cursor: pointer;
-		box-shadow: 0 3px 5px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
+  		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+
+		#rest_card_info #name a{
+			color: #ff6633;
+			-o-transition:.3s;
+			-ms-transition:.3s;
+			-moz-transition:.3s;
+			-webkit-transition:.3s;
+			transition:.3s;
+		}
 	}
 
 	#rest_card_img{
@@ -519,7 +675,7 @@
 	}
 	#rest_card_info{
 		width: 70%;
-		height: 100%; 
+		height: 100%;
 		float: left;
 		padding-top: 8px;
 		padding-left: 10px;
@@ -530,9 +686,7 @@
 			text-decoration: none;
 			font-weight: bold;
 		}
-		#name a:hover{
-			color: #aaa;
-		}
+
 		#like{
 			color:#a1a1a1;
 			font-size:14px;
@@ -564,6 +718,21 @@
 	#info_open{
 		margin-bottom: 6px;
 	}
+
+	#botton_scroll{
+		position: absolute;
+		right: 1%;
+	}
+	#scroll_top{
+		width: 50px;
+	    height: 50px;
+	    background-image: url(/assets/back_top.png);
+	    background-color: transparent;
+	    border: none;
+	    background-size: 50px;
+	    background-repeat: no-repeat;
+	}
+
 }
 
 @media all and (min-width: 1025px) {
@@ -608,6 +777,13 @@
 			background-color: #ff7c51;
 			color: white;
 			font-weight: bold;
+			-o-transition:.3s;
+			-ms-transition:.3s;
+			-moz-transition:.3s;
+			-webkit-transition:.3s;
+			transition:.3s;
+
+
 		}
 		.glyphicon{
 			color: white;
@@ -628,9 +804,13 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
-	#main_img img{
+	#main_img{
 		width: 100%;
 		height: 630px;
+		background-image: url('/assets/back_img3.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
 	}
 
 	#restaurant_card{
@@ -648,7 +828,18 @@
 
 	#restaurant_card:hover{
 		cursor: pointer;
-		box-shadow: 0 3px 5px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
+  		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+
+		/*box-shadow: 0 0px 0px rgba(0,0,0,0.19), 0 0px 10px rgba(0,0,0,0.23);*/
+
+		#rest_card_info #name a{
+			color: #ff6633;
+			-o-transition:.3s;
+			-ms-transition:.3s;
+			-moz-transition:.3s;
+			-webkit-transition:.3s;
+			transition:.3s;
+		}
 	}
 
 	#rest_card_img{
@@ -658,7 +849,7 @@
 	}
 	#rest_card_info{
 		width: 70%;
-		height: 100%; 
+		height: 100%;
 		float: left;
 		padding-top: 5px;
 		padding-left: 20px;
@@ -669,9 +860,7 @@
 			text-decoration: none;
 			font-weight: bold;
 		}
-		#name a:hover{
-			color: #aaa;
-		}
+
 		#like{
 			color:#a1a1a1;
 			font-size:17px;
@@ -689,7 +878,6 @@
 
 	#info_title{
 		margin-bottom: 10px;
-
 	}
 	#info_address{
 		margin-bottom: 10px;
@@ -703,4 +891,20 @@
 	#info_open{
 		margin-bottom: 10px;
 	}
+
+	#botton_scroll{
+		position: absolute;
+		right: 6.5%;
+	}
+	#scroll_top{
+		width: 55px;
+	    height: 55px;
+	    background-image: url(/assets/back_top.png);
+	    background-color: transparent;
+	    border: none;
+	    background-size: 55px;
+	    background-repeat: no-repeat;
+	}
+
+
 }

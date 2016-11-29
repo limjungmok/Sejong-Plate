@@ -21,9 +21,11 @@
         <!-- 가게 타이틀, 추천수 -->
 				<div>
 					<span id="title"><%= @restaurant.r_name %></span>
+          <!-- 
           <span class="restaurant_like_count" onClick="clickFunction()" id="title_like">
               (<%= @restaurant.r_like %> 추천)
           </span>
+          -->
 				</div>
         <!-- //가게 타이틀, 추천수 -->
 				<div>
@@ -102,7 +104,9 @@
     });
 
     //네이버 지도API
-    var oPoint = new nhn.api.map.LatLng(<%= @restaurant.r_latitude %>, <%=@restaurant.r_longtitude %>);
+    var oPoint = new nhn.api.map.LatLng(
+      <%= @restaurant.r_latitude %>, <%=@restaurant.r_longtitude %>
+      );
     var oMap = new nhn.api.map.Map(document.getElementById('map'), { 
         point : oPoint,
         zoom : 12,
