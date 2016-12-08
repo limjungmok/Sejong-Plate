@@ -2,7 +2,6 @@
 <html>
 	<head>
   <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=ab36337e7f5a470f7a2749a1373c5584"></script>
-  
 	</head>
 	<body>
     <!-- show 페이지 전체 영역 -->
@@ -21,11 +20,6 @@
         <!-- 가게 타이틀, 추천수 -->
 				<div>
 					<span id="title"><%= @restaurant.r_name %></span>
-          <!-- 
-          <span class="restaurant_like_count" onClick="clickFunction()" id="title_like">
-              (<%= @restaurant.r_like %> 추천)
-          </span>
-          -->
 				</div>
         <!-- //가게 타이틀, 추천수 -->
 				<div>
@@ -75,27 +69,27 @@
       <!-- //네이버 지도 API -->
 		</div>
     <!-- //show 페이지 전체 영역 -->
-		<!--<%= render 'restaurants/restaurant_info_bottom' %>-->
 	</body>
 </html>
 <script>
-  //헤더 처음부터 배경 하얀색 하려고 만듬.
-  $('.navbar-inverse').css('background-color','white');
-  $('.navbar-inverse .navbar-brand').css('color','#222');
-  $('.navbar-inverse .navbar-nav > li > a').css('color','#222');
-  $('#logo').css('color','black');
-  
-  //이미지 슬라이더 jQuery Plugin
-  $(document).ready(function() {
-    $("#img_slider").owlCarousel({
-        autoPlay: 2500, //Set AutoPlay to 3 seconds
-        items : 4,
-        itemsDesktop : [1199,3],
-        itemsDesktopSmall : [979,3]
+    //헤더 처음부터 배경 하얀색 하려고 만듬.
+    $('.navbar-inverse').css('background-color','white');
+    $('.navbar-inverse .navbar-brand').css('color','#222');
+    $('.navbar-inverse .navbar-nav > li > a').css('color','#222');
+    $('#logo').css('color','black');
+    
+    //이미지 슬라이더 jQuery Plugin
+    $(document).ready(function() {
+      $("#img_slider").owlCarousel({
+          autoPlay: 2500, //Set AutoPlay to 3 seconds
+          items : 4,
+          itemsDesktop : [1199,3],
+          itemsDesktopSmall : [979,3]
+      });
     });
-  });
-</script>
-<script>
+     
+    
+
     //브라우저 너비에 맞춘 Dynamical Function
 		$(window).resize(function () {
       $('#map').css('width',100+'%');
@@ -120,6 +114,7 @@
         minMaxLevel : [ 1, 14 ],
         size : new nhn.api.map.Size(300, 300)
     });
+
     // 줌 컨트롤러
     var oSlider = new nhn.api.map.ZoomControl();
     oMap.addControl(oSlider);
